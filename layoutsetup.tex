@@ -1,0 +1,115 @@
+%% Memoir layout setup
+
+%% NOTE: You are strongly advised not to change any of them unless you
+%% know what you are doing.  These settings strongly interact in the
+%% final look of the document.
+
+% Dependencies
+\usepackage{array}
+
+% Define the default sans serif font as the lighter computer modern bright by
+% D. Knuth.
+\renewcommand{\sfdefault}{cmbr}
+
+% Turn extra space before chapter headings off.
+\setlength{\beforechapskip}{0pt}
+
+% Chapter style redefinition
+\makeatletter
+\newcommand\thickhrulefill{\leavevmode \leaders%
+\hrule height 6.25pt depth -3.25pt \hfill \kern \z@}
+\setlength\midchapskip{10pt}
+\makechapterstyle{VZ14}{
+  \renewcommand\chapternamenum{}
+  \renewcommand\printchaptername{}
+  \renewcommand\chapnamefont{\Large\scshape}
+  \renewcommand\printchapternum{%
+    \chapnamefont\null\thickhrulefill\quad
+    \@chapapp\space\thechapter\quad\thickhrulefill}
+  \renewcommand\printchapternonum{%
+    \par\thickhrulefill\par\vskip\midchapskip
+    \hrule\vskip\midchapskip
+  }
+  \renewcommand\chaptitlefont{\Huge\scshape\centering}
+  \renewcommand\afterchapternum{%
+    \par\nobreak\vskip\midchapskip\hrule\vskip\midchapskip}
+  \renewcommand\afterchaptertitle{%
+    \par\vskip\midchapskip
+\hrule\nobreak\vskip\afterchapskip}
+}
+
+% Set the way pages are layed out (headers and page numbering)
+\if@twoside
+  \pagestyle{Ruled}
+\else
+  \pagestyle{ruled}
+\fi
+
+% Use the newly defined style
+\chapterstyle{VZ14}
+
+% Redefine sectional headings to contain rules
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+{-2\baselineskip}{0.8\baselineskip}%
+{\hrule depth 0.2pt width\textwidth\hrule depth1.5pt%
+width0.25\textwidth\vspace*{1.2em}\Large\bfseries\sffamily}}
+
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+{-2\baselineskip}{0.8\baselineskip}%
+{\hrule depth 0.2pt width\textwidth\hrule depth1pt width0.25\textwidth\vspace*{0.8em}\large\bfseries\sffamily}}
+
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+{-2\baselineskip}{0.8\baselineskip}%
+{\large\bfseries\sffamily}}
+
+\setparaheadstyle{\normalsize\bfseries\sffamily}
+\setsubparaheadstyle{\normalsize\bfseries\sffamily}
+
+% Set captions to a more separated style for clearness
+\captionnamefont{\sffamily\bfseries\footnotesize}
+\captiontitlefont{\sffamily\footnotesize}
+\setlength{\intextsep}{16pt}
+\setlength{\belowcaptionskip}{1pt}
+
+%%% Make a bit of additional space for footnotes
+%%% No.
+%\addtolength{\skip\footins}{4pt}
+%\renewcommand{\footnoterule}{%
+%   \kern -7pt                   % call this kerna
+%   \hrule height 0.4pt width 0.4\columnwidth
+%   \kern 6.6pt                  % call this kernb
+%}
+
+% Set section and TOC numbering depth to subsection
+\setsecnumdepth{subsection}
+\settocdepth{subsection}
+
+% Turn off american style paragraph indentation and add some space to be
+% printed when a new paragraph starts.
+
+\setlength{\parindent}{0pt}
+\addtolength{\parskip}{2pt}
+
+\newcommand{\professor}[1]{\def\@professor{#1}}
+\renewcommand{\maketitlehookb}%
+{\vspace{2em}\centering\Large\@professor\vspace{0.3\textheight}}
+
+% A bit spacier tabulars and lists
+\setlength{\extrarowheight}{4pt}
+\setlength{\itemsep}{10pt}
+\renewcommand{\arraystretch}{1.2}
+
+% This provides a frontend to set the lecture date into the header
+\newcommand{\lecturedate}[1]{\def\@lecdate{#1}}
+\makeoddhead{Ruled}{\@lecdate}{}{\normalfont\rightmark}
+
+\makeatother
+
+% This defines how theorems should look. Best leave as is.
+\theoremstyle{plain}
+\theoremseparator{:\quad}
+\theoremprework{}
+\theoremindent2em
+\theoremheaderfont{\sffamily\bfseries}
+\theorembodyfont{\normalfont}
+\theoremsymbol{}

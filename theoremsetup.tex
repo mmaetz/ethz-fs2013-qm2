@@ -1,0 +1,38 @@
+%% Theorem-like environments
+
+%% This can be changed according to language. You can comment out the ones you
+%% don't need.
+
+%% German theorems
+%\newtheorem{bspl}{Beispiel}[section]
+%\newtheorem{bemk}{Bemerkung}[section]
+%\newtheorem{korl}{Korrolar}[section]
+%\newtheorem{satz}{Satz}[section]
+
+%% English variants
+\newtheorem{expl}{Example}[section]
+\newtheorem{remk}{Remark}[section]
+\newtheorem{corl}{Corollary}[section]
+\newtheorem{thrm}{Theorem}[section]
+
+%% Theorems common to both languages
+\newtheorem{defn}{Definition}[section]
+\newtheorem{lemm}{Lemma}[section]
+\newtheorem{prop}{Proposition}[section]
+
+%% Note, if you want to run all of them on a single counter, use
+%\newtheorem{expl}{Example}[section]
+%\newtheorem{remk}[expl]{Remark}
+%\newtheorem{corl}[expl]{Corollary}
+%% etc. You can also run equations on the same counter if you like,
+%% with
+%\numberwithin{equation}{section}
+%\newtheorem{expl}[equation]{Example}
+%% You can also declare unnumbered environments with
+%\newtheorem*{expl}{Example}
+
+%% Proof environment with a small square as a "qed" symbol
+\theoremstyle{nonumberplain}
+\theoremsymbol{\ensuremath{\square}}
+\newtheorem{proof}{Proof}
+%\neotheorem*{beweis}{Beweis}

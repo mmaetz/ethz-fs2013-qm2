@@ -1,0 +1,64 @@
+% -\_/ % Marc supplement % \_/- %
+\newcommand{\td}{\mathrm d }
+
+% TikZ
+\newcommand{\qd}{\tikz\draw (0,0) rectangle +(2ex,2ex);\\}
+% QM1
+\newcommand{\bra}[1]{\left\langle #1\right|}
+\newcommand{\ket}[1]{\left| #1\right\rangle}
+\newcommand{\braket}[2]{\left\langle #1\right|\left.\! #2\right\rangle}
+\newcommand{\ketbra}[2]{\ensuremath{ {\ket{#1} \!\bra{#2}}}}
+\newcommand{\proj}[1]{\ensuremath{ {\ket{#1} \!\bra{#1}}}}
+\newcommand{\sumproj}[1]{\ensuremath{ {\sum_{#1}\proj{#1}}}}
+\newcommand{\sand}[3]{\ensuremath{\left\langle {#1}\vphantom{#3} \right\rvert{#2} \left\lvert{#3}\vphantom{#1}\right\rangle}}
+
+
+\newcommand{\vevj}[2]{\left\langle {#1} \right\langle_{#2} }
+\newcommand{\vev}[1]{\left\langle {#1} \right\rangle }
+
+
+\newcommand{\comm}[2]{\left[ {#1}, {#2} \right] }
+\newcommand{\acomm}[2]{\left\{ {#1}, {#2} \right\} }
+
+\newcommand{\norm}[1]{\left\lvert {#1} \right\rvert }
+
+
+
+%calculus
+\newcommand{\ddd}[2]{\frac{\mathrm d ^{2} #1}{\mathrm d #2 ^{2}}}
+\newcommand{\dd}[2]{\frac{\mathrm d #1}{\mathrm d #2}}
+\newcommand{\ddn}[3]{\frac{\mathrm d ^{#1} #2}{\mathrm d #3 ^{#1}}}
+\newcommand{\pdd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pddd}[2]{\frac{\partial^{2} #1}{\partial #2 ^{2}}}
+\newcommand{\pdddm}[3]{\frac{\partial^{2} #1}{\partial #2 \partial #3}}
+\newcommand{\pddn}[3]{\frac{\partial^{#1} #2}{\partial #3 ^{#1}}}
+\newcommand{\wrt}[1]{\; d #1}
+\newcommand{\de}{differential equation}
+\newcommand{\diverg}{\operatorname{{\mathrm div}}}
+\newcommand{\curl}{\operatorname{{\mathrm curl}}}
+\newcommand{\sgn}{\operatorname{{\mathrm sgn}}}
+\newcommand{\Ltran}[1]{\mathcal{L} \left( #1 \right) }
+\newcommand{\Ftran}[1]{\mathcal{F} \left( #1 \right) }
+\newcommand{\Ftrani}[1]{\mathcal{F}^{-1} \left( #1 \right) }
+
+%vectors + complex
+\newcommand{\Arg}{\operatorname{{\mathrm Arg}}}
+\newcommand{\Res}[2]{\mathrm{Res} \left( #1 , #2 \right) }
+%\DeclareMathAlphabet{\m}{OT1}{cmss}{m}{sl} % for matrices
+\newcommand{\vtr}[1]{\boldsymbol{\mathrm{#1}}}
+% \DeclareMathAlphabet doesn't do symbols bold so can't be used for 
+% \vtr
+\newcommand{\Log}{\operatorname{{\mathrm Log}}}
+\newcommand{\Ln}{\operatorname{{\mathrm Ln}}}
+\newcommand{\dotp}{\cdot}
+\newcommand{\Int}{\operatorname{{\mathrm Int}}}
+\newcommand{\Ext}{\operatorname{{\mathrm Ext}}}
+\newcommand{\Real}{\operatorname{{\mathrm Re}}}
+\newcommand{\Imag}{\operatorname{{\mathrm Im}}}
+\newcommand{\vwrt}[1]{\dotp {\rm d} \vtr{#1}}
+\newcommand{\dist}[2]{d \left( #1 , #2 \right)}
+
+%%% Randnotizen Abstand vom Text
+%\marginparsep-0.8cm
+%%% alle Randnotizen links statt rechts
+%\reversemarginpar

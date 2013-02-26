@@ -1,0 +1,93 @@
+\chapter{Approximation methods for stationary problems}
+\begin{itemize}
+	\item standard QM problem:
+		\begin{itemize}
+			\item given $\ket{\psi(t_0)}$
+			\item wanted 
+				\begin{dgroup*}[]
+					\begin{dmath*}[]
+						\ket{\psi(t)}=U\left( t,t_0 \right)\ket{\psi(t_0)}
+					\end{dmath*}
+					\begin{dmath*}[]
+						U=e^{-\frac{i}{\hbar}H\left( t-t_0 \right)}
+					\end{dmath*}
+				\end{dgroup*}
+		\end{itemize}
+	\item for time independent $H$
+		\begin{dmath}[]
+			U=e^{-\frac{i}{\hbar}H\left( t-t_0 \right)}
+		\end{dmath}
+		find eigenvalue and eigenstates (diagonalize $H$)
+\end{itemize}
+but: most problems cannot be solved exactly $\to$ find approximate solution.
+\section{Time-independent perturbation theory, non-degenerate case}
+Assume:
+\begin{dmath}[]
+	H=H_0+\lambda V
+\end{dmath}
+with $H_0$ the Hamiltonian that I can solve (``free'' Hamiltonian) and the perturbation $V$ ``small'' and $\lambda$ a dimensionless bookkeeping par.
+\begin{dgroup*}[]
+	\begin{dmath*}[]
+		\lambda\to 0 \condition*{H\to H_0}
+	\end{dmath*}
+	\begin{dmath*}[]
+		\lambda\to 1 \condition*{\text{full } H}
+	\end{dmath*}
+\end{dgroup*}
+We know
+\begin{dmath*}[]
+	\ket{\psi_{n}^{(0)}}, E_{n}^{(0)}
+\end{dmath*}
+with
+\begin{dgroup*}[]
+	\begin{dmath*}[]
+		H_0\ket{\psi_{n}^{(0)}}=E_{n}^{(0)}\ket{\psi_{n}^{(0)}}
+	\end{dmath*}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath*}[]
+		\braket{\psi_{n}^{(0)}}{\psi_{m}^{(0)}}=\delta_{mn}
+	\end{dmath*}
+\end{dgroup*}
+(continuous spectrum also understood.)
+
+We want $\ket{\psi_n}$ and $E_n$ with 
+\begin{dmath*}[]
+	\left( H_0+\lambda V \right)\ket{\psi_n}=E_n\ket{\psi_n}
+\end{dmath*}
+let
+\begin{dgroup*}[]
+	\begin{dmath*}[]
+		E_n=E_{n}^{(0)}+\lambda E_{n}^{(1)}+\lambda^2 E_{n}^{(2)}+ \dots
+	\end{dmath*}
+	\begin{dmath*}[]
+		\ket{\psi_n}=\ket{\psi_{n}^{(0)}}+\lambda \ket{\psi_{n}^{(1)}}+\lambda^2\ket{\psi_{n}^{(2)}}+ \dots
+	\end{dmath*}
+\end{dgroup*}
+seems obvious, but assumption. (convergence?)
+\begin{dgroup*}[]
+	\begin{dmath*}[]
+		\left( H_0-E_{n}^{(0)} \right)\ket{\psi_{n}^{(0)}}+\lambda\left( \left( H_0-E_{n}^{(0)} \right)\ket{\psi_{n}^{(1)}} \right)
+		+\lambda^2\left( \left( H_0-E_{n}^{(0)} \right)\ket{\psi_{n}^{(2)}}+\left( V-E_{n}^{(1)} \right)\ket{\psi_{n}^{(1)}}-E_{n}^{(2)} \right)
+		+ \mathcal{O}\left( \lambda^3 \right)=0
+	\end{dmath*}
+\end{dgroup*}
+with $\mathcal{O}(1)$ ``step 0'', $\mathcal{O}(\lambda)$ ``step 1'', $\mathcal{O}(\lambda^2)$ ``step 2''.
+\paragraph{Step 0:} nothing to do
+\paragraph{Step 1} multiply by $\bra{\psi_{m}^{(0)}}$
+\begin{dgroup*}[]
+	\begin{dmath*}[]
+	\sand{\psi_{m}^{(0)}}{H_0-E_{n}^{(0)}}{\psi_{n}^{(1)}}+\sand{\psi_{m}^{(0)}}{V-E_{n}^{(1)}}{\psi_{n}^{(0)}}=0
+	\end{dmath*}
+	\begin{dmath*}[]
+		\hiderel{=}\left( E_{m}^{(0)}-E_{n}^{(0)} \right)\braket{\psi_{m}^{(0)}}{\psi_{n}^{(1)}}+\sand{\psi_{m}^{(0)}}{V}{\psi_{n}^{(0)}}-E_{n}^{(1)}\delta_{mn}=0
+	\end{dmath*}
+	\begin{dsuspend}
+		to get $\ket{\psi_{n}^{(1)}}$
+	\end{dsuspend}
+	\begin{dmath*}[]
+		\ket{\psi_{n}^{(1)}}=\sum_{m}^{}\underbrace{\braket{\psi_{m}^{(0)}}{\psi_{n}^{(1)}}}\ket{\psi_{m}^{(0)}}
+		=\sum_{m}^{}\frac{\sand{\psi_{m}^{(0)}}{V}{\psi_{n}^{(0)}}}{E_{n}^{(0)}-E_{m}^{(0)}}\ket{\psi_{m}^{(0)}}+\ket{\psi_{n}^{(0)}}\braket{\psi_{n}^{(0)}}{\psi_{n}^{(1)}}
+	\end{dmath*}
+\end{dgroup*}

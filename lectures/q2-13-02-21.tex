@@ -1,0 +1,177 @@
+from normalization
+\begin{dmath}[]
+	\braket{\psi_n}{\psi_n}\stackrel{!}{=}1=\underbrace{\braket{\psi_{n}^{(0)}}{\psi_{n}^{(0)}}}_{1}+\lambda\underbrace{\braket{\psi_{n}^{(0)}}{\psi_{n}^{(1)}}}_{0}+\lambda\braket{\psi_{n}^{(1)}}{\psi_{n}^{(0)}}+\mathcal{O}\left( \lambda^2 \right)
+\end{dmath}
+has to be small. If $E_{n}^{(0)}=E_{m}^{(0)}$?? degeneracy! $\to$ sec 1.2 if $E_{n}^{(0)}\simeq E_{m}^{(0)}$ quasi degenerate 
+
+\paragraph{step 2}
+take $\mathcal{O}(\lambda^2)$ terms $\bra{\psi_{k}^{(0)}}$
+\begin{dmath}[]
+	\left( E_{k}^{(0)}-E_{n}^{(0)} \right)\braket{\psi_{k}^{(0)}}{\psi_{n}^{(2)}} + \sand{\psi_{k}^{(0)}}{V}{\psi_{n}^{(1)}}-E_{n}^{(1)}\braket{\psi_{k}^{(0)}}{\psi_{n}^{(1)}}=E_{n}^{(2)}\delta_{kn}
+\end{dmath}
+for $k=n$
+\begin{dmath}[]
+	E_{n}^{(2)}=\sand{\psi_{n}^{(0)}}{V}{\psi_{n}^{(1)}}=\sum_{m\neq n}^{}\frac{\sand{\psi_{n}^{(0)}}{V}{\psi_{m}^{(0)}}\sand{\psi_{m}^{(0)}}{V}{\psi_{n}^{(0)}}}{E_{n}^{(0)}-E_{m}^{(0)}}=\sum_{m\neq n}^{}\frac{\norm{V_{nm}^2}}{E_{n}^{(0)}-E_{m}^{(0)}}
+\end{dmath}
+Note $E_{n}^{(2)}<0$ for ground state.
+
+Next compute $\ket{\psi_{n}^{(2)}}$:
+initially fix normalization such that 
+\begin{dmath}[]
+	\braket{\psi_{n}^{(0)}}{\psi_{n}^{(i)}}=\delta_{i0}
+\end{dmath}
+this is in conflict 
+\begin{dmath}[]
+	\braket{\psi_n}{\psi_n}=1
+\end{dmath}
+$\to$ sort out at the end.
+\begin{dmath}[]
+	\ket{\psi_{n}^{(2)}}=\sum_{k\neq n}^{}\ket{\psi_{k}^{(0)}}\braket{\psi_{k}^{(0)}}{\psi_{n}^{(2)}}+0
+	=\sum_{k\neq n}^{}\ket{\psi_{k}^{(0)}}\left( \frac{\sand{\psi_{k}^{(0)}}{V}{\psi_{n}^{(1)}}}{E_{n}^{(0)}-E_{k}^{(0)}}-\frac{E_{n}^{(1)}\braket{\psi_{k}^{(0)}}{\psi_{n}^{(1)}}}{E_{n}^{(0)}-E_{k}^{(0)}} \right)
+\end{dmath}
+plug in $\ket{\psi_{n}^{(1)}}$ and sort out normalization
+\begin{dgroup*}[]
+\begin{dmath}[]
+	\ket{\psi_n}_N=\mathbb{Z}^{1/2}\ket{\psi_n}
+\end{dmath}
+\begin{dsuspend}
+fix such that
+\end{dsuspend}
+\begin{dmath}[]
+	{}_N\braket{\psi_n}{\psi_n}_M=1
+\end{dmath}
+\begin{dmath}[]
+	{}_N\braket{\psi_n}{\psi_n}_N=1=Z_n\braket{\psi_n}{\psi_n}=Z_n\left( \bra{\psi_{n}^{(0)}}+\lambda\bra{\psi_{n}^{(1)}}+\lambda^2\bra{\psi_{n}^{(2)}} \right)\times \left( \ket{\psi_{n}^{(0)}}+\lambda\ket{\psi_{n}^{(1)}}+\ldots \right)=E_{n}^{(2)}\delta_{kn}
+	=Z_n\left( 1+\lambda^2\braket{\psi_{n}^{(1)}}{\psi_{n}^{(1)}}+\mathcal{O}\left( \lambda^3 \right) \right)
+\end{dmath}
+\begin{dmath}[]
+	Z_n^{1/2}=1-\frac{\lambda^2}{2}\braket{\psi_{n}^{(1)}}{\psi_{n}^{(1)}}\mathcal{O}\left( \lambda^3 \right)
+\end{dmath}
+\begin{dmath}[]
+	\Rightarrow \ket{\psi_{n}^{(2)}}=\sum_{k\neq n}^{}\sum_{m\neq n}^{}\ket{\psi_{k}^{(0)}}\left[ \frac{V_{km}-V_{mn}}{\left( E_{n}^{(0)}-E_{k}^{(0)} \right)\left( E_{m}^{(0)}-E_{n}^{(0)} \right)}-\frac{V_{kn}V_{nn}}{\left( E_{n}^{(0)}-E_{n}^{(0)} \right)} \right]-\frac{1}{2}\sum_{k\neq n}^{}\ket{\psi_{n}^{(0)}}\frac{\norm{V_{kn}^{2}}}{\left( E_{n}^{(0)}-E_{k}^{(0)} \right)}
+\end{dmath}
+\end{dgroup*}
+\section{Time-independent perturbation theory: degenerate case}
+Assume $E_{n}^{(0)}$ is $\alpha$-fold degenerate i.e. 
+\begin{dmath}[]
+	H_0\ket{\psi_{n_i}^{(0)}}=E_{n}^{(0)}\ket{\psi_{n}^{(0)}}\condition*{1\leq i \leq \alpha}
+\end{dmath}
+fix
+\begin{dmath}[]
+	\braket{\psi_{n_i}^{(0)}}{\psi_{n_j}^{(0)}}=\delta_{ij}
+\end{dmath}
+Any linear combination
+\begin{dmath}[]
+	\ket{\chi_{n}^{(0)}}=\sum_{i=1}^{\alpha}c_{n_i}\ket{\psi_{n_i}^{(0)}}
+\end{dmath}
+is an eigenstate of $H_0$ with evaluation $E_{n}^{(0)}$
+\begin{figure}[]
+	\begin{center}
+		\begin{tikzpicture}[]
+			\coordinate[label=above:$E(\lambda)$] (y) at (0,5);
+			\coordinate[label=right:$\lambda$] (x) at (5,0);
+			\draw[-latex] (0,0) -- (y);
+			\draw[-latex] (0,0) -- (x);
+			\coordinate[label=below:${\lambda=0,H_0}$] (h0) at (0,0);
+			\coordinate[label=below:${\lambda=1, H}$] (h1) at (4,0);
+			\draw[] (4,0) -- (4,5);
+			\coordinate[label=left:$E_{n}^{(0)}$] (e0) at (0,3);
+			\foreach \x/\y in {n_1/4,n_2/3,n_k/1}
+			{
+				\coordinate[label=right:$E_{\x}$] (c\y) at (4,\y);
+				\fill[] (c\y) circle (2pt);
+				\draw[dashed] (e0) -- (c\y);
+			}
+			\coordinate[label=right:$\vdots$] (cdots) at (4cm+1ex,2);
+		\end{tikzpicture}
+	\end{center}
+	\caption{}
+	\label{fig:}
+\end{figure}
+Typically $V$ ``lifts'' degeneracy at least partially since often 
+\begin{dmath}[]
+	\comm{H_0}{V}\neq 0
+\end{dmath}
+Pick one of the evals $E_{n_k}$ with 
+\begin{dmath}[]
+	H\ket{\psi_{n_k}}=E_{n_k}\ket{\psi_{n_k}}
+\end{dmath}
+for $\lambda\to 0$: $E_{n_k}\to E_{n}^{(0)}$ and 
+\begin{dmath}[]
+	\ket{\psi_{n_k}}\to \ket{\chi_{n_k}(0)}=\sum_{i=1}^{\alpha}\underbrace{c_{n_k i}\ket{\psi_{n_i}^{(0)}}}_{\substack{\text{some lin}\\\text{comb}}}
+\end{dmath}
+have to find ``good'' linear combination, i.e. coeff $c_{n_k i}$. Main idea as before:
+\begin{dgroup*}[]
+	\begin{dmath}[]
+		\ket{\psi_{n_k}}=\ket{\chi_{n_k}^{(0)}}+\lambda\ket{\psi_{n_k}^{(1)}}
+	\end{dmath}
+	\begin{dmath}[]
+		0=\left( H_0-E_{n}^{(0)} \right)\ket{\psi_{n_k}^{(1)}}+\left( V-E_{n_k}^{(1)} \right)\ket{\chi_{n_k}^{(1)}}
+	\end{dmath}
+	\begin{dsuspend}
+		with 
+	\end{dsuspend}
+	\begin{dmath}[]
+		\ket{\psi_{n_k}^{(1)}}=\sum_{\ell =1}^{\dim(H_0)}a_{n_{\ell}}\ket{\psi_{\ell}^{(0)}}
+	\end{dmath}
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath}[]
+		\sum_{i=1}^{\alpha}c_{n_k i}\ket{\psi_{n_i}^{(0)}}
+	\end{dmath}
+\end{dgroup*}
+multiply by $\bra{\psi_{n_j}^{(0)}}$.
+\begin{dmath}[]
+	\sum_{\ell=1}^{\dim H_0}\underbrace{\left( E_{\ell}^{(0)}-E_{n}^{(0)} \right)}_{=0\text{ for }n=\ell}a_{n \ell}\underbrace{\braket{\psi_{n_j}^{(0)}}{\psi_{\ell}^{(0)}}}_{=0\text{ for }n\neq \ell}+\sum_{i=1}^{\alpha}c_{n_k i}\left( \sand{\psi_{n_j}^{(0)}}{V}{\psi_{n_i}^{(0)}}-E_{n_k}^{(1)}\underbrace{\braket{\psi_{n_j}^{(0)}}{\psi_{n_i}^{(0)}}}_{V_{ji}}-E_{n_k}^{(1)}\underbrace{\braket{\psi_{n_j}^{(0)}}{\psi_{n_i}^{(0)}}}_{\delta_{ij}} \right)
+\end{dmath}
+$\to$ solve
+\begin{dmath}[]
+	\det
+	\begin{pmatrix}
+		V_{11}-E_{n_k}^{(1)}&V_{12}&\ldots & V_{1\alpha}\\
+		V_{21}&V_{22}-E_{n_k}^{(1)}&\ldots& \vdots\\
+		\vdots&\vdots&\ddots&\vdots\\
+		V_{\alpha 1}&\ldots&\ldots&V_{\alpha\alpha}-E_{n_k}^{(1)}
+	\end{pmatrix}
+	=0
+\end{dmath}
+$\to$ eq. of order $\propto$ in $E_{n_k}^{(1)}$\\
+$\to$ $\alpha$ solutions
+\subsection{easy way out (sometimes)}
+if $V_{ij}=0$ for $i\neq j$ problem already solved\\
+$\to \alpha$ solutions are 
+\begin{dmath}[]
+	E_{n_i}^{(1)}=\sand{\psi_{i}^{(0)}}{V}{\psi_{i}^{(0)}}
+\end{dmath}
+Note: if $\exists$ operator $A$ with 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{A}{V}=0
+	\end{dmath}
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath}[]
+		A\ket{\psi_{n_i}^{(0)}}=a_{n_i}\ket{\psi_{n_i}^{(0)}}
+	\end{dmath},
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		a_{n_i}\neq a_{n_k}\condition{for $k\neq i$}
+	\end{dmath}
+	\begin{dsuspend}
+		then these $\ket{\psi_{n_i}^{(0)}}$ are ``good'' eigenstates
+	\end{dsuspend}
+\end{dgroup}
+\begin{proof}
+	\begin{dgroup}[]
+	\begin{dmath}[]
+		\sand{\psi_{n_i}^{(0)}}{\comm{A}{V}}{\psi_{n_k}^{(0)}}=0=\underbrace{\left( a_{n_i}-a_{n_k} \right)}_{\neq 0}\underbrace{\sand{\psi_{n_i}^{(0)}}{V}{\psi_{n_k}^{(0)}}}_{V_{ik}}
+		\end{dmath}
+		\begin{dmath}[]
+		\Rightarrow V_{ik}=0
+	\end{dmath}
+	\end{dgroup}
+	\end{proof}
