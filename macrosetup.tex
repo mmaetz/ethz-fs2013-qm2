@@ -8,7 +8,8 @@
 %% Differential d. This sets it as proper operator in roman type. With correct
 %% spacing. ISO standards for mathematical typesetting says it should be printed
 %% like this.
-\newcommand{\diff}[1]{\operatorname{d}\ifthenelse{\equal{#1}{}}{\,}{\!#1}}
+%\newcommand{\diff}[1]{\operatorname{d}\ifthenelse{\equal{#1}{}}{\,}{\!#1}}
+\newcommand{\dd}[1]{\operatorname{d}\ifthenelse{\equal{#1}{}}{\,}{\!#1}}
 
 %% Symbols for euler number and imaginary unit
 \providecommand*{\eu}%
@@ -26,6 +27,7 @@
 \DeclareMathOperator{\Div}{\nabla\cdot}
 
 %% Additional mathematical operators
+%% Just use the physics package
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\id}{Id}
 \DeclareMathOperator{\arccot}{arccot}
@@ -56,8 +58,10 @@
 \newcommand{\seq}[1]{\langle #1 \rangle}
 \newcommand{\set}[1]{\{ #1 \}}
 \newcommand{\abs}[1]{\lvert #1 \rvert}
-%\newcommand{\norm}[1]{\lVert #1 \rVert}
+\newcommand{\norm}[1]{\lVert #1 \rVert}
 \newcommand{\indic}[1]{\bigl[#1\bigr]}
+\newcommand{\comm}[2]{\left[ {#1}, {#2} \right] }
+\newcommand{\acomm}[2]{\left\{ {#1}, {#2} \right\} }
 
 %% Scaling delimiter examples
 \newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
@@ -68,8 +72,16 @@
 \newcommand{\Norm}[1]{\left\lVert #1 \right\rVert}
 
 %% Absolute and partial derrivate fractions
-\newcommand{\Diff}[2]{\displaystyle\frac{\diff{#1}}{\diff{#2}}}
-\newcommand{\Part}[2]{\displaystyle\frac{\partial #1}{\partial #2}}
+%% Calculus
+\newcommand{\dv}[2]{\frac{\mathrm d #1}{\mathrm d #2}}
+\newcommand{\dvt}[3]{\frac{\mathrm d ^{2} #1}{\mathrm d #2 ^{2}}}
+\newcommand{\dvn}[3]{\frac{\mathrm d ^{#1} #2}{\mathrm d #3 ^{#1}}}
+\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pddv}[2]{\frac{\partial^{2} #1}{\partial #2 ^{2}}}
+\newcommand{\pddvm}[3]{\frac{\partial^{2} #1}{\partial #2 \partial #3}}
+\newcommand{\pdvn}[3]{\frac{\partial^{#1} #2}{\partial #3 ^{#1}}}
+\newcommand{\vtr}[1]{\boldsymbol{\mathrm{#1}}}
+
 
 %% Set an index and print it to the current position at the same time
 \newcommand{\Index}[1]{\emph{#1}\index{#1}}
@@ -81,9 +93,11 @@
 \newcommand{\Mx}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 
 %% Include a lecture from the lectures/ folder by date.
+%% Added ddmmyydate option because the default format is too large.
 \newcommand{\Include}[4][\prefix]%
 {\ifthenelse{\equal{#1}{+PRE% this comment prevents substitution
-FIX+}}{\Include[TP]{#2}{#3}{#4}}{\lecturedate{\formatdate{#2}{#3}{20#4}}\input{lectures/#1-#4-#3-#2.tex}}}
+FIX+}}{\Include[TP]{#2}{#3}{#4}}{\lecturedate{\ddmmyydate\formatdate{#2}{#3}{20#4}}\input{lectures/#1-#4-#3-#2.tex}}}
+\renewcommand{\dateseparator}{.}
 
 
 %% A macro to typeset a commutitive diagram in the style of
@@ -111,3 +125,17 @@ FIX+}}{\Include[TP]{#2}{#3}{#4}}{\lecturedate{\formatdate{#2}{#3}{20#4}}\input{l
 
 %% Also set the alternate phi as default.
 %\renewcommand{\phi}{\ensuremath{\varphi}}
+
+%% Uncomment to type bra, kets etc.
+\newcommand{\bra}[1]{\left\langle #1\right|}
+\newcommand{\ket}[1]{\left| #1\right\rangle}
+\newcommand{\braket}[2]{\left\langle #1\right|\left.\! #2\right\rangle}
+\newcommand{\ketbra}[2]{\ensuremath{ {\ket{#1} \!\bra{#2}}}}
+\newcommand{\proj}[1]{\ensuremath{ {\ket{#1} \!\bra{#1}}}}
+\newcommand{\sumproj}[1]{\ensuremath{ {\sum_{#1}\proj{#1}}}}
+%% matrix element
+\newcommand{\mel}[3]{\ensuremath{\left\langle {#1}\vphantom{#3} \right\rvert{#2} \left\lvert{#3}\vphantom{#1}\right\rangle}}
+\newcommand{\ev}[3]{\ensuremath{\left\langle {#1}\right\rvert{#2} \left\lvert{#1}\right\rangle}}
+
+\newcommand{\vevj}[2]{\left\langle {#1} \right\langle_{#2} }
+\newcommand{\vev}[1]{\left\langle {#1} \right\rangle }

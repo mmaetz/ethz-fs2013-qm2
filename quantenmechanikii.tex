@@ -36,47 +36,19 @@
 %% capable, so you may want to use 'latin1' instead.
 \usepackage[utf8]{inputenc}
 
-%% This changes default fonts for both text and math mode to use Herman Zapfs
-%% excellent Palatino font.
-%% \usepackage[sc]{mathpazo}
-%% Computer Roman is a very nice and clean font and there is no reason to change this.
-
-%% OPTIONAL: This is needed to generate an index at the end of the
-%% document.
-%\usepackage{makeidx}
-
-%% Make document internal hyperlinks whereever possible. (TOC, references)
-\usepackage{hyperref}
-
-%% Math related packages
-
-%% The AMS-LaTeX extensions for mathematical typesetting.
-\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
-
-%% NTheorem is a reimplementation of the AMS Theorem package. This will allow
-%% us to typeset theorems like examples, proofs and similar.
-%% NOTE: Must be loaded AFTER amsmath, or the \qed placement will break
-\usepackage[thmmarks]{ntheorem}
-
-%% LaTeX' own graphics handling
-\usepackage{graphicx}
-
+%% Only the very basic packages are in the master file. For more information about packages - also recommended and optional ones see the extrapackages.tex file.
 \input{extrapackages}
 \input{layoutsetup}
 \input{theoremsetup}
 \input{macrosetup}
-\input{marcpackages}
-\input{marctheorem}
-\input{marcmacros}
-\input{marclayout}
 
 
 %% Titlepage adjustments
-\preauthor{\begin{center}\large\bfseries Mitschrift%
+\preauthor{\begin{center}\large\bfseries Notes%
 \\[2mm]\normalfont\begin{tabular}[t]{c}}
 \predate{\vspace{2em}\begin{center}\bfseries\itshape\large}
 \pretitle{\begin{center}\Huge}
-\posttitle{\\*[0.8cm] \large\itshape Vorlesungs-Skript\end{center}}
+\posttitle{\\*[0.8cm] \large\itshape lecture notes\end{center}}
 
 
 %% Use this command to set the page header to the lecture date
@@ -85,7 +57,7 @@
 %% Document information ========================================================
 
 %% The title of the document
-\title{Quantenmechanik II}
+\title{Quantum Mechanics II}
 
 %% Your name
 \author{Marc Maetz}
@@ -124,6 +96,8 @@
 %% The correct syntax for this is \Include[Prefix]{Day}{Month}{Year}
 \Include{19}{02}{13}
 \Include{21}{02}{13}
+\Include{26}{02}{13}
+\Include{28}{02}{13}
 
 
 \newpage

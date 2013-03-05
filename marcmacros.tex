@@ -1,5 +1,6 @@
 % -\_/ % Marc supplement % \_/- %
-\newcommand{\td}{\mathrm d }
+%\newcommand{\td}{\mathrm d }
+\newcommand{\rd}{\mathrm d }
 
 % TikZ
 \newcommand{\qd}{\tikz\draw (0,0) rectangle +(2ex,2ex);\\}
@@ -10,7 +11,7 @@
 \newcommand{\ketbra}[2]{\ensuremath{ {\ket{#1} \!\bra{#2}}}}
 \newcommand{\proj}[1]{\ensuremath{ {\ket{#1} \!\bra{#1}}}}
 \newcommand{\sumproj}[1]{\ensuremath{ {\sum_{#1}\proj{#1}}}}
-\newcommand{\sand}[3]{\ensuremath{\left\langle {#1}\vphantom{#3} \right\rvert{#2} \left\lvert{#3}\vphantom{#1}\right\rangle}}
+\newcommand{\ev}[3]{\ensuremath{\left\langle {#1}\vphantom{#3} \right\rvert{#2} \left\lvert{#3}\vphantom{#1}\right\rangle}}
 
 
 \newcommand{\vevj}[2]{\left\langle {#1} \right\langle_{#2} }
@@ -25,13 +26,13 @@
 
 
 %calculus
-\newcommand{\ddd}[2]{\frac{\mathrm d ^{2} #1}{\mathrm d #2 ^{2}}}
-\newcommand{\dd}[2]{\frac{\mathrm d #1}{\mathrm d #2}}
-\newcommand{\ddn}[3]{\frac{\mathrm d ^{#1} #2}{\mathrm d #3 ^{#1}}}
-\newcommand{\pdd}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pddd}[2]{\frac{\partial^{2} #1}{\partial #2 ^{2}}}
-\newcommand{\pdddm}[3]{\frac{\partial^{2} #1}{\partial #2 \partial #3}}
-\newcommand{\pddn}[3]{\frac{\partial^{#1} #2}{\partial #3 ^{#1}}}
+\newcommand{\ddv}[2]{\dv[2]{#1}{#2}}
+\newcommand{\dv}[2]{\frac{\mathrm d #1}{\mathrm d #2}}
+%\newcommand{\ddn}[3]{\frac{\mathrm d ^{#1} #2}{\mathrm d #3 ^{#1}}}
+\newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pddv}[2]{\frac{\partial^{2} #1}{\partial #2 ^{2}}}
+\newcommand{\pddvm}[3]{\frac{\partial^{2} #1}{\partial #2 \partial #3}}
+\newcommand{\pdvn}[3]{\frac{\partial^{#1} #2}{\partial #3 ^{#1}}}
 \newcommand{\wrt}[1]{\; d #1}
 \newcommand{\de}{differential equation}
 \newcommand{\diverg}{\operatorname{{\mathrm div}}}

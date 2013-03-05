@@ -11,8 +11,14 @@
 % D. Knuth.
 \renewcommand{\sfdefault}{cmbr}
 
+%%% Define a nice orange color and use it for hyperref
+%%% Needs xcolor
+\usepackage{xcolor}
+\definecolor{rioday}{RGB}{255,166,0} 
+\hypersetup{colorlinks=false,linkbordercolor=rioday}
+
+
 % Turn extra space before chapter headings off.
-\setlength{\beforechapskip}{0pt}
 
 % Chapter style redefinition
 \makeatletter
@@ -39,11 +45,12 @@
 }
 
 % Set the way pages are layed out (headers and page numbering)
-\if@twoside
-  \pagestyle{Ruled}
-\else
-  \pagestyle{ruled}
-\fi
+\pagestyle{ruled}
+%\if@twoside
+  %\pagestyle{Ruled}
+%\else
+  %\pagestyle{ruled}
+%\fi
 
 % Use the newly defined style
 \chapterstyle{VZ14}
@@ -72,13 +79,12 @@ width0.25\textwidth\vspace*{1.2em}\Large\bfseries\sffamily}}
 \setlength{\belowcaptionskip}{1pt}
 
 %%% Make a bit of additional space for footnotes
-%%% No.
-%\addtolength{\skip\footins}{4pt}
-%\renewcommand{\footnoterule}{%
-%   \kern -7pt                   % call this kerna
-%   \hrule height 0.4pt width 0.4\columnwidth
-%   \kern 6.6pt                  % call this kernb
-%}
+\addtolength{\skip\footins}{4pt}
+\renewcommand{\footnoterule}{%
+   \kern -7pt                   % call this kerna
+   \hrule height 0.4pt width 0.4\columnwidth
+   \kern 6.6pt                  % call this kernb
+}
 
 % Set section and TOC numbering depth to subsection
 \setsecnumdepth{subsection}
@@ -94,15 +100,14 @@ width0.25\textwidth\vspace*{1.2em}\Large\bfseries\sffamily}}
 \renewcommand{\maketitlehookb}%
 {\vspace{2em}\centering\Large\@professor\vspace{0.3\textheight}}
 
-% A bit spacier tabulars and lists
-\setlength{\extrarowheight}{4pt}
-\setlength{\itemsep}{10pt}
-\renewcommand{\arraystretch}{1.2}
-
-% This provides a frontend to set the lecture date into the header
+%% This provides a frontend to set the lecture date into the header
+%% The chapter names are usually shorter than the section names. So the date should be at this place.
 \newcommand{\lecturedate}[1]{\def\@lecdate{#1}}
-\makeoddhead{Ruled}{\@lecdate}{}{\normalfont\rightmark}
-
+\makeevenhead{ruled}{\normalfont\leftmark,}{}{\@lecdate}
+%%% Make the header the same width as the text
+\makerunningwidth{ruled}{\textwidth}
+\makeheadrule{ruled}{\textwidth}{\normalrulethickness}
+\renewcommand{\footruleskip}{-5pt}
 \makeatother
 
 % This defines how theorems should look. Best leave as is.
@@ -113,3 +118,10 @@ width0.25\textwidth\vspace*{1.2em}\Large\bfseries\sffamily}}
 \theoremheaderfont{\sffamily\bfseries}
 \theorembodyfont{\normalfont}
 \theoremsymbol{}
+%% Minimal margin to print two pages on an A4 paper or viewing it on tablets.
+\settypeblocksize{17.7cm}{11.8cm}{*}
+\setlrmargins{2cm}{*}{*}
+\setulmargins{1.6cm}{*}{*}
+\setheadfoot{7pt}{20pt}
+\setlength{\beforechapskip}{-1.2cm}
+\checkandfixthelayout

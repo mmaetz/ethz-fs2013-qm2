@@ -1,3 +1,51 @@
+%% OPTIONAL: This is needed to generate an index at the end of the
+%% document.
+%\usepackage{makeidx}
+
+%% Make document internal hyperlinks whereever possible. (TOC, references)
+\usepackage{hyperref}
+
+%% Math related packages
+
+%% The AMS-LaTeX extensions for mathematical typesetting.
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+
+%% NTheorem is a reimplementation of the AMS Theorem package. This will allow
+%% us to typeset theorems like examples, proofs and similar.
+%% NOTE: Must be loaded AFTER amsmath, or the \qed placement will break
+\usepackage[thmmarks]{ntheorem}
+
+%% LaTeX' own graphics handling
+\usepackage{graphicx}
+
+%% [OPT] To make automatic numbered items
+\usepackage{enumerate}
+
+%% [OPT] For the ability to use arithmetic operators for options in LaTeX
+\usepackage{calc}
+%% [REC] To have bold symbols. Works also with greek letters and symbols.
+\usepackage{bm}
+%% [REC] To use \bm\mathrm instead of \vec one needs the appropriate greek letters
+\usepackage{upgreek}
+%%% [OPT] Extension of bigger braces
+\usepackage{yhmath}
+
+%% [REC] To have SI-units how they should look like
+\usepackage{siunitx}
+%% [OPT] To draw sketches
+\usepackage{tikz,pgflibraryshapes}
+%% And it's recommended libraries which are mostly used.
+\usetikzlibrary{positioning,calc,matrix,chains,scopes,fit,patterns,decorations,decorations.pathmorphing,decorations.pathreplacing,arrows,through,backgrounds}
+%% [OPT] To have precise 3d-sketches
+\usepackage{tikz-3dplot}
+%% [OPT] Fancy physics macros (Unfortunately NOT COMPATIBLE with breqn.)
+%% \usepackage{physics}
+
+%% [OPT] Book-like tabulars
+\usepackage{booktabs}
+
+
+
 %% See the TeXed file for more explanations
 
 %% [OPT] Multi-rowed cells in tabulars
@@ -18,13 +66,8 @@
 %\usepackage{cancel}
 
 %% [ADV] This allows for additional typesetting tools in
-%% mathmode. \mathclap{} will allow you to take away the width of a
-%% mathematical statement seen by LaTeX.
-%\usepackage{mathtools}
-
-%% [ADV] Conditional commands
-%% (note that this is included by macrosetup.tex anyway)
-%\usepackage{ifthen}
+%% mathmode. \mathclap{} will allow you to take away the width of a mathematical statement seen by LaTeX. Basically this packages adds features that lack in the AMSmath package.
+\usepackage{mathtools}
 
 %% [OPT] Manual large braces or other delimiters.
 %\usepackage{bigdelim, bigstrut}
@@ -56,3 +99,7 @@
 
 %% [ADV] XY-Pic to typeset some matrix-style graphics
 %\usepackage[all]{xy}
+%% [ADV] Automatic line breaking math environments. Very fancy, but in alpha stage. 
+%% Only recommended for advanced users.
+\usepackage{flexisym}
+\usepackage{breqn}

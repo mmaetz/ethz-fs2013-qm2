@@ -7,11 +7,11 @@ has to be small. If $E_{n}^{(0)}=E_{m}^{(0)}$?? degeneracy! $\to$ sec 1.2 if $E_
 \paragraph{step 2}
 take $\mathcal{O}(\lambda^2)$ terms $\bra{\psi_{k}^{(0)}}$
 \begin{dmath}[]
-	\left( E_{k}^{(0)}-E_{n}^{(0)} \right)\braket{\psi_{k}^{(0)}}{\psi_{n}^{(2)}} + \sand{\psi_{k}^{(0)}}{V}{\psi_{n}^{(1)}}-E_{n}^{(1)}\braket{\psi_{k}^{(0)}}{\psi_{n}^{(1)}}=E_{n}^{(2)}\delta_{kn}
+	\left( E_{k}^{(0)}-E_{n}^{(0)} \right)\braket{\psi_{k}^{(0)}}{\psi_{n}^{(2)}} + \ev{\psi_{k}^{(0)}}{V}{\psi_{n}^{(1)}}-E_{n}^{(1)}\braket{\psi_{k}^{(0)}}{\psi_{n}^{(1)}}=E_{n}^{(2)}\delta_{kn}
 \end{dmath}
 for $k=n$
 \begin{dmath}[]
-	E_{n}^{(2)}=\sand{\psi_{n}^{(0)}}{V}{\psi_{n}^{(1)}}=\sum_{m\neq n}^{}\frac{\sand{\psi_{n}^{(0)}}{V}{\psi_{m}^{(0)}}\sand{\psi_{m}^{(0)}}{V}{\psi_{n}^{(0)}}}{E_{n}^{(0)}-E_{m}^{(0)}}=\sum_{m\neq n}^{}\frac{\norm{V_{nm}^2}}{E_{n}^{(0)}-E_{m}^{(0)}}
+	E_{n}^{(2)}=\ev{\psi_{n}^{(0)}}{V}{\psi_{n}^{(1)}}=\sum_{m\neq n}^{}\frac{\ev{\psi_{n}^{(0)}}{V}{\psi_{m}^{(0)}}\ev{\psi_{m}^{(0)}}{V}{\psi_{n}^{(0)}}}{E_{n}^{(0)}-E_{m}^{(0)}}=\sum_{m\neq n}^{}\frac{\norm{V_{nm}^2}}{E_{n}^{(0)}-E_{m}^{(0)}}
 \end{dmath}
 Note $E_{n}^{(2)}<0$ for ground state.
 
@@ -27,7 +27,7 @@ this is in conflict
 $\to$ sort out at the end.
 \begin{dmath}[]
 	\ket{\psi_{n}^{(2)}}=\sum_{k\neq n}^{}\ket{\psi_{k}^{(0)}}\braket{\psi_{k}^{(0)}}{\psi_{n}^{(2)}}+0
-	=\sum_{k\neq n}^{}\ket{\psi_{k}^{(0)}}\left( \frac{\sand{\psi_{k}^{(0)}}{V}{\psi_{n}^{(1)}}}{E_{n}^{(0)}-E_{k}^{(0)}}-\frac{E_{n}^{(1)}\braket{\psi_{k}^{(0)}}{\psi_{n}^{(1)}}}{E_{n}^{(0)}-E_{k}^{(0)}} \right)
+	=\sum_{k\neq n}^{}\ket{\psi_{k}^{(0)}}\left( \frac{\ev{\psi_{k}^{(0)}}{V}{\psi_{n}^{(1)}}}{E_{n}^{(0)}-E_{k}^{(0)}}-\frac{E_{n}^{(1)}\braket{\psi_{k}^{(0)}}{\psi_{n}^{(1)}}}{E_{n}^{(0)}-E_{k}^{(0)}} \right)
 \end{dmath}
 plug in $\ket{\psi_{n}^{(1)}}$ and sort out normalization
 \begin{dgroup*}[]
@@ -123,7 +123,7 @@ have to find ``good'' linear combination, i.e. coeff $c_{n_k i}$. Main idea as b
 \end{dgroup*}
 multiply by $\bra{\psi_{n_j}^{(0)}}$.
 \begin{dmath}[]
-	\sum_{\ell=1}^{\dim H_0}\underbrace{\left( E_{\ell}^{(0)}-E_{n}^{(0)} \right)}_{=0\text{ for }n=\ell}a_{n \ell}\underbrace{\braket{\psi_{n_j}^{(0)}}{\psi_{\ell}^{(0)}}}_{=0\text{ for }n\neq \ell}+\sum_{i=1}^{\alpha}c_{n_k i}\left( \sand{\psi_{n_j}^{(0)}}{V}{\psi_{n_i}^{(0)}}-E_{n_k}^{(1)}\underbrace{\braket{\psi_{n_j}^{(0)}}{\psi_{n_i}^{(0)}}}_{V_{ji}}-E_{n_k}^{(1)}\underbrace{\braket{\psi_{n_j}^{(0)}}{\psi_{n_i}^{(0)}}}_{\delta_{ij}} \right)
+	\sum_{\ell=1}^{\dim H_0}\underbrace{\left( E_{\ell}^{(0)}-E_{n}^{(0)} \right)}_{=0\text{ for }n=\ell}a_{n \ell}\underbrace{\braket{\psi_{n_j}^{(0)}}{\psi_{\ell}^{(0)}}}_{=0\text{ for }n\neq \ell}+\sum_{i=1}^{\alpha}c_{n_k i}\left( \ev{\psi_{n_j}^{(0)}}{V}{\psi_{n_i}^{(0)}}-E_{n_k}^{(1)}\underbrace{\braket{\psi_{n_j}^{(0)}}{\psi_{n_i}^{(0)}}}_{V_{ji}}-E_{n_k}^{(1)}\underbrace{\braket{\psi_{n_j}^{(0)}}{\psi_{n_i}^{(0)}}}_{\delta_{ij}} \right)
 \end{dmath}
 $\to$ solve
 \begin{dmath}[]
@@ -142,7 +142,7 @@ $\to$ $\alpha$ solutions
 if $V_{ij}=0$ for $i\neq j$ problem already solved\\
 $\to \alpha$ solutions are 
 \begin{dmath}[]
-	E_{n_i}^{(1)}=\sand{\psi_{i}^{(0)}}{V}{\psi_{i}^{(0)}}
+	E_{n_i}^{(1)}=\ev{\psi_{i}^{(0)}}{V}{\psi_{i}^{(0)}}
 \end{dmath}
 Note: if $\exists$ operator $A$ with 
 \begin{dgroup}[]
@@ -168,10 +168,10 @@ Note: if $\exists$ operator $A$ with
 \begin{proof}
 	\begin{dgroup}[]
 	\begin{dmath}[]
-		\sand{\psi_{n_i}^{(0)}}{\comm{A}{V}}{\psi_{n_k}^{(0)}}=0=\underbrace{\left( a_{n_i}-a_{n_k} \right)}_{\neq 0}\underbrace{\sand{\psi_{n_i}^{(0)}}{V}{\psi_{n_k}^{(0)}}}_{V_{ik}}
+		\ev{\psi_{n_i}^{(0)}}{\comm{A}{V}}{\psi_{n_k}^{(0)}}=0=\underbrace{\left( a_{n_i}-a_{n_k} \right)}_{\neq 0}\underbrace{\ev{\psi_{n_i}^{(0)}}{V}{\psi_{n_k}^{(0)}}}_{V_{ik}}
 		\end{dmath}
 		\begin{dmath}[]
-		\Rightarrow V_{ik}=0
+			\hiderel{\Rightarrow} V_{ik}=0
 	\end{dmath}
 	\end{dgroup}
-	\end{proof}
+\end{proof}
