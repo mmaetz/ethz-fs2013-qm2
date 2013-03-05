@@ -1,0 +1,162 @@
+\section{The variational principle}
+Useful to get good estimate of ground-state energy $E_0$ of complicated systems. Claim
+\begin{dmath}[compact]
+	E_0\leq \frac{\ev{\psi}{H}{\psi}}{\braket{\psi}{\psi}}=\ev{\psi}{H}{\psi}
+\end{dmath}
+if $\ket{\psi}$ normalized.
+\begin{proof}
+	Let
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			\ket{\psi}=\sum_{}^{}c_n\ket{\psi_n}
+		\end{dmath},
+		\begin{dsuspend}
+			with
+		\end{dsuspend}
+		\begin{dmath}[]
+			H\ket{\psi_n}=E_n\ket{\psi_n}
+		\end{dmath}
+		\begin{dsuspend}
+			and
+		\end{dsuspend}
+		\begin{dmath}[]
+			\braket{\psi}{\psi}=1
+		\end{dmath}
+		\begin{dmath}[]
+			\hiderel{\Rightarrow}\sum_{}^{}\norm{c_n}^2=1
+		\end{dmath}
+		\begin{dsuspend}
+			then
+		\end{dsuspend}
+		\begin{dmath}[compact]
+			\ev{\psi}{H}{\psi}=\sum_{m,n}^{}c_{m}^{*}c_n\ev{\psi_m}{H}{\psi_n}
+			=\sum_{m,n}^{}c_{m}^{*}c_nE_n\underbrace{\braket{\psi_m}{\psi_n}}_{\delta_{mn}}
+			=\sum_{n}^{}\norm{c_n}^2E_n
+			\geq E_0\sum_{n}^{}\norm{c_n}^2=E_0
+		\end{dmath}
+	\end{dgroup}
+\end{proof}
+\begin{expl}[Harmonic oscillator]
+	\begin{dmath}[]
+		H=-\frac{\hbar^2}{2m}\dvt{}{x}-\frac{m}{2}\omega^2x^2
+	\end{dmath}
+	(of course we know $E_0=\frac{\hbar}{2}\omega$). Let
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			\psi(x)=Ae^{-bx^2}
+		\end{dmath}
+		\begin{dsuspend}
+			since
+		\end{dsuspend}
+		\begin{dmath}[]
+			\braket{\psi}{\psi}\stackrel{!}{=}1
+			= \int_{}^{}\dd x \,\norm{A}^2 e^{-2bx^2}=\norm{A}^2\sqrt{\frac{\pi}{2b}}
+		\end{dmath}
+		\begin{dsuspend}
+			compute
+		\end{dsuspend}
+		\begin{dmath}[]
+			\ev{\psi}{H}{\psi}
+			=\norm{A}^2\int_{}^{}\dd x \, e^{-bx^2}\left( -\frac{\hbar^2}{2m}\dvt{}{x}-\frac{m}{2}\omega^2x^2 \right)e^{-bx^2}
+			=\ldots
+			= \frac{\hbar^2 b}{2m}+\frac{m\omega^2}{8b}=\ev{\psi}{H}{\psi}\geq E_0
+		\end{dmath}
+	\end{dgroup}
+\end{expl}
+Minimize with respect to $b$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\dv{}{b}\ev{\psi}{H}{\psi}=\frac{\hbar^2}{2m}-\frac{m\omega^2}{8b^2}=0
+	\end{dmath}
+	\begin{dmath}[]
+		b_{\text{min}}=\frac{m\omega}{2\hbar}
+	\end{dmath}
+	\begin{dmath}[]
+		E_0\leq \ev{\psi}{H}{\psi}_{\text{min}}=\frac{\hbar\omega}{2}
+	\end{dmath}
+\end{dgroup}
+in this case we get $E_0$ exactly is a coincidence, since Ansatz$=$true wave function.
+\section{WKB approximation, semiclassical approximation}
+WKB for Wentzel, Kramers, Brillouin (see QMI Ch. 8.3.)
+useful for 1-dim problems with ``smooth'' popential. Schrödinger:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\left( -\frac{\hbar^2}{2m}\dvt{}{x}+V(x) \right)\psi(x)=E\psi(x)
+	\end{dmath}
+	\begin{dsuspend}
+		if
+	\end{dsuspend}
+	\begin{dmath}[]
+		V(x)\equiv V_0 \text{ const.}
+	\end{dmath}
+	\begin{dmath}[]
+		\psi(x)=e^{\pm \frac{i}{\hbar}\sqrt{2m \left( E-V_0 \right)}x}
+	\end{dmath}
+	\begin{dsuspend}
+		if $V(x)$ is slowly varying. Ansatz
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi(x)=e^{\frac{i}{\hbar}S(x)}
+	\end{dmath}
+	\begin{dsuspend}
+		Ansatz into Schrödinger:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\frac{-i\hbar}{2m}S''+\frac{1}{2m}\left( S' \right)^2+V(x)-E=0
+	\end{dmath}
+	\begin{dsuspend}
+		equivalent to but more complicated than Schrödinger. Note for
+	\end{dsuspend}
+	\begin{dmath*}[]
+		V(x)\equiv V_0
+	\end{dmath*}
+	\begin{dmath*}[]
+		S=\pm \sqrt{2m\left( E-V_0 \right)}\cdot x
+	\end{dmath*}
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath*}[]
+		S''=0
+	\end{dmath*}
+	\begin{dsuspend}
+		first term $\sim \hbar$ vanishes for 
+	\end{dsuspend}
+	\begin{dmath*}[]
+		V(x)\equiv V_0\condition{(classical limit)}
+	\end{dmath*},
+\end{dgroup}
+Let
+\begin{dgroup}[]
+	\begin{dmath}[]
+		S(x)=S_0(x)+\hbar S_1(x)+\mathcal{O}(\hbar^2)
+	\end{dmath}
+	\begin{dsuspend}
+		plug in into differential equation for $S$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\frac{1}{2m}\left( S_0' \right)^2+V(x)-E=0
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow} S_0'=\pm \sqrt{2m\left( E-V(x) \right)}\equiv \pm p(x)
+	\end{dmath}
+	\begin{dmath}[]
+		S_0'S_1'-\frac{1}{2}S_0''=0
+	\end{dmath}
+	\begin{dmath}[compact]
+		\hiderel{\Rightarrow} S_1'=\frac{i}{2}\frac{S_0''}{S_0'}=\frac{i}{2}\frac{p'(x)}{p(x)}
+	\end{dmath}
+	\begin{dsuspend}
+		solve these differential equation
+	\end{dsuspend}
+	\begin{dmath}[]
+		S_0=\pm \int_{}^{x}\dd x'\, p(x')
+	\end{dmath}
+	\begin{dmath}[]
+		S_1=\frac{i}{2}\ln p(x)
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow} \psi(x)=Ae^{\frac{i}{\hbar}\left( S_0+\hbar _1 \right)}
+		=\frac{A_{+}}{\sqrt{p(x)}}e^{\frac{i}{\hbar}\int_{}^{}\dd x'\,p(x')}+\frac{A_{-}}{\sqrt{p(x)}}e^{-\frac{i}{\hbar}\int_{}^{}\dd x'\, p(x')}
+	\end{dmath}
+\end{dgroup}

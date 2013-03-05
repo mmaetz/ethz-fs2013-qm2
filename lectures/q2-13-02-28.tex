@@ -1,0 +1,166 @@
+\chapter{The hydrogen atom}
+\section{Basics}
+Two body problem proton (1)-electron (2)
+\begin{dmath}[]
+	H=-\frac{\hbar^2}{2m_2}\vtr{\nabla}_{1}^{2}-\frac{\hbar^2}{2m_2}\nabla_{2}^{2}+V\left( \vtr{r}_1-\vtr{r}_2 \right)
+\end{dmath}
+new variables
+\begin{dgroup*}[]
+	\begin{dmath}[]
+		R=\frac{m_2r_1+m_2r_2}{m_1+m_2}
+	\end{dmath}
+	\begin{dmath}[]
+		r=r_1-r_2
+	\end{dmath}
+	\begin{dmath}[]
+		M=m_1+m_2
+	\end{dmath}
+	\begin{dmath}[]
+		m=\frac{m_1m_2}{m_1+m_2}
+	\end{dmath}
+	\begin{dmath}[]
+		H=-\frac{\hbar^2}{2M}
+	\end{dmath}
+\end{dgroup*}
+
+\section{Spin-orbit term}
+naive ``derivation'' 
+\begin{enumerate}[(1)]
+	\item Electron with spin $\to$ magnetic dipole moment
+		\begin{dmath}[]
+			\vtr{\upmu}=\frac{e}{m}\frac{g}{2}\vtr{s}
+		\end{dmath},
+		\begin{dseries}[]
+			\begin{math}
+				\mu=\frac{e}{T}\pi r^2
+			\end{math},
+			\begin{math}
+				s=\frac{2\pi}{T}mr^2
+			\end{math},
+			\begin{math}
+				g\simeq \text{ (from Dirac)}
+			\end{math}
+		\end{dseries}
+	\item Electron feeds magnetic field due to the proton
+		\begin{dgroup*}[]
+			\begin{dmath}[]
+				\vtr{E}\sim \frac{e}{r3}\vtr{r}
+			\end{dmath}
+			\begin{dmath}[]
+				\hiderel{\to}\vtr{B}=-\frac{1}{c^2}\vtr{\nabla}\times \vtr{E}
+				=-\frac{1}{mc^2r^3}\vtr{p}\times \vtr{r}=\frac{-\vtr{L}}{mc^2r^3}
+			\end{dmath}
+		\end{dgroup*}
+		wrong by factor $2$ (Thomas precession)
+\end{enumerate}
+\ldots
+correct result
+\begin{dmath}[]
+	H_{\text{SO}}=\frac{Ze^2}{2mc^2}\frac{1}{r^3}\vtr{L}\cdot\vtr{S}\condition*{\left( \sim -\vtr{\upmu}\cdot \vtr{B} \right)}
+\end{dmath}
+To describe spin
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\ket{n,\ell,\left( s=\frac{1}{2},m_s \right)}=\psi_{n\ell m_{\ell}m_{s}}=\psi_{n\ell m_{\ell}}\left( r,\theta\varphi \right)\chi_{m_{s}}
+	\end{dmath}
+	\begin{dsuspend}
+		with $\chi_{m_s}$ spin-orbit 
+	\end{dsuspend} 
+	\begin{dmath}[]
+		\begin{pmatrix}
+			1\\
+			0
+		\end{pmatrix}
+		\begin{pmatrix}
+			0\\
+			1
+		\end{pmatrix}
+	\end{dmath}
+\end{dgroup}
+Note 
+%\begin{dgroup}[]
+	%\begin{dmath}[]
+	%	\Delta E_{\text{SO}}=0
+	%\end{dmath}
+	%\begin{dsuspend}
+	%	for
+	%\end{dsuspend}
+	%\begin{dmath}[]
+	%	\ell\neq \ell'
+	%\end{dmath}
+	%\begin{dsuspend}
+	%	since
+	%\end{dsuspend}
+%	\begin{dmath}[]
+%		\comm{L^2}{H_{\text{SO}}}=\comm{L^3}{L\cdot S}=0
+%	\end{dmath}
+%\end{dgroup}
+$H_{\text{SO}}$ ``mixes'' states with same $\ell$, but different $m_{\ell},m_{\ell}'$\\
+$\to$ use degenerate perturbation theory with $2\cdot \left( 2\ell +1 \right)\times \underbrace{2}_{\text{spin}}\underbrace{\left( 2\ell +1 \right)}_{ m_{\ell}}$ matrix
+\begin{dmath}[]
+	\ev{n,\ell,m_{\ell}',m_s'}{H_{\text{SO}}}{n,\ell,m_{\ell},m_{s}}\to \text{diagonalize}
+\end{dmath}
+recall degenerate perturbation theory $\to$ find  ``good'' linear combination that diagonalize this matrix by looking for symmetry use total angular momentum
+\begin{dmath}[]
+	J\equiv L+S
+\end{dmath}
+for $\ell=0\quad j=\frac{1}{2}$, for $\ell\neq 0\quad j=\ell\pm \frac{1}{2}$. Use states
+\begin{dmath}[]
+	\ket{n,\ell,j,m_{j}}
+\end{dmath}
+\begin{dmath}[]
+	\ket{n,\ell,j,m_{j}}=\sum_{m_{\ell},m_{s}}^{}\ket{n,\ell,m_{\ell},m_{s}}\underbrace{\braket{n,\ell,m_{\ell},m_{s}}{n,\ell,j,m_{j}}}_{\text{Clebsch-Gordan}}
+\end{dmath}
+use 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		J^{2}=L^2+2L\cdot S+S^2
+	\end{dmath}
+	\begin{dmath}[]
+		L\cdot S =\frac{1}{2}\left( J^2-L^2-S^2 \right)
+	\end{dmath}
+\end{dgroup}
+$\ket{n,\ell,j,m_{j}}$ are eigenstates of 
+\begin{dmath}[]
+	H_0,L^2,S^2,J^2,J_z
+\end{dmath}
+with eigenvalues
+\begin{dmath}[]
+	E_n,\hbar^2\ell\left( \ell+1 \right),\hbar^2\frac{3}{4},\hbar^2j\left( j+1 \right),\hbar m_j
+\end{dmath}
+\begin{dmath}[]
+	\Delta E_{\text{SO}}=\ev{n,\ell,j,m_{j}}{H_{\text{SO}}}{n,\ell,j,m_j}
+\end{dmath}
+for $\ell=0$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\Delta E_{\text{SO}}=0
+	\end{dmath}
+	\begin{dsuspend}
+		for $\ell \neq 0$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\Delta E_{\text{SO}}=\frac{Ze^2}{2m^2c^2}\ev{n,\ell,j,m_{j}}{\frac{1}{r^3}\frac{1}{2}\left( J^2-L^2-S^2 \right)}{n,\ell,j,m_{j}}
+		=\frac{Ze^2}{2m^2c^2}\vev{\frac{1}{r^3}}\frac{\hbar^2}{2}\left( j\left( j+1 \right)-\ell\left( \ell+1 \right)-\frac{3}{4} \right)
+		=-E_{n}\frac{\left( Z\alpha \right)^2}{2n\left( \ell+\frac{1}{2} \right)}
+		\begin{cases}
+			\frac{1}{\ell+1}& j=\ell+\frac{1}{2}\\
+			-\frac{1}{\ell}& j=\ell-\frac{1}{2}
+		\end{cases}
+	\end{dmath}
+\end{dgroup}
+\section{Darwin term}
+Sloppy consideration electron position fluctuates by $\delta r\simeq \lambda_c\simeq \frac{\hbar}{mc}$ electron feels average potential
+\begin{dmath}[]
+	\vev{V\left( r+\delta r \right)}=\vev{V(r)}+\underbrace{\frac{1}{2}\vev{\vtr{\updelta}}r\cdot \vtr{\nabla}\vtr{\updelta} r\cdot \nabla V}_{}
+\end{dmath}
+correct result is 
+\begin{dmath}[]
+	H_{D}=\frac{\hbar^2}{8 m^2c^2}\nabla^2V=\frac{\pi \hbar^2Ze^2}{2m^2c^2}\delta(r)
+\end{dmath}
+only for $\ell=0$!
+\begin{dmath}[]
+	\Delta E_D=\ev{n,\ell,j,m_{j}}{H_{D}}{n,\ell,j,m_{j}}
+	=\frac{\pi\hbar^2Ze^2}{2m^2c^2}\norm{\psi_{n\ell}(0)}^2
+	=-E_{n}\frac{\left( Z\alpha \right)^{2}}{n}\delta_{\ell 0}
+\end{dmath}
