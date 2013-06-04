@@ -105,6 +105,7 @@ Let $H(t)=E_n(t)\ket{\psi_n(t)}$
 	\begin{dmath}[]
 	\ket{\psi(t)}&=\sum_{n}c_n(t)\underbrace{e^{(i\hbar)^{-1}\int_0^tE_n(\tau)\dd{\tau}}}_{e^{i\varepsilon_n}}\ket{\psi_n(t)}
 	\end{dmath}
+	
 	\begin{dmath}[]
 	=\sum_{n}c_n(t)e^{i\varepsilon_n}\ket{\psi_n(t)}
 	\end{dmath}
@@ -122,24 +123,27 @@ Now for $m\neq n$
 	\begin{dmath}[]
 	H\ket{\psi_n}=E_n\ket{\psi_n}
 	\end{dmath}
+	
 	\begin{dmath}[]
 	\dot{H}\ket{\psi_n}+H\ket{\dot{\psi_n}}=\dot{E}_n\ket{\psi_n}+E_n\ket{\dot{\psi}_n}
 	\end{dmath}
+	
 	\begin{dmath}[]
-	\braket{\psi_m|\dot{H}|\psi_n}=(E_n-E_m)\braket{\psi_m|\dot{\psi}_n}
+	\mel{\psi_m}{\dot{H}}{\psi_n}=(E_n-E_m)\braket{\psi_m}{\dot{\psi}_n}
 	\end{dmath}
 \end{dgroup}
 Put into equation for $\dot{c}_m$
 \begin{dmath}[]
-\dot{c}_m=-c_m\braket{\psi_m|\dot{\psi}_m}-\sum_{n\neq m}c_n\frac{\braket{\psi_m|\dot{H}|\psi_n}}{E_n-E_m}e^{i(\varepsilon_n-\varepsilon_m)}
+\dot{c}_m=-c_m\braket{\psi_m}{\dot{\psi}_m}-\sum_{n\neq m}c_n\frac{\mel{\psi_m}{\dot{H}}{\psi_n}}{E_n-E_m}e^{i(\varepsilon_n-\varepsilon_m)}
 \end{dmath}
 where the last sum is an adiabatic approximation for $\dot{H}$ small $\to 0$ and also must not have degeneracy.
 \begin{dgroup}[]
 	\begin{dmath}[]
-	\dot{c}_m(t)=-c_m\braket{\psi_m|\dot{\psi}_m}
+	\dot{c}_m(t)=-c_m\braket{\psi_m}{\dot{\psi}_m}
 	\end{dmath}
+	
 	\begin{dmath}[]
-	c_m(t)=c_m(t_0)e^{i\gamma_m(t)} \quad \gamma_m=i\int_{t_0}^{t}\dd{\tau}\braket{\psi_m(\tau)|\dot{\psi}_m(\tau)}
+	c_m(t)=c_m(t_0)e^{i\gamma_m(t)} \quad \gamma_m=i\int_{t_0}^{t}\dd{\tau}\braket{\psi_m(\tau)}{\dot{\psi}_m(\tau)}
 	\end{dmath}
 \end{dgroup}
 If the system is in state $\psi_m$ at time $t$, $H$ remains in this state
@@ -147,6 +151,7 @@ If the system is in state $\psi_m$ at time $t$, $H$ remains in this state
 	\begin{dmath}[]
 	\psi(t)&=c_m(t)e^{i\varepsilon_m(t)}\ket{\psi_m(t)}
 	\end{dmath}
+	
 	\begin{dmath}[]
 	=e^{i\gamma_m(t)}e^{i\varepsilon_m(t)}\ket{\psi_m(t)}
 	\end{dmath}
