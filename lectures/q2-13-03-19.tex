@@ -1,0 +1,52 @@
+\section{Periodic perturbations}
+Let $V(t)=\left(Ve^{-i\omega t}+V^+e^{i\omega t}\right)$ for $t>t_0=0$\\
+The transition probability $P_{i\to f}$ is given by
+\begin{dgroup}[]
+
+\begin{dmath}[]
+  P_{i\to f}&=\frac{1}{\hbar^2}\left|\int_{t_0}^t\dd{t'}
+\end{dmath}
+
+\begin{dmath}[]
+	\left(Ve^{-i\omega t'}+V^+e^{i\omega t'}\right)\right|^2
+\end{dmath}
+
+\begin{dmath}[]
+	=\frac{\pi t}{\hbar^2}\left[|V_{fi}|^2\frac{\sin^2\left(\frac{t}{2}(\omega_{fi}-\omega)\right)}{\pi t\left(\frac{\omega_{fi-\omega}}{2}\right)^2}+|V^+_{fi}|^2\frac{\sin^2\left(\frac{t}{2}(\omega_{fi}+\omega)\right)}{\pi t\left(\frac{\omega_{fi}+\omega}{2}\right)^2}\right. 
+\end{dmath}
+
+\begin{dmath}[]
+	+\left.\Re(V_{fi}V^+_{fi})\mathcal{F}(\omega_{fi},\omega)\right]
+\end{dmath}
+\end{dgroup}
+
+Behavior for t large ($t\gg \frac{2\pi}{\omega}$). Recall that ($\sin^2\to \delta$-distribution) interference term vanishes. For the transition rate we have:
+\begin{dmath}[]
+\Gamma_{i\to f}=\frac{2\pi}{\hbar}\left(|V_{fi}|^2\delta(\underbrace{E_f-E_i-\hbar\omega}_{\stackrel{E_f=E_i+\hbar\omega}{\text{absorbtion } \hbar\omega}})+|V^+_{fi}|^2\delta(\underbrace{E_f-E_i+\hbar\omega}_{\stackrel{E_f=E_i+\hbar\omega}{emmission} \hbar\omega})\right)
+\end{dmath}
+
+\section{The interaction picture}
+Consider again the evolution operator $\ket{\psi(t)}=U(t,t_0)\ket{\psi(t_0)}$ with the following properties:
+\begin{enumerate}
+\item $U(t,t_0)$
+\item $U(t,t_1)U(t_1,t_0)=U(t,t_0)$
+\item 
+\begin{dgroup}[]
+  \begin{dmath}[]
+  %REPLACE Pdiff
+  
+	i\hbar\Pdiff{}{t}\ket{\psi(t)}&=H(t)\ket{\psi(t)}
+	\end{dmath}
+	\begin{dmath}[]
+	&=i\hbar\Pdiff{}{t}\ket{\psi(t)}=&H(t)U(t,t_0)\ket{\psi(t_0)}
+	\end{dmath}
+\end{dmath}
+\end{dgroup}
+\end{enumerate}
+
+
+
+
+
+
+
