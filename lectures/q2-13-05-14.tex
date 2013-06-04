@@ -1,0 +1,198 @@
+Dirac equation:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\left( i\hbar \partial_{\mu}\gamma^{\mu}-mc \right)\psi\equiv \left( i\hbar\cancel{\partial}-mc \right)\psi=0
+	\end{dmath}
+	\begin{dmath}[]
+		\left\{ \gamma^{\mu},\gamma^{\nu} \right\}=2g^{\mu\nu}\id
+	\end{dmath}
+	\begin{dsuspend}
+		The adjoint Dirac equation
+	\end{dsuspend}
+	\begin{dmath}[]
+		0=\gamma^{+}\left( i\hbar \partial_{\mu}\left( \gamma^{\mu} \right)^{\dagger}-mc \right)
+		=\psi^{\dagger}\left( -i\hbar \overleftarrow{\partial}_{\!\mu}\gamma^{0}\gamma^{\mu}\gamma^{0}-\gamma^{0}\gamma^{0}-\gamma^{0}\gamma^{0}mc \right)
+		=\psi^{\dagger}\gamma^{0}\left( \overleftarrow{\partial}_{\!\mu}-mc \right)\gamma^0=0
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow} \overline{\psi}\left( i\hbar \cancel{\partial}+mc \right)=0
+	\end{dmath}
+	\begin{dmath}[]
+		\overline{\psi}\equiv\psi^{\dagger}\gamma^{0}
+	\end{dmath}
+\end{dgroup}
+The current:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		j^{\mu}\equiv\overline{\psi}\gamma^{\mu}\psi
+	\end{dmath}
+	\begin{dmath}[]
+		\partial_{\mu}j^{\mu}=\left( \cancel{\partial}\overline{\psi} \right)\psi+\overline{\psi}\cancel{\partial}\psi=0
+	\end{dmath}
+	\begin{dmath}[]
+		\rho\equiv j^{0}=\psi^{\dagger}\gamma^0\gamma^0\psi=\psi^{\dagger}\psi\condition{positive definite}
+	\end{dmath}
+\end{dgroup}
+($\to$ we still will have problem with $E<0$ solutions)
+\section{Coraviance of Dirac equation}
+Consider LT
+\begin{dgroup}[]
+	\begin{dmath}[]
+		x^{\mu}\to {x'}^{\mu}
+		={\Lambda^{\mu}}_{\nu}x^{\nu}=\pdv{ {x'}^{\mu}}{x^{\nu}}x^{\nu}\condition*{(x\to \Lambda x)}
+	\end{dmath}
+	\begin{dsuspend}
+		Dirac
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( i\hbar \partial_{\mu}\gamma^{\mu} -mc\right)\psi(x)=0
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\to} \left( i\hbar \partial_{\mu}'-mc \right)\psi\left( x' \right)=0
+	\end{dmath}
+	\begin{dsuspend}
+		require transformation
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi(x)\to \psi'(x')=S\left( \Lambda \right)\psi(x)
+	\end{dmath}
+	\begin{dsuspend}
+		such that the ``new'' equation holds
+		start from $S(\Lambda)\times$Dirac equation
+	\end{dsuspend}
+	\begin{dmath}[]
+		S(\Lambda)\left( i\hbar \pdv{}{x^{\mu}}\gamma^{\mu}-mc \right)\psi
+		=S\left( \Lambda \right)\left( i\hbar {\Lambda^{\nu}}_{\mu}\partial_{\nu}' \gamma^{\mu}-mc \right)\psi
+		=S(\Lambda)\left( i\hbar {\Lambda^{\nu}}_{\mu}\partial_{\nu}'\gamma^{\mu}-mc \right)\psi
+		=\left( i\hbar S(\Lambda)\left( {\Lambda^{\nu}}_{\mu}\gamma^{\mu} \right)S^{-1}\left( \Lambda \right)\partial_{\nu}'-mc \right)\underbrace{S(\Lambda)\psi(x)}_{\psi'(x')}
+	\end{dmath}
+	\begin{dsuspend}
+		Compare with Dirac in $S'$
+	\end{dsuspend}
+	\begin{dmath}[]
+		S(\Lambda){\Lambda^{\nu}}_{\mu}\gamma^{\mu}S^{-1}(\Lambda)=\gamma^{\nu}
+	\end{dmath}
+	\begin{dsuspend}
+		or
+	\end{dsuspend}
+	\begin{dmath}[]
+		{\Lambda^{\nu}}_{\mu}\gamma^{\mu}=S^{-1}(\Lambda)\gamma^{\nu}S(\Lambda)
+	\end{dmath}
+	\begin{dsuspend}
+		A proper LT has 6 parameterns ( 3rot, 3boos par)
+	\end{dsuspend}
+	\begin{dmath}[]
+		\omega_{\rho\sigma}=-\omega_{\sigma\rho}\condition{(antisymmetric)}
+	\end{dmath}
+\end{dgroup}
+Claim: For infinitesimal propel LT:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		S(\Lambda)=\vtr{1}+\frac{i}{2}\omega_{\mu\nu}\sigma^{\mu\nu}
+	\end{dmath}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		\sigma^{\mu\nu}\equiv\frac{i}{2}\comm{\gamma^{\mu}}{\gamma^{\nu}}
+	\end{dmath}
+	\begin{dsuspend}
+		or for finite LT
+	\end{dsuspend}
+	\begin{dmath}[]
+		S(\Lambda)=e^{\frac{i}{2}\omega_{\mu\nu}\sigma^{\mu\nu}}
+	\end{dmath}
+	\begin{dsuspend}
+		(compare to QMI rotations) $\to$ exercise sheet 12
+	\end{dsuspend}
+\end{dgroup}
+Fro pariti $(t,\vtr{x})\to \left( t,-\vtr{x} \right)$ or
+\begin{dgroup}[]
+	\begin{dmath}[]
+		{\Lambda^{\mu}}_{\nu}
+		=
+		\begin{pmatrix}
+			1&0&0&0\\
+			0&-1&0&0\\
+			0&0&1&0\\
+			0&0&0&-1
+		\end{pmatrix}
+	\end{dmath}
+	\begin{dsuspend}
+		we get for $\nu=0$
+	\end{dsuspend}
+	\begin{dmath}[]
+		S\gamma^{0}S=\gamma^{0}
+	\end{dmath}
+	\begin{dsuspend}
+		and for $\nu=i$
+	\end{dsuspend}
+	\begin{dmath}[]
+		S\gamma^{i}S=-\gamma^{i}
+	\end{dmath}
+	\begin{dmath}[]
+		S\left( \Lambda_{p} \right)=\gamma^{0}\times \underbrace{\text{Phase}}_{1}
+	\end{dmath}
+\end{dgroup}
+Define 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\gamma_{5}\equiv i\gamma_{0}\psi_1\gamma_2\psi_3
+	\end{dmath}
+	\begin{dsuspend}
+		in Dirac representation
+	\end{dsuspend}
+	\begin{dmath}[]
+		\gamma_5=
+		\begin{pmatrix}
+			0&\vtr{1}\\
+			\vtr{1}&0
+		\end{pmatrix}
+	\end{dmath}
+	\begin{dsuspend}
+		Note 
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( \gamma_{5} \right)=\vtr{1}
+	\end{dmath}.
+\end{dgroup}
+Now we can parametrize any $4\times 4$ matrix in terms of the following 16 matrices  $\left\{ \vtr{1}, \gamma_{5},\gamma^{4},\gamma_{5}\gamma^{4},\sigma^{\mu\nu} \right\}$. We know
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\psi(x)\xrightarrow{\text{LT}}S(\Lambda)\psi(x)
+	\end{dmath}
+	\begin{dmath}[]
+		\overline{\psi}(x)\xrightarrow{\text{LT}}\overline{\psi}(x)S^{-1}(\Lambda)
+	\end{dmath}
+\end{dgroup}
+$\to$ exercise sheet 12
+\subsection{Bilinear covariants}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\overline{\psi}(x)\psi(x)\xrightarrow{\text{pLT}}\overline{\psi}S^{-1}S\psi
+		=\overline{\psi}(x)\psi(x)
+	\end{dmath}
+	\begin{dmath}[]
+		\mbox{}\xrightarrow{\text{Parity}}\overline{\psi}\gamma^{0}\gamma^{0}\psi=\overline{\psi}(x)\psi(x)
+	\end{dmath}
+	\begin{dmath}[]
+	\overline{\psi}(x)\gamma_{5}(x)\psi(x)\xrightarrow{\text{pLT}} \overline{\psi}S^{-1}\gamma^{5}S\psi=\overline{\psi}\gamma_{5}\psi
+	\end{dmath}
+	\begin{dmath}[]
+		\acomm{\gamma^{5}}{\gamma^{\mu}}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow} \comm{S}{\gamma_{5}}=0
+	\end{dmath}
+\end{dgroup}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\overline{\psi}\gamma^{\mu}\psi \to {\Lambda^{\mu}}_{\nu}\overline{\psi}\gamma^{\nu}\psi\condition{vector}
+	\end{dmath}
+	\begin{dmath}[]
+		\overline{\psi}\gamma_{5}\gamma^{\mu}\psi\to \text{Det}(\Lambda){\Lambda^{\mu}}_{\nu}\overline{\psi}\gamma^{\nu}\gamma_{5}\psi\condition{axial vector}
+	\end{dmath}
+	\begin{dmath}[]
+		\overline{\psi}\sigma^{\mu\nu}\psi\to {\Lambda^{\mu}}_{\rho}{\Lambda^{\nu}}_{\sigma}\overline{\psi}\gamma^{\rho\sigma}\psi\condition{tensor rank 2}
+	\end{dmath}
+\end{dgroup}

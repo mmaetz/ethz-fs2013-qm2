@@ -1,0 +1,215 @@
+\section{Coulomb scattering}
+So far we have assumed $\vtr{r} V\left( \vtr{r} \right)\rightarrow 0$, $\abs{\vtr{r}}\rightarrow \infty$, but this is not the case for Coulomb scattering.
+
+However, exact solution is known (recall Hydrogen atom)
+\begin{dmath}[]
+	\left( -\frac{\hbar^2}{2m}\vtr{\nabla}^2-\frac{Z_1Z_2e^2}{r} \right)\psi(\vtr{r})=E\psi\left( \vtr{r} \right)
+\end{dmath}
+\begin{itemize}
+	\item hydrogen $E<0$ (bound states), 
+		\begin{dmath}[]
+			\lim_{r\to \infty}\abs{\psi(\vtr{r})}^2=0
+		\end{dmath}
+	\item scattering $E>0$ with different
+\end{itemize}
+\begin{dmath}[]
+	\nabla^2=\frac{4}{\xi+\eta}\left( \partial_{\xi}\xi\partial_{\xi}+\partial_{\eta}\eta\partial_{\eta} \right)+\underbrace{\frac{1}{\xi\eta}\pddv{}{\varphi}}_{\spadesuit}
+\end{dmath}
+$\spadesuit$: do not contribute
+$\to$
+Confluent hypogeometric equation$\to$
+
+2 linearly independent solutions: find the linear combination which is regular at the origin. Result for $r\to \infty$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\gamma=\frac{m Z_1Z_2e^2}{\hbar^2k}
+	\end{dmath}
+	\begin{dmath}[]
+		%\psi_{\ell}(r)\xrightarrow[r\to \infty]{\vtr{k}=k\vtr{e}_z}
+		\underbrace{e^{i\left( kz+\gamma\log 2k\left( r-z \right) \right)}}_{\text{distorted plane wave}}
+		-\frac{\gamma}{2k\sin^2\frac{\vartheta}{2}}
+		\frac{\Gamma\left( 1+\gamma \right)}{1-i\gamma}e^{-i\gamma\log\left( \sin\frac{2\vartheta}{2} \right)}\underbrace{\frac{e^{i\left( kr-\gamma\log 2kr \right)}}{2}}_{\text{distorted outgoing plane wave}}
+	\end{dmath}
+\end{dgroup}
+\ldots
+This looks the same as
+\begin{dmath}[]
+	\psi\left( \vtr{r} \right)=e^{i\vtr{k}\vtr{r}}+f(\vartheta)\frac{e^{ikr}}{r}
+\end{dmath}
+but gets additional phases, because \emph{not} $rV(r)\xrightarrow{r\to \infty}$
+Cross-section
+\begin{dmath}[]
+	\dv{\sigma}{\Omega}=\abs{f_c(\vartheta)}
+	=\frac{\gamma}{4k^2\sin^4\frac{\vartheta}{2}}
+	=\left( \frac{Z_1Z_2e^2}{4E} \right)^2\frac{1}{\sin^4\frac{\vartheta}{2}}
+\end{dmath}
+\begin{enumerate}[$\to$]
+	\item $\to$ Rutherford scattering formula (classical!)
+	\item Phases drop out in this case
+\end{enumerate}
+Additional phases can have an effect in scattering of $2$ identical particles. Here $2\to 2$, $\xrightarrow{A}\xleftarrow{B}$. Go to the center of mass frame (sec 2.1)
+\begin{dmath}[]
+	\left[ -\frac{\hbar^2}{2\mu}\vtr{\nabla}^2+V(\vtr{r}) \right]\psi(\vtr{r})=E\psi(\vtr{r})
+\end{dmath}
+\begin{itemize}
+	\item 
+		\begin{dmath}[]
+			\mu=\frac{m_1m_2}{m_1+m_2}=\frac{m}{2}\condition{reduced mass}
+		\end{dmath}
+		\begin{dmath}[]
+			V\sim \text{interaction potential}
+		\end{dmath}
+		\begin{dmath}[]
+			\vtr{r}=\vtr{r}_A-\vtr{r}_B\sim \text{relative coordinate}
+		\end{dmath}
+\end{itemize}
+In QM the particles are undistinguishable when idential. Two pictures with a particle $A$ and $B$ going to each other. 
+
+Moreover: Total wave function (spin$+$space$+$\ldots) must be either symmetric or antisymmetric under exchange $A\leftrightarrow B$, $\vtr{r}\leftrightarrow -\vtr{r}$. Spatial wave function
+\begin{dmath}[]
+	\psi_{\text{sym/antysym}}=\left( e^{i\vtr{k}\vtr{r}}\pm e^{-i\vtr{k}\vtr{r}} \right)
+	+\left( f\left( \vartheta \right)\pm f\left( \pi-\vartheta \right) \right)\frac{e^{ikr}}{r}
+\end{dmath}
+\paragraph{Example:}Coulomb scattering of two protons (spin $\frac{1}{2}$, fermions $\to$ t.w.f. antisymmetric). Let us look at unpolarized protons and assume that the potential does not depend on spin. Spin wave function:
+\begin{description}
+	\item[prob $\frac{1}{4}$] singlet state (anti sym.)
+	\item[prob. $\frac{3}{4}$]  triplet states (sym.)
+\end{description}
+Spatial wave function
+\begin{description}
+	\item[prob $\frac{1}{4}$] symm. 
+		\begin{dmath}[]
+			\hiderel{\to} \sigma_{\text{sing}}=\abs{f_{\ell}(\vartheta)+f_c\left( \pi-\vartheta \right)}^2
+		\end{dmath}
+	\item[prob $\frac{3}{4}$] antisym.
+		\begin{dmath}[]
+			\hiderel{\to} \sigma_{\text{trp}}
+			=\abs{f_c\left( \vartheta \right)-f_c\left( \pi-\vartheta \right)}^2
+		\end{dmath}
+\end{description}
+Unpolarized cross-section:
+\begin{dmath}[]
+	\sigma=\frac{1}{4}\abs{f_c(\vartheta)+f\left( \pi-\vartheta \right)}^2+\frac{3}{4}\abs{f_c(\vartheta)-f_c(\pi-\vartheta)}^2
+	=\abs{f_c\left( \vartheta \right)}^2+\abs{f_c\left( \pi-\vartheta \right)}^2
+	-\frac{1}{2}\left( f_c(\vartheta)f_c^*\left( \pi-\vartheta \right)+f_{c}^{*}(\vartheta)f_c\left( \pi-\vartheta \right) \right)
+	\stackrel{Z_1=Z_2=1}{=}
+	\left( \frac{e}{4E} \right)^2\left( \underbrace{\frac{1}{\sin \frac{4\theta}{2}}+\frac{1}{\cos^4\frac{\vartheta}{2}}}_{\text{classical}}-\frac{\cos\left( \gamma\log\left( \tan^2\frac{\vartheta}{2} \right) \right)}{\sin^2\frac{\vartheta}{2}\cos^2\frac{\vartheta}{2}} \right)
+\end{dmath}
+\emph{Mott scattering formula}
+\section{Lippman- Schwinger equation \& Green's function}
+Again:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		E_k=\frac{\hbar^2 k^2}{2m}
+	\end{dmath}
+	\begin{dmath}[]
+		\left( \frac{\hbar^2}{2m}\nabla^2+E_k \right)\psi_k(\vtr{r})=V(\vtr{r})\psi(\vtr{r})
+	\end{dmath}
+\end{dgroup}
+If we know the \emph{Green's function} defined by 
+\begin{dmath}[]
+	\left( \frac{\hbar^2}{2m}\nabla^2 +E_k \right)g_k(\vtr{r})=\delta(\vtr{r})
+\end{dmath}
+then we can write a formual solution for $\psi_k(\vtr{r})$
+\begin{dmath}[]
+	\psi_k(\vtr{r})=e^{i\vtr{k}\vtr{r}}+\int_{}^{}\rd^3\,\vtr{r}'g_k(\vtr{r}-\vtr{r}')V(\vtr{r}')\psi_k(\vtr{r}')
+\end{dmath}
+with $e^{i\vtr{k}\vtr{r}}$ solution to homogeneous equation ($V=0$)
+Checik it at home.
+\paragraph{Idea:}
+As in section 4.4 we can turn this formal solution into a series for $\psi_k$ (in powers of $V$)
+\paragraph{First:} Compute $g_k$: Go to Fourier space
+\begin{dmath}[]
+	g_k(\vtr{r})=\int_{}^{}\frac{\rd^3 \vtr{q}}{\left( 2\pi \right)^3}e^{-i\vtr{q}\vtr{r}}\tilde{g}_k(\vtr{q})
+\end{dmath}
+We get
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\left( \frac{\hbar^2}{2m}\nabla^2+E_k \right)g_k(\vtr{r})
+		=\int_{}^{}\frac{\rd^3 \vtr{q}}{\left( 2\pi \right)^3}\left( -\frac{\hbar^2}{2m}q^2+\frac{\hbar^2}{2m}k^2 \right)e^{-i\vtr{q}\vtr{r}}\tilde{g}_k(\vtr{q})=\delta(\vtr{r})
+		=\int_{}^{}\frac{\rd^3 \vtr{q}}{\left( 2\pi \right)^3}e^{-i\vtr{q}\vtr{r}}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow} \tilde{g}_k(\vtr{q})=\frac{2m}{\hbar^2}\frac{1}{k^2-q^2}=\left( E_k-\frac{\hbar^2q^2}{2m} \right)^{-1}
+	\end{dmath}
+	\begin{dmath}[]
+		g_k(r)=\frac{1}{\left( 2\pi \right)^3}\int_{0}^{\infty}\!\rd q\int_{0}^{2\pi}\!|\rd \varphi \int_{-1}^{1}\!\rd \cos\vartheta\cdot q^2\frac{2m}{\hbar^2}\frac{1}{k^2-q^2}e^{-iqr\cos\vartheta}
+		=\frac{2m}{\hbar^2}\frac{1}{\left( 2\pi \right)^2}
+		=\frac{2m}{\hbar^2}\frac{1}{\left( 2\pi \right)^2}\int_{0}^{\infty}\!\rd q \frac{q^2}{iqr}\frac{1}{k^2-q^2}\left( e^{iqr}-\underbrace{e^{-iqr}}_{\spadesuit} \right)
+		=\frac{m}{2\pi^2\hbar^2}\frac{1}{ir}\int_{-\infty}^{\infty}\!\rd q \frac{q}{k^2-q^2}e^{iqr}
+	\end{dmath}
+\end{dgroup}
+$\spadesuit:$
+\begin{dmath}[]
+	\int_{0}^{\infty}\rd q \xrightarrow{q\to -1}-\int_{0}^{-\infty}=\int_{-\infty}^{0}\rd q
+\end{dmath}
+Integral is not well defined! $\to$ We need a prescription for the poles.
+
+We use contour integral, close it in upper half plane
+\begin{dmath}[]
+	q=q_{R\ell}+iq_{\ell m}\to e^{iqr}=e^{iq_{R\ell}r}e^{-q_{\ell m}r}
+\end{dmath}
+\begin{figure}[]
+	\begin{center}
+		\begin{tikzpicture}[]
+			\coordinate[label=right:$q$] (x) at (4,0);
+			\draw[-latex] (-4,0) -- (x);
+			\coordinate[label=below:$0$] (o) at (0,0);
+			\coordinate[label=below:$+k$] (pk) at (2,0);
+			\coordinate[label=below:$-k$] (mk) at (-2,0);
+			\foreach \x in {o,pk,mk}
+			\fill[] (\x) circle (2pt);
+			\draw[] (4,0) arc (0:180:4);
+		\end{tikzpicture}
+	\end{center}
+	\caption{}
+	\label{fig:}
+\end{figure}
+We deform the contour at $q=\pm k\to$different options, giving \emph{different asympt behaviours} for $g_k(\vtr{r})$!
+For negative point outside and positive point inside curve:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		g_{k}^{+}(r)=2\pi i\frac{m}{2\pi^2\hbar^2}\frac{1}{ir}Res_{q=k}\frac{-q}{\left( q-k \right)\left( q+k \right)}e^{iqr}
+		=-\frac{m}{2\pi\hbar^2}\frac{e^{ikr}}{r}
+	\end{dmath}
+	\begin{dsuspend}
+		For negative point inside and positive point outside curve:
+	\end{dsuspend}
+	\begin{dmath}[]
+		g_{k}^{-}(r)=-\frac{m}{2\pi\hbar^2}\frac{e^{-ikr}}{r}
+	\end{dmath}
+	\begin{dsuspend}
+		for both points inside:
+	\end{dsuspend}
+	\begin{dmath}[]
+		g_{k}^{+}(r)+g_{k}^{-}(r)
+	\end{dmath}
+	\begin{dsuspend}
+		Both points outside
+	\end{dsuspend}
+	\begin{dmath}[]
+		0
+	\end{dmath}
+\end{dgroup}
+\begin{description}
+	\item[$g_{k}^{+}\sim$] outgoing spherical wave
+	\item[$g_{k}^{-}\sim$] incoming spherical wave
+\end{description}
+What we need is $g_{k}^{+}$!
+\begin{dmath}[]
+	\psi_k(\vtr{r})=e^{i\vtr{k}\vtr{r}}-\int_{}^{}\rd^3 \vtr{r}'\frac{m}{2\pi\hbar^2}\frac{e^{ik\abs{\vtr{r}-\vtr{r}'}}}{\abs{\vtr{r}-\vtr{r}'}}V(\vtr{r}')\psi(\vtr{r}')
+\end{dmath}
+Check asymptotic behaviour ($\vtr{r}'V(\vtr{r}')\to 0$)
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\abs{\vtr{r}-\vtr{r}'}\xrightarrow{\abs{\vtr{r}}\to\infty}r\left( 1-\frac{r'}{r}\cos\vartheta+\mathcal{O}\left( \left( \frac{r'}{r} \right) \right) \right)
+		=r-\frac{\vtr{r}\vtr{r}'}{r'}=r-\hat{e}_r\cdot\vtr{r}'
+	\end{dmath}
+	\begin{dsuspend}
+		We get:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi_k(\vtr{r})=e^{i\vtr{k}\vtr{r}}-\frac{m}{2\pi\hbar^2}\int_{}^{}\rd^3 \vtr{r}' \frac{e^{ikr e^{-ik\vtr{e}_r\vtr{r}'}}}{r}\times V(\vtr{r}')\psi_k(\vtr{r}')
+	\end{dmath}
+\end{dgroup}
+\ldots

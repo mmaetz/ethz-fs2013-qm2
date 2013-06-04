@@ -1,0 +1,209 @@
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\vtr{A}\left( \vtr{r},t \right)=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3} \sum_{\lambda}^{}\left( \alpha\left( k,\lambda \right)\vtr{\upepsilon}\left( k,\lambda \right)e^{i\vtr{k}\cdot\vtr{r}-i\omega t}+\alpha^{*}\left( \vtr{k},\lambda \right)\vtr{\upepsilon}^{*}\left( \vtr{k},\lambda \right)e^{-i\vtr{k}\cdot \vtr{r}+i\omega t} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		H=\frac{1}{8\pi}\int_{}^{}\rd^3 \vtr{r}\, \left( \vtr{E}^2+\vtr{B}^2 \right)
+	\end{dmath}
+	\begin{dmath*}[]
+		\int_{}^{}\rd^3 \vtr{r}\, \vtr{E}^2 = \int_{}^{}\rd^3 \vtr{r}\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}\int_{}^{}\frac{\rd^3 \vtr{k}`}{\left( 2\pi \right)^3}\sum_{\lambda\lambda'}^{}
+		\left( \alpha\alpha' \vtr{\upepsilon}\cdot \vtr{\upepsilon}\left( -\frac{\omega\omega'}{c^2} \right)e^{-i\left( \omega+\omega' \right)t}e^{+i\left( \vtr{k}+\vtr{k}' \right)\cdot \vtr{r}}
+		+\alpha^{*}{\alpha'}^{*}\vtr{\upepsilon}^{*}{\vtr{\upepsilon}'}^{*}\left( -\frac{\omega\omega'}{c^2}e^{+i\left( \omega+\omega' \right)t}e^{-i\left( \vtr{k}+\vtr{k}' \right)\cdot\vtr{r}} \right)
+		-\alpha{\alpha'}^{*}\vtr{\upepsilon}^{*}{\vtr{\upepsilon}'}^{*}\left( -\frac{\omega\omega'}{c^2}e^{-i\left( \omega+\omega' \right)t}e^{-i\left( \vtr{k}-\vtr{k}' \right)\cdot\vtr{r}} \right)
+		-\alpha^{*}{\alpha'}\vtr{\upepsilon}^{*}{\vtr{\upepsilon}'}^{*}\left( -\frac{\omega\omega'}{c^2}e^{+i\left( \omega+\omega' \right)t}e^{+i\left( \vtr{k}+\vtr{k}' \right)\cdot\vtr{r}} \right)
+		\right)
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^{3}}\sum_{\lambda\lambda'}^{}\left( -\frac{\omega^2}{c^2} \right)
+		\left( \alpha_{k}\alpha_{-k} \vtr{\upepsilon}_{k}\cdot\vtr{\upepsilon}_{-k}e^{-2i\omega t}+\alpha_{k}^{*}\alpha_{-k}^{*}\vtr{\upepsilon}_{k}^{*}\cdot \vtr{\upepsilon}_{-k}^{*}e^{2i\omega t}
+		-\alpha_{k}\alpha_{+k}^{*}\vtr{\upepsilon}_{k}\cdot \vtr{\upepsilon}_{k}^{*}-\alpha_{k}^{*}\alpha_{k}\vtr{\upepsilon}_{k}^{*}\cdot \vtr{\upepsilon}_{k}
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\left( \frac{\omega^2}{c^2} \right)\left( \alpha_k\alpha_{k}^{*}+\alpha_{k}^{*}\alpha_k+\left\{ \alpha_k\alpha_{-k}, \alpha_{k}^{*}\alpha_{-k}^{*}\text{ terms} \right\} \right)
+		\right)
+	\end{dmath*}
+	\begin{dsuspend}
+		use
+	\end{dsuspend}
+	\begin{dmath}[]
+		\int_{}^{}\rd^3 r\, e^{i\left( k\pm k' \right)r}=\left( 2\pi \right)^3 \delta\left( k\pm k' \right)
+	\end{dmath}
+	\begin{dsuspend}
+		$\lambda,k'$ integration and $\omega_{-k}=\omega_{k}=\omega$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hiderel{\leadsto} \int_{}^{}\rd^3 v \, \vtr{E}^2
+		=\frac{1}{\left( 2\pi \right)^3}\int_{}^{}\rd^3 k \, \left( -\frac{\omega^2}{c^2} \right)\left( \alpha_{k}\alpha_{-k}\vtr{\upepsilon}_{k}\vtr{\upepsilon}_{-k}e^{-2i\omega t}+\alpha_{k}^{*}\alpha_{-k}^{*} \vtr{\upepsilon}_{k}^{*}\vtr{\upepsilon}_{k}^{*}e^{2i\omega t}-\alpha_{k}\alpha_{k}^{*}\vtr{\upepsilon}_k\vtr{\upepsilon}_{k}^{*}-\alpha_{k}^{*}\alpha_{+k}\vtr{\upepsilon}_{k}^{*}\vtr{\upepsilon}_k\right)
+	\end{dmath}
+	\begin{dmath}[]
+		\int_{}^{}\rd^3 \vtr{r}\, \vtr{B}^2 = \ldots 
+		= \int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\left( \frac{\omega^2}{c^2} \right)\left( \alpha_k\alpha_{k}^{*}+\alpha_{k}^{*}\alpha_k-\left\{ \cdots \right\} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		H=\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\frac{\omega^2}{4\pi c^2}\left( \alpha_k\alpha_{k}^{*}+\alpha_{k}^{*}\alpha_k \right)
+	\end{dmath}
+\end{dgroup}
+define:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\alpha^{*}\left( k,\lambda \right)=\sqrt{\frac{\omega}{2\pi c^2\hbar}}\alpha^{*}(k,\lambda)
+	\end{dmath}
+	\begin{dmath}[]
+		\vtr{A}\left( \vtr{r},t \right)=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sqrt{\frac{2\pi c^2\hbar}{\omega}}\sum_{\lambda}^{}\left( q_{k\lambda}\vtr{\upepsilon}_{k\lambda}e^{i\vtr{k}\cdot\vtr{r}-i\omega t}+q_{k\lambda}^{*}\vtr{\upepsilon}_{k\lambda}^{*}e^{-i\vtr{k}\cdot \vtr{r}+i\omega t} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		H=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\frac{\hbar\omega}{2}\left( a_{k\lambda}^{*}a_{k\lambda}+a_{k\lambda\lambda}a_{k\lambda}^{*} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\vtr{P}=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\hbar\vtr{k}a_{k\lambda}^{*}a_{k\lambda}
+	\end{dmath}
+\end{dgroup}
+\subsection{2nd quantization}
+So far $\vtr{A}$ classical field, $a^{(*)}$ functions
+
+\begin{dgroup}[]
+	\begin{dmath}[]
+		a\left( k,\lambda \right)\to \hat{a}\left( k,\lambda \right)\condition{operator}
+	\end{dmath}
+	\begin{dmath}[]
+		a^{*}\left( k,\lambda \right)\to \hat{a}^{\dagger}\left( k,\lambda \right)\condition{operator}
+	\end{dmath}
+	\begin{dsuspend}
+		as for harmonic oscillator
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vtr{A},H,\vtr{P}\to \hat{\vtr{A}},\hat{H}, \hat{P}
+	\end{dmath}
+\end{dgroup}
+commutation relations:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{\hat{a}_{k\lambda}}{\hat{a}_{k',\lambda'}}=\comm{\hat{a}_{\dagger}^{k\lambda}}{\hat{a}_{k',\lambda'}^{\dagger}}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{\hat{a}_{k\lambda}}{\hat{a}_{k'\lambda'}^{\dagger}}=\left( 2\pi \right)^3 \delta\left( \vtr{k},-\vtr{k}' \right)\delta_{\lambda\lambda'}
+	\end{dmath}
+\end{dgroup}
+\begin{description}
+	\item[$\vtr{k}$:] continuous label $\to$
+		ften system in a box, $k$ becomes discrete
+	\item[$\lambda$:] discrete, l.z
+\end{description}
+another way to quantize field $\vtr{A}$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\mathcal{L}=\frac{1}{16\pi}F_{\mu\nu}F^{\mu\nu}
+		=\frac{1}{8\pi}\left( \vtr{E}^2-\vtr{B}^2 \right)
+	\end{dmath}
+	\begin{dsuspend}
+		define conjugate momentum field
+	\end{dsuspend}
+	\begin{dmath}[]
+		\pi=\pdv{f}{\vtr{A}}=\ldots = -\frac{1}{4\pi c}\vtr{E}^2
+	\end{dmath}
+	\begin{dsuspend}
+		$A,\pi\to \hat{A}, \hat{\pi}$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\comm{A_i\left( x,t \right)}{A_{j}\left( y,t \right)}
+		=\comm{\pi_i\left( x,t \right)}{\pi_j\left( y,t \right)}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{A_i}{\pi_j}\approx i\hbar \delta\left( x-y \right)\delta_{ij}
+	\end{dmath}
+\end{dgroup}
+\section{Fock space}
+Built up as for single harmonic oscillator with ``ladder'' operators
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\hat{a}^{\dagger}\left( k,\lambda \right)=\hat{a}_{k\lambda}^{\dagger}\condition{creation operator}
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{a}\left( k,\lambda \right)=\hat{a}_{k\lambda}\condition{annihilation operator}
+	\end{dmath}
+	\begin{dsuspend}
+		start with vacuum $\ket{0}$ definition
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hat{a}_{k\lambda}\ket{0}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\ket{1\left( k,\lambda \right)}=\hat{a}^{\dagger}\ket{0}
+	\end{dmath}
+	\begin{dsuspend}
+		state with 1 photon momentum, $\vtr{k}$, polarization $\lambda$
+	\end{dsuspend}
+\end{dgroup}
+\paragraph{General state}
+
+Note:
+
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\hat{a}_{k_j\lambda_j}^{\dagger}\ket{n_1\left( k_1,\lambda_1 \right)\ldots n_j\left( k_j,\lambda_j \right) \ldots n_m \left( k_m,\lambda_m \right)}=\sqrt{n_j+1}\ket{n_1\ldots n_{j+1} \ldots n_m}
+	\end{dmath}
+	\begin{dmath}[]
+		\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\hat{a}_{k\lambda} \ket{n_1\left( k_1,\lambda_1 \right)}
+		=\frac{1}{\sqrt{n_1!}}\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\hat{a}_{k\lambda}\left( \hat{a}_{k_1\lambda_1}^{\dagger} \right)^{n_1}\ket{0}
+	\end{dmath}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hat{a}_{k\lambda}\left( \hat{a}_{k_1\lambda_1}^{\dagger} \right)^{n_1}\ket{0}
+		= \left( \hat{a}_{k_1\lambda_1}^{\dagger} \right)^{n_1-1}n_1\comm{\hat{a}_{k\lambda}}{\hat{a}_{k_1\lambda_1}^{\dagger}}+\left( \hat{a}_{k_1\lambda_1}^{\dagger} \right)\hat{a}_{k\lambda}
+	\end{dmath}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		\comm{\hat{a}_{k\lambda}}{\hat{a}_{k_1\lambda_1}^{\dagger}}=n_1\left( 2\pi \right)^3 \delta\left( \vtr{k}-\vtr{k}_1 \right)\delta_{\lambda\lambda_1}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\leadsto} \int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\hat{a}_{k\lambda} \ket{n_1\left( k_1,\lambda_1 \right)}
+		=\frac{n_1}{\sqrt{n_1!}}\left( \hat{}_{k_1\lambda_1}^{\dagger} \right)^{n_1-1}\ket{0}
+		=\frac{n_1 \sqrt{\left( n_1-1 \right)!}}{\sqrt{n_1!}}\frac{\left( \hat{a}_{k_1\lambda_1}^{\dagger} \right)^{n_1-1}}{\sqrt{\left( n_1-1 \right)!}}\ket{0}
+		=\sqrt{n_1}\ket{\left( n_1-1 \right)\left( k_1\lambda_1 \right)}
+	\end{dmath}
+\end{dgroup}
+General:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}a_{k\lambda}\ldots
+	\end{dmath}
+	\begin{dsuspend}
+		Compute expectation value of $\hat{H}$ in state $\ket{n_1\left( k_1\lambda_1 \right)}$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\mel{n_1}{\hat{H}}{n_1}=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\frac{\hbar\omega}{2}\mel{n_1}{\hat{a}_{k\lambda}^{\dagger}\hat{a}_{k\lambda}+\underbrace{\hat{a}_{k\lambda}\hat{a}_{k\lambda}^{\dagger}}_{\hat{a}_{k\lambda}^{\dagger}\hat{a}_{k\lambda}}+\delta(0)}{n_1}
+	\end{dmath}
+	\begin{dmath}[]
+		\mel{n_1}{\hat{H}}{n_1}
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\hbar \omega\mel{n_1}{\hat{a}_{k\lambda}^{\dagger}\hat{a}_{k\lambda}}{n_1}
+		=\hbar\omega \mel{n_1}{\hat{a}_{k_1\lambda_1}^{\dagger}}{n_1-1}\sqrt{n_1}
+		=\hbar\omega n_1\braket{n_1}{n_1}=n_1\hbar\omega
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\to} \mel{n_1\ldots n_m}{\hat{H}}{n_1\ldots n_m}=\sum_{i=1}^{m}\hbar\omega_i n_i
+	\end{dmath}
+\end{dgroup}
+introduce interactions with matter (compare Section 5)
+\begin{dgroup}[]
+	\begin{dmath}[]
+		V=-\frac{q}{2mc}\left( \vtr{p}\cdot \vtr{A}+\vtr{A}\cdot \vtr{p} \right)+\frac{q^2}{2mc^2}\hat{\vtr{A}}^2
+	\end{dmath}
+\end{dgroup}
+in Coulomb gauge
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\vtr{\nabla}\cdot \vtr{A}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow} \vtr{p}\cdot \vtr{A}=\vtr{A}\cdot \vtr{p}
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{V}=-\frac{q_{-}}{mc}p\cdot \hat{A}+\frac{q^2}{2mc^2}\hat{A}^2
+	\end{dmath}
+	\begin{dsuspend}
+		is operator in Fock space and will be used to compute transition matrix elements
+	\end{dsuspend}
+	\begin{dmath}[]
+		V_{\beta\alpha}=\mel{\psi_{\beta}^{0}}{V}{\psi_{\alpha}^{0}}
+	\end{dmath}
+\end{dgroup}

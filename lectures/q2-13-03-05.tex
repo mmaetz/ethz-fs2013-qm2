@@ -1,0 +1,84 @@
+\section{Fine structure of hydrogen}
+Combine $\Delta E_{\text{rel}}$, $\Delta E_{\text{SO}}$ and $\Delta E_{D}$
+\begin{dmath}[]
+	\Delta E_{n}=-E_{n}^{(0)}\frac{(Z\alpha)^{2}}{n^2}\left( \frac{3}{4}-\frac{n}{j+\frac{1}{2}} \right)
+\end{dmath}
+valid for $\ell=0$, i.e. $j=\frac{1}{2}$ and $j=\ell\pm \frac{1}{2}$.
+
+fine structure suppressed $\sim \left( Z\alpha \right)^2$ relative to $E_{n}^{(0)}$ only depends on $j$ (not independently on $\ell$ and $s$).
+
+Notation for states $n L_{J}$
+\begin{dgroup*}[]
+	\begin{dmath*}[]
+		n=1,2,\ldots
+	\end{dmath*}
+	\begin{dmath*}[]
+		L\equiv S\left( \ell \hiderel{=}0 \right), P\left( \ell \hiderel{=}1 \right), D\left( \ell\hiderel{=}2 \right), F\left( \ell\hiderel{=}3 \right)
+	\end{dmath*}
+\end{dgroup*}
+\subsection{first few states}
+\[
+	\begin{array}[]{ccccc}
+		& \ell=0&\ell=1&\ell=2&\text{degeneracy }2n^2\\
+		n=1&
+		\begin{tikzpicture}[]
+					\end{tikzpicture}
+		&
+	\end{array}
+\]
+\begin{figure}[]
+	\begin{center}
+		\begin{tikzpicture}[]
+			\matrix{
+				\node{$\ell=0$};&\node{$\ell=1$};&\node{$\ell=2$};&\node{degeneracy $2n^2$};\\
+				\node{$n=1$};&
+				\draw[] (0,0) -- (0.9,0); 
+				\draw[rioday] (0.9,0) -- (1.1,-0.5) -- (2,-0.5);
+				\coordinate[label=above:$1 S_{\frac{1}{2}}\left\{ 2 \right\}$] (s11) at (2,-0.5);\\
+				\node{$n=2$};&
+				\draw[] (0,0) -- coordinate (e22) (0.9,0); 
+				\draw[rioday] (0.9,0) -- (1.1,-0.5)  -- (2,-0.5) coordinate (f22);
+				\coordinate[label=above:$2 S_{\frac{1}{2}}\left\{ 2 \right\}$] (s22) at (2,-0.5);
+				&\draw[] (0,0) coordinate (b23)  -- (0.9,0); 
+				\coordinate[label=right:$2 S_{\frac{3}{2}}\left\{ 2 \right\}$] (pa23) at (2,-0.25);
+				\coordinate[label=right:$2 S_{\frac{1}{2}}\left\{ 2 \right\}$] (pb23) at (2,-0.5);
+				\draw[rioday] (0.9,0) -- coordinate (c23) (1.1,-0.5) -- (2,-0.5);
+				\draw[rioday] (1.05,-0.25) -- (pa23);
+				\\
+			};
+			\draw[dashed] (e22) -- (b23);
+			\draw[dashed] (f22) -- (c23);
+		\end{tikzpicture}
+	\end{center}
+	\caption{}
+	\label{fig:}
+\end{figure}
+\section{Corrections beyound fine structure}
+\subsection{Hyperfine structure}
+Effect of proton spin Sp
+\begin{dmath}[]
+	\vtr{\upmu}_p=\frac{e}{2m_p}g_p \vtr{s}_p
+\end{dmath}
+$\mu_p$ indices $B$-field $\mu$ of electron ``feels'' $B$-field $\sim \vtr{\upmu}\cdot \vtr{B}$
+\begin{dgroup*}[]
+	\begin{dmath}[]
+		\hiderel{\leadsto} \Delta E_{\text{Hfs}}\sim \left( Z\alpha \right)^4 \frac{m_e}{m_p}
+	\end{dmath},
+	\begin{dsuspend}
+		with $\left( Z\alpha \right)^{4}$ as always and $\frac{m_e}{m_p}$ suppression.
+		total spin
+	\end{dsuspend}
+	\begin{dmath}[]
+		F=S_e+S_p
+		=
+		\begin{cases}
+			1&\text{triplet}\\
+			0&\text{singlet}
+		\end{cases}
+	\end{dmath}
+\end{dgroup*}
+\subsection{Lamb shift (needs QED!)}
+$\leadsto$ modification of Coulomb potential. splits e.g. $2S_{\frac{1}{2}}$ and $2p_{\frac{1}{2}}$
+\begin{dmath}[]
+	\Delta E_{\text{Lamb}}\sim \left( Z\alpha \right)^{4}\cdot \alpha \left( \frac{1}{\log\left( Z\alpha \right)} \right)\ldots
+\end{dmath}

@@ -1,0 +1,283 @@
+configuration of electron $\to$ chemical properties of elements. What is the configuration (total spin, $L$, $J$) ofthe outer electron. $\to$ Hund's rules (empirical) ~ [Notation ${^{2s+1}L_{J}}$]
+\begin{expl}
+	Carbon $\left( 1s \right)^2\left( 2s \right)^2(2p)^2$\\
+	for each of the $2$ $2p$-electrons $2p$-electrons we can have $m_{\ell}=-1,0,1$, $m_{s}=-\frac{1}{2},\frac{1}{2}$. $\to 6$ possibilities\\
+	for both 
+	\begin{dmath}[]
+		\frac{6\cdot 5}{2}=15\text{ possibilities}
+	\end{dmath}
+\end{expl}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		L=
+		\begin{matrix}
+			0,2\\
+			1
+		\end{matrix}
+		\begin{matrix}
+			\text{symmetric}\\
+			\text{anti-symmetric}
+		\end{matrix}
+	\end{dmath}
+	\begin{dmath}[]
+		S=
+		\begin{matrix}
+			1\\
+			0
+		\end{matrix}
+		\begin{matrix}
+			\text{symmetric}\\
+			\text{anti-symmetric}
+		\end{matrix}
+	\end{dmath}
+\end{dgroup}
+total wave function is antisymmetric
+\begin{dmath}[]
+	\begin{array}[]{ccccc}
+		L&S&J&{}^{2s+1}L_{J}&\text{deg}\\
+		\hline
+		0&0&0&{}^1S_0&1\\
+		&&0&{}^3P_0&1\\
+		1&1&1&{}^3P_1&3\\
+		&&2&{}^3P_2&5\\
+		2&0&2&{}^1D_2&5\\
+		&&&&15\\
+	\end{array}
+\end{dmath}
+Which one is ground state? $\to$ Hund's rules
+\begin{enumerate}[(1)]
+	\item make spin maximal
+		\begin{dmath}[]
+			\to \text{spin part more symmetric}
+			\to \text{orbital port more asymmetric}
+			\to \text{electron further away from each other}
+			\to \text{less repulsion}
+		\end{dmath}
+		for $C$: $s=1$
+	\item make $L$ maximal
+		\begin{dmath}[]
+			\to \text{electron average further away from each other}
+			\to \text{less repulsion}
+		\end{dmath}
+		no impaft for $C$
+	\item 
+		\begin{dgroup}[]
+			\begin{dmath}[]
+				\Delta E_{\text{SO}}=\text{constant} \left(  j\left( j+1 \right)-\ell\left( \ell+1 \right)-s\left( s+1 \right) \right)
+			\end{dmath}
+			\begin{dmath}[]
+				\text{constant}
+				\begin{cases}
+					>0&\text{if subshell \emph{no} more than half filled }J=\abs{L-S}\\
+					<0&\text{if subshell more than half filled }J=\abs{L+S}
+				\end{cases}
+			\end{dmath}
+		\end{dgroup}
+		for $C$ first case and 
+		\begin{dmath}[]
+			J=\abs{L-S}=0
+		\end{dmath}
+		ground state ${}^3P_0$
+\end{enumerate}
+\chapter{Approximation methods for time-dependent problems}
+We now want to know time evolution
+\begin{dmath}[]
+	\ket{\psi(t)}=U\left( t,t_0 \right)\ket{\psi(t_0)}
+\end{dmath}
+We know:
+\begin{dmath}[]
+		i\hbar\pdv{}{t}\ket{\psi(t)}=H(t)\ket{\psi(t)}
+\end{dmath}
+with $H(t)$ now time dependent $\to$ more complicated relation between $H$ and $U$
+\section{Time-dependent perturbation theory}
+Let
+\begin{dgroup}[]
+	\begin{dmath}[]
+		H(t)=H_0+\lambda V(t)
+	\end{dmath},
+	\begin{dsuspend}
+		with $H_0$ time independent and that can be solved and $V(t)$ with $t$ the ``only'' difference to chapter 1.
+	\end{dsuspend}
+	\begin{dmath}[]
+		H_0\ket{\psi_{n}^{(0)}}=E_{n}^{(0)}\ket{\psi_{n}^{(0)}}
+	\end{dmath}
+	\begin{dmath}[]
+		i\hbar \pdv{}{t}\ket{\psi(t)}=H(t)\ket{\psi(t)}
+		=\left( H_0+\lambda V(t) \right)\ket{\psi(t)}
+	\end{dmath}
+	\begin{dsuspend}
+		for any $t$:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\ket{\psi(t)}=\sum_{n}^{}c_n(t)e^{-\frac{i}{\hbar}E_{n}^{(0)}}\ket{\psi_{n}^{(0)}}
+	\end{dmath}
+	\begin{dmath}[]
+		\braket{\psi(t)}{\psi(t)}=1
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow}\sum_{n}^{}\abs{c_n}^2=1
+	\end{dmath}
+	\begin{dsuspend}
+		we can also write
+	\end{dsuspend}
+	\begin{dmath}[]
+		V(t)\ket{\psi_{n}^{(0)}}=\sum_{m}^{}\ket{\psi_{m}^{(0)}}\mel{\psi_{m}^{(0)}}{V(t)}{\psi_{n}^{(0)}}
+	\end{dmath}
+	\begin{dsuspend}
+		with 
+	\end{dsuspend}
+	\begin{dmath}[]
+		\mel{\psi_{m}^{(0)}}{V(t)}{\psi_{n}^{(0)}} =V_{mn}(t)
+	\end{dmath}
+	\begin{dsuspend}
+		$\to$ into Schrödinger
+	\end{dsuspend}
+	\begin{dmath}[]
+		\sum_{n}^{}\left( i\hbar \dot{c}_n+E_{n}^{(0)}c_n \right)\ket{\psi_{n}^{(0)}}
+		=\sum_{n}^{}c_ne^{-\frac{i}{\hbar}E_{n}^{(0)}t}\left( E_{n}^{(0)}\ket{\psi_{n}^{(0)}}+\lambda\sum_{m}^{}V_{mn}(t)\ket{\psi_{m}^{(0)}} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		swap labels $m$ and $n$ on rhs
+	\end{dsuspend}
+	\begin{dmath}[]
+		\sum_{n}^{}i\hbar\dot{c_n}e^{-\frac{i}{\hbar}E_{n}^{(0)}t}\ket{\psi_{n}^{(0)}}
+		=\sum_{n,m}^{}\lambda c_me^{-\frac{i}{\hbar}E_{m}^{(0)}t}V_{nm}(t)\ket{\psi_{n}^{(0)}}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow}
+		\dot{c_n}=\left( i\hbar \right)^{-1}\lambda \sum_{m}^{}V_{mn}e^{\frac{i}{\hbar}\left( E_{n}^{(0)}-E_{m}^{(0)} \right)t}c_m
+	\end{dmath}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		\omega_{nm}=\frac{E_{n}^{(0)}-E_{m}^{(0)}}{\hbar}
+	\end{dmath}
+	\begin{dsuspend}
+		so
+	\end{dsuspend}
+	\begin{dmath}[]
+		\dot{c_n}=\left( i\hbar \right)^{-1}\lambda\sum_{m}^{}V_{nm}e^{i\omega_{nm}t}c_m
+	\end{dmath}.
+	\begin{dsuspend}
+		Now expand in $\lambda$ ($\to$ perturbation theory)
+	\end{dsuspend}
+	\begin{dmath}[]
+		c_n=c_{n}^{(0)}+\lambda c_{n}^{(1)}+\lambda^2 c_{n}^{(2)}+\ldots
+	\end{dmath}
+	\begin{dmath}[]
+		\dot{c}_{n}^{(0)}=0\condition*{\mathcal{O}(\lambda^0)}
+	\end{dmath}
+	\begin{dmath}[]
+		c_{n}^{(1)}=\left( i\hbar \right)^{-1}\sum_{m}^{}V_{nm}e^{i\omega_{nm}t}c_{m}^{(0)}
+	\end{dmath}
+	\begin{dsuspend}
+		\ldots
+	\end{dsuspend}
+	\begin{dmath}[]
+		c_{n}^{(j)}=\left( i\hbar \right)^{-1}\sum_{m}^{}V_{nm}e^{i\omega_{nm}t}c_{m}^{\left( j-1 \right)}
+	\end{dmath}
+	\begin{dsuspend}
+		Let system be in state $\ket{\psi_{i}^{(0)}}$ at time to initial condition
+	\end{dsuspend}
+	\begin{dmath}[]
+		c_{m}^{(0)}=\delta_{im}
+	\end{dmath}
+	\begin{dmath}[]
+		\dot{c}_{f}^{(1)}=\left( i\hbar \right)^{-1}V_{fi}e^{i\omega_{fi}t}
+	\end{dmath}
+	\begin{dmath}[]
+		c_{f}^{(1)}(t)=\left( i\hbar \right)^{-1}\int_{t_0}^{t}\dd{t'}V_{fi}(t')e^{i\omega_{fi}t'}
+	\end{dmath}
+	\begin{dsuspend}
+		$\to$ transition probability for the system to be found in state $\ket{\psi_{f}^{(0)}}$ at time $t$.
+	\end{dsuspend}
+	\begin{dmath}[]
+		P_{i\to f}=\abs{c_{f}^{(1)}}^2
+		=\frac{1}{\hbar^2}\abs{\int_{t_0}^{t}\dd{t'}\;V_{fi}e^{i\omega_{fi}t'}}^2+\mathcal{O}\left( \lambda^2 \right)
+	\end{dmath}
+	\begin{dsuspend}
+		approximation only valif if
+	\end{dsuspend}
+	\begin{dmath}[]
+		\abs{c_f}^2\ll1
+	\end{dmath}
+	\begin{dsuspend}
+		Higher orders in $\lambda$ will be covered  section 4.4 and Exercise
+	\end{dsuspend}
+\end{dgroup}
+\section{Constant perturbation}
+Let
+\begin{dgroup}[]
+	\begin{dmath}[]
+		V(t)=
+		\begin{cases}
+			0&\text{for }t<t_0(=0)\\
+			V&\text{(constant) for }t>t_0
+		\end{cases}
+	\end{dmath}
+	\begin{dmath}[]
+		P_{i\to f}=\frac{1}{\hbar^2}\abs{V_{fi}}^2\abs{\int_{t_0=0}^{t}\dd{t'}\, e^{i\omega_{fi}t'}}
+	\end{dmath},
+	\begin{dsuspend}
+		using
+	\end{dsuspend}
+	\begin{dmath}[]
+		\int_{t_0=0}^{t}\dd{t'}\, e^{i\omega_{fi}t'}
+		=\frac{2}{\omega^2}\left( 1-\cos\omega_{fi}t \right)
+		=\frac{4}{\omega^2}\sin^2\left( \frac{\omega_{fi}t}{2} \right)
+	\end{dmath},
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath}[]
+		\delta_{t}(\alpha)\equiv \frac{\sin^2\left( \alpha t \right)}{\pi\alpha^2 t}
+		=
+		\begin{cases}
+			\frac{t}{\pi}&\alpha=0\\
+			<\frac{1}{\pi\alpha^2 t}&\alpha\neq=0
+		\end{cases}
+	\end{dmath},
+	\begin{dsuspend}
+		which is plotted in Fig. \ref{fig:sinc1}
+	\end{dsuspend}
+	\begin{dmath}[]
+		\lim_{t\to\infty}P_{i\to f}=\frac{\pi t}{\hbar^2}\abs{V_{fi}}^2\delta\left( \frac{E_{f}^{(0)}-E_{j}^{(0)}}{2\hbar} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		P_{i\to f}=\frac{2\pi t}{\hbar}\abs{V_{fi}}^2\delta\left( E_{f}^{(0)}-E_{i}^{(0)} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		transition rate$= \text{probability}/\text{time}$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\Gamma_{fi}=\frac{2\pi}{\hbar}\abs{V_{fi}}^2\delta\left( E_f-E_i \right)
+	\end{dmath}
+\end{dgroup}
+\begin{figure}[]
+	\begin{center}
+		\begin{tikzpicture}[]
+			\coordinate[label=above:$\delta(\alpha)$] (y) at (0,4);
+			\coordinate[label=right:$\alpha t$] (x) at (4,0);
+			\draw[-latex] (0,0) -- (y);
+			\draw[-latex] (-4,0) -- (x);
+			\draw[domain=-4:4] plot[id=sinc,smasa] function{sin(x*pi)**2/x**2};
+		\end{tikzpicture}
+	\end{center}
+	\caption{}
+	\label{fig:sinc1}
+\end{figure}
+Consider transitions into continuous specturm $\rho(E)$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\int_{E_1}^{E_2}\dd{E}\,\rho(E)=\text{number of states in energy range $E_1$-$E_2$}
+	\end{dmath}
+	\begin{dmath}[]
+		\sum_{f}^{}\Gamma_{fi}\hiderel{\to}\int_{}^{}\dd{E}\,\rho(E)\Gamma_{fi}
+		=\frac{2\pi}{\hbar}\rho(E_f)\abs{V_{fi}}^2
+	\end{dmath}
+	\begin{dsuspend}
+		golden rule!
+	\end{dsuspend}
+\end{dgroup}
+requires contiuum of states and applicabiliity of perturbation theory.

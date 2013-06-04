@@ -1,0 +1,105 @@
+\section{Obs in 2nd quantization}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\hat{T}=\int_{}^{}\rd^3 \vtr{x}\, \hat{\psi}^{\dagger}\left( -\frac{\hbar^2 \nabla^2}{2m} \right)\hat{\psi}(x)
+	\end{dmath}
+\end{dgroup}
+\paragraph{momentum representation}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\hat{\psi}(x)=\sum_{i}^{}\hat{a}_i\psi_i(x)
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{\psi}^{\dagger}\left( x \right)=\sum_{i}^{}\hat{a}_{i}^{\dagger}
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{\psi}(x)=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\hat{a}_k e^{-i\vtr{k}\cdot \vtr{x}}
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{\psi}^{\dagger}\left( x \right)=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\hat{a}_{k}^{\dagger}e^{i\vtr{k}\cdot \vtr{x}}
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{T}=\int_{}^{}\rd^3 \vtr{x}\int_{}^{}\frac{\rd^3 k'}{\left( 2\pi \right)^3}\underbrace{e^{i\vtr{x}\left( \vtr{k}-\vtr{k}' \right)}}_{\mathclap{\left( 2\pi \right)^3 \delta \left( \vtr{k}-\vtr{k}' \right)}}\hat{a}_{k}^{\dagger}\hat{a}_{k'}\left( -\frac{\hbar^2 \left( i\vtr{k}' \right)^2}{2m} \right)
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\frac{\hbar^2\vtr{k}^2}{2m}\underbrace{\hat{a}_{k}^{\dagger}\hat{a}_k}_{N_k}
+	\end{dmath}
+	\begin{dsuspend}
+		$N_k$ counts number of particles of kind $k$. Potential
+	\end{dsuspend}
+	\begin{dmath}[]
+		U(x)=\int_{}^{}\frac{\rd^3 q}{\left( 2\pi \right)^3}e^{-i\vtr{q}\cdot \vtr{x}}\tilde{U}\left( \vtr{q} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{U}=\int_{}^{}\rd^3 \vtr{x}\,\hat{\psi}^{\dagger}(x)U(x) \hat{ \psi}(x) 
+		=\int_{}^{}\frac{\rd^3 k_1}{\left( 2\pi \right)^3}\int_{}^{}\frac{\rd^3 \vtr{k}_2}{\left( 2\pi \right)^3}\int_{}^{}\frac{\rd^3 q}{\left( 2\pi \right)^3}\int_{}^{}\underbrace{\rd^3 x\, e^{i\vtr{k}_1 \cdot \vtr{x}}e^{-i\vtr{k}_2\cdot \vtr{x}}e^{-i\vtr{q}\cdot \vtr{x}}}_{\mathclap{\left( 2\pi \right)^3\delta \left( \vtr{k}_1-\vtr{k}_2-\vtr{q} \right)}}\hat{a}_{k_1}^{\dagger}\hat{a}_{k_2}^{}\tilde{U}(\vtr{q})
+		=\int_{}^{}\frac{\rd^3 \vtr{k}_1}{\left( 2\pi \right)^3}\int_{}^{}\frac{\rd^3 \vtr{k}_2}{\left( 2\pi \right)^3}\,\tilde{U}\left( \vtr{k}_1\vtr{k}_2 \right)
+	\end{dmath}
+	\begin{dmath}[]
+		V\left( x_1,x_2 \right)=V\left( x_1-x_2 \right)
+		=\int_{}^{}\frac{\rd^3 q}{\left( 2\pi \right)^3}\, e^{-i\vtr{q}\left( \vtr{x}_1-\vtr{x}_2 \right)}\tilde{V}(q)
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{V}
+		=\int_{}^{}\rd^3 x_1\int_{}^{}\rd^3 x_2\, \hat{\psi}^{\dagger}\left( x_1 \right)\hat{\psi}^{\dagger}(x_2)V\left( x_1-x_2 \right)\hat{ \psi}(x_1)\hat{\psi}(x_2)
+		=\int_{}^{}\prod_{i=1}^{4}\frac{\dd{k_i}}{\left( 2\pi \right)^3}\int_{}^{}\frac{\rd^3 q}{\left( 2\pi \right)^3}\cdot \int_{}^{}\rd^3 x_1\, e^{i\vtr{x}_1\left( \vtr{k}_1-\vtr{k}_3-\vtr{q} \right)}\cdot \int_{}^{}\rd^3 x_2\, e^{i\vtr{x}_2\left( \vtr{k}_2-\vtr{k}_4+\vtr{q} \right)}\hat{a}_{k_1}^{\dagger}\hat{a}_{k_2}^{\dagger}\hat{a}_{k_3}^{}\hat{a}_{k_4}
+		=\int_{}^{}\frac{\rd^3 \vtr{k}_1}{\left( 2\pi \right)^3}\int_{}^{}\frac{\rd^3 \vtr{k}_2}{\left( 2\pi \right)^3}\int_{}^{}\frac{\rd^3 q}{\left( 2\pi \right)^3}\, \hat{a}_{k_1}^{\dagger}\hat{a}_{k_2}^{\dagger}\hat{a}_{\vtr{k}_1-\vtr{q}}\hat{a}_{\vtr{k}_2+\vtr{q}}\tilde{V}(q)
+	\end{dmath}
+\end{dgroup}
+consider commutation relation between field operators:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{\hat{\psi}(x)}{\hat{\psi}(y)}_{\mp}
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\int_{}^{}\frac{\rd^3 \vtr{k}'}{\left( 2\pi \right)^3}\int_{}^{}\frac{\rd^3 \vtr{k}'}{\left( 2\pi \right)^3}\, e^{-i\vtr{k}\cdot \vtr{x}}e^{+i\vtr{k}'\cdot \vtr{y}}\underbrace{\comm{\hat{a}_k}{\hat{a}_{k'}^{\dagger}}}_{\mathclap{\left( 2\pi \right)^3\delta\left( \vtr{k}-\vtr{k}' \right)}}
+		\stackrel{!}{=}\delta\left( \vtr{x}-\vtr{y} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		with the $\left( 2\pi \right)^3$ of $\left( 2\pi \right)^3 \delta\left( \vtr{k}-\vtr{k}' \right)$ being convection and generalization of
+	\end{dsuspend}
+	\begin{dmath}[]
+		\comm{\hat{a}_i}{\hat{a}_{j}^{\dagger}}=\delta_{ij}
+	\end{dmath}
+\end{dgroup}
+time dependence of field operator: Schrödinger picture $\to$ Heisenberg
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\underbrace{\hat{\psi}\left( \vtr{x},t \right)}_{\mathclap{\text{Heisenberg}}}=e^{\frac{i}{\hbar}\hat{H}t}\underbrace{\hat{\psi}(\vtr{x})}_{\mathclap{\text{SChrödinger}}}e^{\frac{-i}{\hbar}\hat{H}t}
+	\end{dmath}
+	\begin{dmath}[]
+		i\hbar\pdv{}{t}\hat{\psi}\left( \vtr{x},t \right)
+		=-\comm{\hat{H}}{\hat{\psi}\left( \vtr{x},t \right)}
+		=-\comm{\hat{H}}{\hat{\psi}(\vtr{x})}
+		=-e^{\frac{i}{\hbar}\hat{H}t}\comm{\hat{H}}{\hat{\psi}(x)}e^{-\frac{i}{\hbar}\hat{H}t}
+	\end{dmath}
+	\begin{dsuspend}
+		take free case
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hat{H}=\hat{T}\condition{bosons}
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{\hat{T}}{\hat{\psi}(x)}
+		=\int_{}^{}\rd^3 y\, \frac{\hbar^2}{2m}\comm{\nabla_y\psi^{\dagger}(y)\nabla_{y}\hat{\psi}(y)}{\hat{\psi}(x)}
+	\end{dmath}
+	\begin{dsuspend}
+		from now on, don't write $\nabla_{y}$ but $\nabla$
+	\end{dsuspend}
+	\begin{dmath*}[]
+		\comm{\nabla_y\psi^{\dagger}(y)\nabla_{y}\hat{\psi}(y)}{\hat{\psi}(x)}
+		=\nabla\hat{\psi}^{\dagger}(y)\varsigma\hat{\psi}(y)\hat{\psi}(x)
+		-\hat{\psi}(x)\nabla\hat{\psi}^{\dagger}(y)\nabla\hat{\psi}(y)
+		=\nabla\hat{\psi}^{\dagger}(y)\hat{\psi}(x)\nabla\hat{\psi}(y)
+		-\hat{\psi}(x)\nabla\hat{\psi}^{\dagger}(y)\nabla\hat{\psi}(y)
+		=\nabla\bigg(\! \comm{\hat{\psi}^{\dagger}(y)}{\hat{\psi}(x)}+\hat{\psi}(x)\underbrace{\hat{\psi}^{\dagger}(y) \!\bigg)\nabla\hat{\psi}(y)
+		-\hat{\psi}(x)\nabla\hat{\psi}^{\dagger}(y)\nabla\hat{\psi}(y)}_{=0}
+		=\int_{}^{}\rd^3 y\, \frac{-\hbar^2}{2m}\nabla_{y}\delta\left( \vtr{x}-\vtr{y} \right)\nabla\hat{\psi}(y)
+		=\frac{\hbar^2}{2m}\nabla_{x}^{2}\hat{\psi}(x)
+	\end{dmath*}
+	\begin{dsuspend}
+		in free case
+	\end{dsuspend}
+	\begin{dmath}[]
+		i\hbar \pdv{}{t}\hat{\psi}(x,t)=-\frac{\hbar^2}{2m}\nabla^2 \hat{\psi}\left( x,t \right)+\diamondsuit
+	\end{dmath}
+	\begin{dsuspend}
+		$\diamondsuit$ with interations much more complicated $\to$ QFT
+	\end{dsuspend}
+\end{dgroup}

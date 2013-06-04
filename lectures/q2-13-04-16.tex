@@ -1,0 +1,83 @@
+\section{The Born approximation}
+Formal solution
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\psi_k(\vtr{r})=e^{i\vtr{k}\vtr{r}}
+		+\int_{}^{}\rd^3\vtr{r}'\,g_{k}^{+}\left( \vtr{r}-\vtr{r}' \right)V(\vtr{r}')\psi_k(\vtr{r}')
+	\end{dmath}
+	\begin{dmath}[]
+		g_{k}^{+}\left( \vtr{r}-\vtr{r}' \right)=-\frac{m}{2\pi\hbar^2}\frac{e^{ik\abs{\vtr{r}-\vtr{r}'}}}{\abs{\vtr{r}-\vtr{r}'}}
+	\end{dmath}
+	\begin{dmath}[]
+		f=-\frac{m}{2\pi\hbar^2}\int_{}^{}\rd^3\vtr{r}'e^{-ik\vtr{e}_r\cdot\vtr{r}'}V(\vtr{r}')\psi_k(\vtr{r}')
+	\end{dmath}
+\end{dgroup}
+Solve this ``pertubatively" by iteration.
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\psi_k(\vtr{r})=e^{i\vtr{k}\cdot\vtr{r}}
+		+\sum_{n=1}^{\infty}\int_{}^{}\rd^3\vtr{r}'\, K_(\vtr{r},\vtr{r}')e^{i\vtr{k}\cdot\vtr{r}'}
+	\end{dmath}
+	\begin{dmath}[]
+		K_1\left( \vtr{r},\vtr{r}' \right)=g_{k}^{+}\left( \vtr{r}-\vtr{r}' \right)V(\vtr{r}')\condition*{\sim V^1}
+	\end{dmath}
+	\begin{dmath}[]
+		K_n\left( \vtr{r},\vtr{r}' \right)=\int_{}^{}\rd^3\vtr{r}''\, K_1\left( \vtr{r},\vtr{r}'' \right)K_{n-1}\left( \vtr{r}'',\vtr{r}' \right)\condition*{\sim V^n}
+		=\int_{}^{}\left( \prod_{i=1}^{n}\rd^3 \vtr{r}_i \right) g_{k}^{+}\left( \vtr{r}-\vtr{r} \right)V(\vtr{r}_n)g^{+}\left( \vtr{r}_n-\vtr{r}_{n-1} \right)\ldots g_{k}^{+}\left( \vtr{r}_2-\vtr{r}_1 \right)V(\vtr{r}_1)
+	\end{dmath}
+\end{dgroup}
+Retaining only the 1st term we have (1st) Born approx.
+\begin{dmath}[]
+	\psi_k^{(1)}(\vtr{r})=e^{ikz}\underbrace{-\frac{m}{2\pi\hbar^2}\int_{}^{}\rd^3 \vtr{r}'V(\vtr{r}')e^{ik\left( \vtr{e}_z-\vtr{e}_r \right)\cdot \vtr{r}'}}_{f^{(1)}(\theta,\phi)}\frac{e^{ikr}}{r}
+\end{dmath}
+assuming $k$ is along the $z$-axis. $f^{(1)}$ is the Fourier transform of potential w.r.t. $\vtr{q}$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\vtr{q}\equiv k\left( \vtr{e}_z-\vtr{e}_r \right)=\vtr{k}-\vtr{k}'\condition{momentum transfer}
+	\end{dmath}
+	\begin{dsuspend}
+		for central potential $V(r')$ (not $V(\vtr{r}')$).
+	\end{dsuspend}
+\end{dgroup}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		f^{(1)}\left( \theta,\phi \right)=-\frac{m}{2\pi\hbar^2}\int_{}^{}\rd\phi\int_{-1}^{1}\!\rd\cos\vartheta\int_{}^{}\rd r'\, V(r')e^{iqr'\cos\vartheta}
+		=-\frac{m}{\hbar^2}\int_{}^{}{r'}^2\dd{r'}\frac{2\sin(qr')}{qr'}V(r')
+	\end{dmath}
+	\begin{dmath}[]
+		f^{(1)}(\theta)=-\frac{2m}{\hbar^2q}\int_{}^{}\dd{r'}\,r' V(r')\sin\left( qr' \right)\condition*{q=2k\sin\frac{\theta}{2}}
+	\end{dmath}
+\end{dgroup}
+Note $f^{(1)}$ is real! Cp optical theorem!?
+\paragraph{Example:} Yukawa potential:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		V(r)=V_0\frac{e^{-\mu r}}{r}\condition*{\mu\sim \text{range of interaction}}
+	\end{dmath}
+	\begin{dmath}[]
+		f^{(1)}=-\frac{2m}{\hbar^2 q}V_0\underbrace{\int_{0}^{\infty}\rd r' e^{-\mu r'}\sin (qr')}_{q/\left( \mu^2+q^2 \right)}=-\frac{2m}{\hbar^2}\frac{V_0}{\mu^2+q^2}
+	\end{dmath}
+	\begin{dmath}[]
+		\left( \dv{\sigma}{\Omega} \right)^{(1)}=\abs{f^{(1)}(\theta)}^2
+		=\left( \frac{2m V_0}{\hbar^2} \right)^2\frac{1}{\left( \mu^2+2k^2\left( 1-\cos\theta \right) \right)^2}
+	\end{dmath}
+	\begin{dsuspend}
+		total cross section 
+	\end{dsuspend}
+	\begin{dmath}[]
+		\sigma_{\text{tot}}^{(1)}=2\pi\int_{-1}^{1}\dd{\cos\theta}\left( \frac{2mV_0}{\hbar^2} \right)^2\frac{1}{\left( \mu^2+2k^2\left( 1-\cos\theta \right) \right)^2}
+		=2\pi\left( \frac{2mV_0}{\hbar^2} \right)\frac{2}{\mu^4+4k^2\mu^2}
+	\end{dmath}
+\end{dgroup}
+Take limit $\mu\to 0$: ``infinite'' range of interaction
+\begin{dgroup}[]
+	\begin{dmath}[]
+		V(\vtr{r})=\frac{V_0}{r}\condition{(Coulomb)}
+	\end{dmath}
+	\begin{dmath}[]
+		\left( \dv{\sigma}{\Omega} \right)_{\text{Coulomb}}^{(1)}\!=\left( \frac{2mV_0}{\hbar^2} \right)^2\frac{1}{\left( 2k^2\left( 1-\cos\theta \right) \right)}
+	\end{dmath}
+\end{dgroup}
+but total cross section diverges!
+
+Note $\lim_{r\to \infty} rV(r)\neq 0$ for Coulomb!

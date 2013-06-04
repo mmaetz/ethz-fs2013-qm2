@@ -1,0 +1,239 @@
+\chapter{General scattering theory}
+General scattering more complicated than in section 6 e.g. production of new particles. Want to use general representation, so $\ket{\psi}$ is a general state in Hilbert space (not nec. wave function)
+\section{Dynamics of scattering}
+Start from time dependent Schrödinger
+\begin{dgroup}[]
+	\begin{dmath}[]
+		i\hbar\partial_{t}\ket{\psi,t}=H\ket{\psi,t}
+	\end{dmath}
+	\begin{dmath}[]
+	H=H_0+V
+	\end{dmath}
+	\begin{dmath}[]
+		\ldots = \ldots
+	\end{dmath}
+	\begin{dmath}[]
+		\left( i\hbar \partial_t-H_0 \right)\ket{\psi,t}=V\ket{\psi,t}=\ket{\chi,t}
+	\end{dmath}
+\end{dgroup}
+\begin{defn}
+	Green operation $G_0\left( t,t' \right)$ through
+	\begin{dmath}[]
+	\left( i\hbar \partial_t-H_0 \right)G_0\left( t,t' \right)=
+	\delta\left( t-t' \right)\cdot \vtr{1}\condition{($\leftarrow$ operators)}
+	\end{dmath}
+	inhomogeneous differential equation in $t$
+\end{defn}
+\paragraph{solutions}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		G_{0}^{+}\left( t,t' \right)=-\frac{i}{\hbar}\theta\left( t-t' \right)e^{-\frac{i}{\hbar}H_0\left( t-t' \right)}
+	\end{dmath}
+	\begin{dmath}[]
+		G_{0}^{-}\left( t,t' \right)=+\frac{i}{\hbar}
+	\end{dmath}
+\end{dgroup}
+
+\begin{proof}
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			i\hbar\partial_tG_{0}^{+}\left( t-t' \right)=i\hbar\left( -\frac{i}{\hbar} \right)\partial_t\theta\left( t-t' \right)e^{-\frac{i}{\hbar}H_0\left( t-t' \right)}
+			=\delta\left( t-t' \right)e^{-\frac{i}{\hbar}H_0\left( t-t' \right)}+\theta\left( t-t' \right)\left( -\frac{i}{\hbar}H_0 \right)e^{-\frac{i}{\hbar}H_0\left( t-t' \right)}
+			=\delta\left( t-t' \right)+H_0G_{0}^{+}\left( t-t' \right)
+		\end{dmath}
+	\end{dgroup}
+	Note: The superscripts $\pm$ are related to those in section 6
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			G_{0}^{\pm}\left( t,t' \right)=G_{0}^{pm}\left( t-t' \right)
+		\end{dmath}
+		\begin{dsuspend}
+			Write solution to Schrödinger
+		\end{dsuspend}
+		\begin{dmath}[]
+			\ket{\psi^{\pm},t}=\ket{\psi^0,t}+\int_{}^{}\dd{t'}G_{0}^{\pm} \left( t-t' \right)V\ket{\psi^{\pm},t'}
+		\end{dmath}
+		\begin{dsuspend}
+			with $\ket{\psi^{0},t}$ solution to homogeneous problem
+		\end{dsuspend}
+		\begin{dmath}[]
+			\left( i\hbar\partial_t-H_{0} \right)\ket{\psi_0,t}=0
+		\end{dmath}
+	\end{dgroup}
+	The ``physical'' solution is given by $\ket{\psi^{+},t}$, since $G^{+}\left( t-t' \right)$ moves ``forward'' in time. (retardation)
+
+	To make connection with section 6: $t\to E$
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			G_{0}^{+}\left( E \right)=\int_{-\infty}^{\infty}\dd{t}\, e^{\frac{i}{\hbar} Et}G_{0}^{+}(t)
+			=-\frac{i}{\hbar}\int_{0}^{\infty}\dd{t}\, e^{\frac{i}{\hbar}Et}e^{-\frac{i}{\hbar}H_0t}
+		\end{dmath}
+		\begin{dsuspend}
+			with
+		\end{dsuspend}
+		\begin{dmath}[]
+			G_{0}^{+}(t)=G_{0}^{+}\left( t,t'\hiderel{=}0 \right)
+		\end{dmath}
+		\begin{dsuspend}
+			for $t\to \infty$ need $E\to E+i0^{+}, 0^{+}>0$
+		\end{dsuspend}
+		\begin{dmath}[]
+			G_{0}^{\pm}=\frac{1}{E-H_0\pm i0^{+}}
+			\equiv \left( E-H_0\pm i0^{+} \right)^{-1}
+		\end{dmath}
+	\end{dgroup}
+\end{proof}
+$\ket{\psi^{\pm},t}$ evolves with $H$, but was equal to free state $\ket{\psi^{0},t}$ @ $t\to-\infty$
+
+Let $\alpha$ be a complete set of quantum number of $H_0$ (including $E_{\alpha}$)
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\hiderel{\to} \ket{\psi_{\alpha}^{0},t}\leftrightarrow \ket{\psi_{\alpha}^{\pm},t}
+	\end{dmath}
+	\begin{dsuspend}
+		make Fourier $t\to E$ of Eq. $\pm$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\underbrace{\int_{}^{}\dd{t}\, e^{\frac{i}{\hbar}Et}\ket{\psi_{\alpha}^{\pm},t}}_{\ket{\psi_{\alpha}^{\pm}(E)}\to \ket{\psi_{\alpha}^{\pm}}}=\underbrace{\int_{}^{}\dd{t}\, e^{\frac{i}{\hbar}Et}\ket{\psi_{\alpha}^{0},t}}_{\ket{\psi_{\alpha}^{0}\left( E \right)}\sim \ket{\psi_{\alpha}^{0}}}
+		+\int_{}^{}\dd{t}\, e^{\frac{i}{\hbar}Et}\underbrace{\int_{}^{}\dd{t'}\, G_{0}^{\pm}\left( t-t' \right)}_{t\to t+t'}V\ket{\psi_{\alpha}^{\pm},t}
+	\end{dmath}
+	\begin{dmath}[]
+		\int_{}^{}\dd{t}\, e^{\frac{i}{\hbar}Et}G_{0}^{+}(t)=G_{0}^{+}(E)
+	\end{dmath}
+	\begin{dmath}[]
+		V\ket{\psi_{\alpha}^{\pm}(E)}=\int_{}^{}\dd{t'} \, e^{\frac{i}{\hbar}Et'}V\left( \psi_{\alpha}^{\pm}(E) \right)
+	\end{dmath}
+\end{dgroup}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\ket{_{\alpha}^{\pm}}=\ket{\psi_{\alpha}^{0}}+G_{0}^{\pm}V\ket{\psi_{\alpha}^{\pm}}\condition{(Lippmann-Schwinger)}
+	\end{dmath}
+\end{dgroup}
+Solution:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\ket{\psi_{\alpha}^{\pm}}=\left( 1-G_{0}^{\pm}V \right)^{-1}\ket{\psi_{\alpha}^{0}}
+		=\frac{1}{\left( G_{0}^{\pm} \right)^{-1}-V}\left( G_{0}^{pm} \right)^{-1}\ket{\psi_{\alpha}^{0}}
+		=\frac{1}{E_{\alpha}-H_0\pm i0^{+}-V}\left( E_{`?a}-H_0\pm i0^{+}-V+V \right)\ket{\psi_{\alpha}^{0}}
+		=\underbrace{\frac{1}{E_{\alpha}-H\pm i0^{+}}}_{G^{\pm}E_{\alpha}}\left( E_{\alpha}-H+V\pm i0^{+} \right)\ket{\psi_{\alpha}^{0}}
+		=\left( 1+G^{\pm}V \right)\ket{\psi_{\alpha}^{0}}
+	\end{dmath}
+	\begin{dmath}[]
+		\psi_{\alpha}^{\pm}=\left( 1+G^{\pm}V \right)\ket{\psi_{\alpha}^{0}}
+	\end{dmath}
+	\begin{dsuspend}
+		can also be obtained from (exercise 2)
+	\end{dsuspend}
+	\begin{dmath}[]
+		\ket{\psi^{\pm},t}=\lim_{t'\to \mp \infty}i\hbar G^{+}\left( t-t' \right)\ket{\psi_0,t'}
+	\end{dmath}
+\end{dgroup}
+\section{M\o ller operators \& scattering operator}
+$\alpha$: Complete set of quantum numbers
+\begin{dgroup}[]
+	\begin{dmath}[]
+		H_0\ket{\psi_{\alpha}^{0}}=E_{\alpha}\ket{\psi_{\alpha}^{0}}
+	\end{dmath}
+	\begin{dmath}[]
+		H\ket{\psi_{\alpha}^{\pm}}=E_{\alpha}\ket{\psi_{\alpha}^{\pm}}
+	\end{dmath}
+	\begin{dsuspend}
+		Consider again
+	\end{dsuspend}
+	\begin{dmath}[]
+		\ket{\psi_{\alpha}^{\pm}}=\ket{\psi_{\alpha}^{0}}+\left( E_{\alpha}-H_0+\pm O^{+} \right)^{-1}V\ket{\psi_{\alpha}^{\pm}}
+		=\ket{\psi_{\alpha}^{0}}+\int_{}^{}\dd{\beta}\, \frac{T_{\beta\alpha}\ket{\psi_{\beta}^{0}}}{E_{\alpha}-E_{\beta}\pm i0^{+}}
+	\end{dmath}
+	\begin{dmath}[]
+		1=\int_{}^{}\dd{\beta}\, \proj{\psi_{\beta}^{0}}
+	\end{dmath}
+	\begin{dmath}[]
+		T_{\beta\alpha}\equiv \mel{\psi_{\beta}^{0}}{V}{\psi_{\alpha}^{\pm}}
+	\end{dmath}
+	\begin{dsuspend}
+		Transfer matrix
+	\end{dsuspend}
+\end{dgroup}
+This state satisfies:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\int_{}^{}\dd{\alpha}\, e^{-\frac{i}{\hbar}E_{\alpha}\tau}f(\alpha)\ket{\psi_{\alpha}^{\pm}}
+		\xrightarrow{\tau\to \mp \infty}\int_{}^{}\dd{\alpha} \, e^{-\frac{i}{\hbar}E_{\alpha}\tau}f(\alpha)\ket{\psi_{\alpha}^{0}}
+	\end{dmath}
+	\begin{dsuspend}
+		or
+	\end{dsuspend}
+	\begin{dmath}[]
+		e^{-\frac{i}{\hbar}H\tau}\int_{}^{}\dd{\alpha}\, f(\alpha)\ket{\psi_{\alpha}^{\pm}}\xrightarrow{e^{-\frac{i}{\hbar}H_0\tau}}\int_{}^{}\dd{\alpha}\, f(\alpha)\ket{\psi_{\alpha}^{0}}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow}\ket{\psi_{\alpha}^{\pm}}=\lim_{\tau\mp \infty}e^{+\frac{i}{\hbar}H\tau}e^{-\frac{i}{\hbar}H_0\tau}\ket{\psi_{\alpha}^{0}}=\Omega^{\pm}\ket{\psi_{\alpha}^{0}}
+	\end{dmath}
+	\begin{dsuspend}
+		with $\Omega^{\pm}$ M\o ller operators
+	\end{dsuspend}
+\end{dgroup}
+\emph{Typical} scattering experiment:
+
+At $t\to -\infty$ prepare state with quantum number $\alpha$ of $H_0$
+
+Q: What is amplitude for this state to end up in (another) eigenstate of $H_0$ with quantum number $\beta$.
+
+A: 
+%\begin{dgroup}[]
+	\begin{dmath}[]
+		\braket{\psi_{\beta}^{-}}{\psi_{\alpha}^{+}}=\mel{\psi_{\beta}^{0}}{\left( \Omega^{-} \right)^{\dagger}\Omega^{+}}{\psi_{\alpha}^{0}}
+		\equiv \mel{\psi_{\beta}^{0}}{S}{\psi_{\alpha}^{0}}
+	\end{dmath}
+%\end{dgroup}
+\begin{dsuspend}
+		$S=$Scattering operator, with
+	\end{dsuspend}
+	\begin{dmath}[]
+		S=\lim_{\substack{\tau\to \infty\\ \tau\to -\infty}}e^{\frac{i}{\hbar}H_0\tau}e^{\frac{i}{\hbar}H\left( \tau_0-\tau \right)}e^{-\frac{i}{\hbar}H_0\tau_0}
+		=\lim_{\substack{\tau\to\infty\\ \tau_0\to -\infty}}U\left( \tau,\tau_0 \right)=U\left( \infty,-\infty \right)
+\end{dmath}
+ex 1: sheet 6:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		i\hbar\dv{}{\tau}U\left( \tau,\tau_0 \right)=e^{\frac{i}{\hbar}H_0\tau}\left( H-H_0 \right)e^{\frac{i}{\hbar}H\left( \tau_0-\tau \right)}e^{-\frac{i}{\hbar}H_0\tau_0}
+		=\underbrace{e^{\frac{i}{\hbar}H_0\tau}Ve^{-\frac{i}{\hbar}H_0\tau}}_{V(\tau)}U\left( \tau,\tau_0 \right)
+		=V(\tau)U\left( \tau,\tau_0 \right)
+	\end{dmath}
+\end{dgroup}
+$V(\tau)$ evolution operator in IA picture section 4.4. Solution
+\begin{dgroup}[]
+	\begin{dmath}[]
+		U\left( \tau,\tau_0 \right)=T\left( e^{-\frac{i}{\hbar}\int_{\tau_0}^{\tau}\! V(\tau)\dd{\tau}} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath}[]
+		S=U\left( \infty,-\infty \right)
+		=\vtr{1}-\frac{i}{\hbar}\int_{-\infty}^{\infty}\! \dd{t_1}V(t_1)+\left( -\frac{i}{\hbar} \right)^{2}\int_{-\infty}^{\infty}\! \dd{t_1}\int_{-\infty}^{t_1}\! \dd{t_2}V(t_1)V(t_2)+\ldots
+	\end{dmath}
+\end{dgroup}
+Note:
+\begin{dmath}[]
+	SS^{\dagger}=\vtr{1}\condition{$S$ operator is unitary}
+\end{dmath}
+$S$-matrix 
+\begin{dmath}[]
+	S_{\beta\alpha}\equiv \mel{\psi_{\beta}^{0}}{S}{\psi_{\alpha}^{0}}
+	=\braket{\psi_{\beta}^{-}}{\psi_{\alpha}^{\dagger}}
+\end{dmath}
+\paragraph{option 1} insert $S$ operator
+\begin{description}
+	\item[1st term:]
+		\begin{dmath}[]
+			\mel{\psi_{\beta}^{0}}{\vtr{1}}{\psi_{\alpha}^{0}}=\delta\left( \beta-\alpha \right)
+		\end{dmath}
+	\item[2nd term] 
+		\begin{dmath}[]
+			-\frac{i}{\hbar}\int_{-\infty}^{\infty}\! \dd{t_1}\mel{\psi_{\beta}^{0}}{e^{\frac{i}{\hbar}H_0t}Ve^{-\frac{i}{\hbar}H_0t}}{\psi_{\alpha}^{0}}
+			=-\frac{i}{\hbar}\int_{}^{}\dd{t}e^{-\frac{i}{\hbar}\left( E_{\alpha}-E_{\beta} \right)t}\mel{\psi_{\beta}^{0}}{V}{\psi_{\alpha}^{0}}
+			=-2i\pi \delta\left( E_{\alpha}-E_{\beta} \right)V_{\beta\alpha}
+		\end{dmath}
+	\item[3rd and 4th] $\to$ exercise sheet 8
+\end{description}

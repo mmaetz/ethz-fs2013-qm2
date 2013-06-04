@@ -1,0 +1,142 @@
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\ket{\psi_{\alpha}^{\pm}}=\ket{\psi_{\alpha}^{0}}+G_{0}^{\pm}(E)V\ket{\psi_{\alpha}^{\pm}}
+		=\ket{\psi_{\alpha}^{0}}+G_{}^{\pm}(E)V\ket{\psi_{\alpha}^{0}}
+	\end{dmath}
+	\begin{dmath}[]
+		S_{\beta\alpha}=\braket{\psi_{\beta}^{-}}{\psi_{\alpha}^{+}}
+		=\mel{\psi_{\beta}^{0}}{S}{\psi_{\alpha}^{0}}
+	\end{dmath}
+\end{dgroup}
+\section{structure of $S$-matrix}
+$\to$ exercise 3 sheet 8
+\paragraph{or:}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\ket{\psi_{\alpha}^{-}}-\ket{\psi_{\alpha}^{+}}=G^{-}
+		=\left( G^{-}(E_{\alpha})-G^{+}(E_{\alpha}) \right)V \ket{\psi_{0}^{\alpha}}
+	\end{dmath}
+	\begin{dmath}[]
+		\bra{\psi_{\alpha}^{-}}-\bra{\psi_{\alpha}^{+}}=\bra{\psi_{\alpha}^{0}}V\left( G^{+}(E_{\alpha})-G^{-}\left( E_{\alpha} \right) \right)
+	\end{dmath}
+	\begin{dmath}[]
+		S_{\beta\alpha}=\braket{\psi_{\alpha}^{+}}{\psi_{\alpha}^{+}}
+		=\left( \bra{\psi_{\beta}^{+}}+\bra{\psi_{\beta}^{0}}V\left( \frac{1}{E_{\beta}-H+i0^{+}}-\frac{1}{E_{\beta}-H-i0^{+}} \right) \right)\ket{\psi_{\alpha}^{+}}
+		=\delta\left( \beta-\alpha \right)+\underbrace{\left( \frac{1}{E_{\beta}-E_{\alpha}+i0^{+}}-\frac{1}{E_{\beta}-E_{\alpha}-i0^{+}} \right)}_{\spadesuit}
+	\end{dmath}
+	\begin{dmath}[]
+		\spadesuit:\ds\lim_{0+\searrow 0}\frac{-2i0^{+}}{\left( E_{\beta}-E_{\alpha} \right)^2+\left( 0^{+} \right)^{2}}=-2i\pi\delta\left( E_{\beta}-E_{\alpha} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\delta(x)=\lim_{\varepsilon\searrow}\frac{1}{\pi}\frac{\varepsilon}{x^2+\varepsilon^2}
+	\end{dmath}
+\end{dgroup}
+\begin{remk}
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			\sqrt{H}\ket{\phi}=\sum_{}^{}\sqrt{E}c_{\alpha}\ket{\psi_{\alpha}}
+			=\sum_{}^{}c_{\alpha}\sqrt{E_{\alpha}}\ket{\psi_{\alpha}}
+		\end{dmath}
+		\begin{dsuspend}
+			with
+		\end{dsuspend}
+		\begin{dmath}[]
+			\ket{\phi}=\sum_{}^{}c_{\alpha}\ket{\psi_{\alpha}}
+		\end{dmath},
+		\begin{dmath}[]
+			H\ket{\psi_{\alpha}}=E_{\alpha}\ket{\psi_{\alpha}}
+		\end{dmath},
+		\begin{dmath}[]
+			\hiderel{\Rightarrow} \sqrt{H}\ket{\psi_{\alpha}}=\sqrt{E_{\alpha}}\ket{\psi_{\alpha}}
+		\end{dmath}.
+	\end{dgroup}
+\end{remk}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		S_{\beta\alpha}=\delta\left( \beta-\alpha \right)-2i\pi \delta\left( E_{\alpha}-E_{\beta} \right)\underbrace{\mel{\psi_{\beta}^{0}}{V}{\psi_{\alpha}^{+}}}_{T_{\beta\alpha} \text{ transition matrix}}
+	\end{dmath}
+\end{dgroup}
+\chapter{Quantization of radiation field}
+\section{Quantization of free radiation field}
+from section 5.1
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\vtr{A}\left( \vtr{r},t \right)=\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^{3}}\sum_{\lambda}^{}\left( \alpha\left( k\lambda \right)\vtr{\upepsilon}\left( k\lambda \right)e^{i\vtr{k}\cdot \vtr{r}-i\omega t} +\alpha^{*}\left( k,\lambda \right)\vtr{\upepsilon}^{*}\left( k,\lambda \right)e^{-i\vtr{k}\cdot \vtr{r}+i\omega_{k}t}\right)\condition*{\omega=c\abs{\vtr{k}}}
+	\end{dmath}
+	\begin{dsuspend}
+		with $\lambda\to$ 2 polarizations, $\vtr{\upepsilon}$ polarization vectors with
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vtr{k}\cdot \vtr{\upepsilon}\left( k,\lambda \right)=0
+	\end{dmath}
+\end{dgroup}
+consider time dependence of single mode $\left( \vtr{k},\lambda \right)$:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		q_{k\lambda}=\alpha\left( k,\lambda \right)e^{-i\omega_{k}t}
+	\end{dmath}
+	\begin{dmath}[]
+		\ddot{q}_{k\lambda}=\omega_{k}^{2}q_{k\lambda}
+	\end{dmath}
+	\begin{dsuspend}
+		$\to$ harmonics oscillator
+	\end{dsuspend}
+\end{dgroup}
+Recall QMI: harmonic oscillator
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\hat{H}=\frac{\hbar\omega}{2}\left( \hat{a}^{\dagger}\hat{a}+\hat{a}\hat{a}^{\dagger} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		states
+	\end{dsuspend}
+	\begin{dmath}[compact]
+		\hat{a}\ket{0}=0
+	\end{dmath}
+	\begin{dmath}[compact]
+		\ket{n}\equiv \frac{\left( \hat{a}^{\dagger} \right)^{n}}{\sqrt{n!}}\ket{0}
+	\end{dmath}
+	\begin{dsuspend}
+		The Hilbert space
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hat{a}^{\dagger}\ket{n}=\sqrt{n+1}\ket{n+1}\ldots
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{N}=\hat{a}^{\dagger}\hat{a}
+	\end{dmath}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hat{N}\ket{n}=n\ket{n}\condition{etc.}
+	\end{dmath}
+	\begin{dsuspend}
+		outlook $\vtr{A}\to \hat{\vtr{A}}$ (2nd quantization)
+	\end{dsuspend}
+\end{dgroup}
+To motivate the interpretation of $\vtr{A}$ as collection of independent harmonic oscillator compute
+\begin{dgroup}[]
+	\begin{dmath}[]
+		H=\frac{1}{8\pi}\int_{}^{}\rd^3 \vtr{r} \; \left( \vtr{E}^2+\vtr{B}^2 \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\vtr{E}=-\frac{1}{c}\dot{\vtr{A}}
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\left( \alpha\vtr{\upepsilon}\frac{i\omega}{c}e^{-i\omega t+i\vtr{k}\cdot \vtr{r}}-\alpha^{*}\vtr{\upepsilon}\frac{i\omega}{c}e^{i\omega t-i\vtr{k}\vtr{r}} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\int_{}^{}\rd^3 \vtr{r} \vtr{E}^2
+		=\int_{}^{}\rd^3 \vtr{r}\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}\sum_{\lambda\lambda'}^{}\left( \alpha\vtr{\upepsilon} e^{-i\omega t+i\vtr{k}\vtr{r}}-\alpha^{*}\vtr{\upepsilon}^{*}e^{i\omega t -i\vtr{k} \vtr{r}} \right)\left( \frac{i\omega}{c} \right)
+		\cdot \left( \alpha'\vtr{\upepsilon}'e^{i\omega't+i\vtr{k}'\cdot \vtr{r}}-{\alpha^{*}}'{\vtr{\upepsilon}^{*}}'e^{i\omega't-i\vtr{k}'\cdot\vtr{r}} \right)\left( \frac{i\omega'}{c} \right)
+		=\int_{}^{}\rd^3 \vtr{r}\iint_{}^{}\sum_{\lambda\lambda'}^{}\left( \alpha\alpha'\vtr{\upepsilon}\times {\vtr{\upepsilon}'}^{*}\frac{-\omega\omega'}{c^2}e^{-it\left( \omega-\omega' \right)}e^{r\vtr{r}\left( \vtr{k}-\vtr{k}' \right)} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		use
+	\end{dsuspend}
+	\begin{dmath}[]
+		\int_{}^{}\rd^3 \vtr{r}\; e^{i\vtr{r}\left( \vtr{k}-\vtr{k}' \right)}=\left( 2\pi \right)^3 \delta\left( \vtr{k}-\vtr{k}' \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda\lambda'}^{}\left( \alpha\alpha'\vtr{\upepsilon}\times {\vtr{\upepsilon}^{*}}' \left( \frac{-\omega^2}{c^2} \right)+\ldots \right)
+	\end{dmath}
+\end{dgroup}

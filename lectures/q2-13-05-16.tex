@@ -1,0 +1,398 @@
+\section{Solutions to the dirac equation}
+\begin{dmath}[]
+	\psi(x)
+	=\begin{pmatrix}
+		\psi_1\\
+		\psi_2\\
+		\psi_3\\
+		\psi_4
+	\end{pmatrix}
+\end{dmath}
+4 comps: 2 spin$\times$2 positive/negative energy
+
+momentum space
+
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\psi^{+}(x)=e^{-ikx}u(k)\condition{positive $E$}
+	\end{dmath}
+	\begin{dmath}[]
+		\psi^{-}(x)=e^{ikx}v(k)\condition{negative $E$}
+	\end{dmath}
+\end{dgroup}
+
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\vtr{k}\cdot\vtr{x}=k_{\mu}x^{\mu}=\omega t-\vtr{x}\cdot \vtr{k}
+	\end{dmath}
+	\begin{dsuspend}
+		write as:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi^{+}=e^{-\frac{i}{\hbar}\left( Et-px \right)}u(p)
+	\end{dmath}
+	\begin{dmath}[]
+		\psi^{-}=e^{\frac{i}{\hbar}\left( -Et-px \right)}u(p)
+	\end{dmath}
+	\begin{dmath}[]
+		p^{\mu}=\left( \frac{E}{c},p \right)
+	\end{dmath}
+\end{dgroup}
+Dirac
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\left( \cancel{p}-mc \right)u(p)=0
+	\end{dmath}
+	\begin{dmath}[]
+		-\cancel{p}-mcv(p)=0
+	\end{dmath}
+	\begin{dsuspend}
+		are matrix equations
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( \cancel{p}\mp mc \right)=
+		\begin{pmatrix}
+			\frac{E}{c}\mp mc&-\vtr{p}\cdot \vtr{\upsigma}\\
+			\vtr{p}\cdot \vtr{\upsigma}&-\frac{E}{c}\mp mc
+		\end{pmatrix}
+		\begin{pmatrix}
+			\chi\\
+			\varphi
+		\end{pmatrix}
+		=0
+	\end{dmath}
+	\begin{dsuspend}
+		par. of $u$ and/or $v$
+	\end{dsuspend}
+	\begin{dmath}[]
+		u(p)\equiv
+		\begin{pmatrix}
+			\chi\\
+			\varphi
+		\end{pmatrix}
+	\end{dmath}
+	\begin{dmath}[]
+		\varphi=\left( \frac{c\vtr{p}\cdot \vtr{\upsigma}}{E+mc^2} \right)\chi
+	\end{dmath}
+	\begin{dsuspend}
+		pick normalization factor $\sqrt{E +mc^2}$
+	\end{dsuspend}
+	\begin{dmath}[]
+		u\left( p,r \right)
+		=
+		\begin{pmatrix}
+			\sqrt{E+mc^2}&\chi_r\\
+			\frac{c\vtr{p}\cdot \vtr{\upsigma}}{\sqrt{E+mc^2}}\chi_r&
+		\end{pmatrix}
+	\end{dmath}
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath}[]
+		v(p,r)=
+		\begin{pmatrix}
+			\frac{c\vtr{p}\cdot \vtr{\upsigma}}{\sqrt{E+mc^2}}&\chi_r\\
+			\sqrt{E+mc^2}&\chi_r
+		\end{pmatrix}
+	\end{dmath}
+	\begin{dmath}[]
+		\chi_1=
+		\begin{pmatrix}
+			1\\
+			0
+		\end{pmatrix}
+	\end{dmath}
+	\begin{dmath}[]
+		\chi_2=
+		\begin{pmatrix}
+			0\\
+			1
+		\end{pmatrix}
+	\end{dmath}
+	\begin{dsuspend}
+		$r$ related to spin, $4$-solutions
+	\end{dsuspend}
+	\begin{dsuspend}
+		some propertes of $u$ and $v$:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\overline{u}\left( p,r_i \right)u\left( p,r_j \right)=u^{\dagger}\left( p,r_i \right)\gamma^{0}u\left( p,R-j \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\begin{pmatrix}
+			\sqrt{E+mc^2}\chi_i&\frac{c\vtr{p}\cdot \vtr{\upsigma}}{\sqrt{E+mc^2}\chi_i}\cdot
+		\end{pmatrix}
+		\begin{pmatrix}
+			\vtr{1}&0\\
+			0&-\vtr{1}
+		\end{pmatrix}
+		\begin{pmatrix}
+			\sqrt{E+mc^2}&\chi_j\\
+			\frac{c\vtr{\upsigma}\cdot \vtr{p}}{\sqrt{E+mc^2}}&\chi_j
+		\end{pmatrix}
+		=\left( (E+mc^2 \right)\chi_i\cdot \chi_j-\frac{c\vtr{p}^2}{\left( Emc^2 \right)}\chi_i\chi_j
+		=2mc^2\chi_i\chi_j=2mc^2\delta_{ij}
+	\end{dmath}
+	\begin{dsuspend}
+		similar 
+	\end{dsuspend}
+	\begin{dmath}[]
+		\overline{v}\left( p,r_i \right)v\left( p,r_j \right)=-2mc^2\delta_{ij}
+	\end{dmath}
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath}[]
+		\overline{v}u=\overline{u}v=0
+	\end{dmath}
+	\begin{dsuspend}
+		Convention: In some books
+	\end{dsuspend}
+	\begin{dmath}[]
+		u/v\to \frac{1}{\sqrt{2mc^2}}u/v
+	\end{dmath}
+	\begin{dsuspend}
+		$\to u,v$ form a basis
+	\end{dsuspend}
+\end{dgroup}
+We can also show:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\sum_{i=1}^{3}u\left( p,r_i \right)\cdot \overline{u}\left( p,r_i \right)=c\left( \cancel{p}+mc \right)
+	\end{dmath}
+	\begin{dsuspend}
+	$\leftarrow$	projection to positios energy states
+	\end{dsuspend}
+	\begin{dmath}[]
+		\sum_{}^{}v\left( p,r_i \right)\cdot \overline{v}\left( p,r_i \right)=c\left( -\cancel{p}+mc \right)
+	\end{dmath}
+	\begin{dsuspend}
+		$\leftarrow$ negative
+	\end{dsuspend}
+	\begin{dsuspend}
+		Show equaivalence for complete set $u\left( p,r_j \right)$ and $v\left( p,r_j \right)$ e.g.
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( \sum_{i=1}^{3}u\left( p,r_i \right)\cdot \overline{u}\left( p,r_i \right) \right)u\left( p,r_j \right)
+		=2mc^2 u\left( p,r_j \right)
+		\ldots
+	\end{dmath}
+\end{dgroup}
+\subsection{Interpretation of solutions and spin}
+Now we show that Dirac equation describes spin $\frac{1}{2}$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		H=\vtr{\upalpha}\cdot \vtr{p}+\beta mc^2
+	\end{dmath}
+	\begin{dmath}[]
+		\vtr{L}=\vtr{x}\times \vtr{p}
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{L_i}{H}=\comm{\varepsilon_{ijk}x_jp_k}{\alpha_{\ell}p_{\ell}}
+		=\varepsilon_{ijk}\alpha_{\ell}\comm{x_j}{p_{\ell}}p_k
+		=i\hbar\varepsilon_{ijk}\alpha_jp_k
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{\vtr{L}}{H}=i\hbar\vtr{\upalpha}\times \vtr{p}\neq 0
+	\end{dmath}
+	\begin{dsuspend}
+		is not conserved. However $\vtr{J}=\vtr{L}+\vtr{S}$ must be conserved $\vtr{S}\not=0$
+	\end{dsuspend}
+\end{dgroup}
+need to find $\vtr{S}$ such that 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{\vtr{J}}{H}=0
+	\end{dmath},
+	\begin{dsuspend}
+		i.e.
+	\end{dsuspend}
+	\begin{dmath}[]
+		\comm{\vtr{S}}{H}=-i\hbar\vtr{\upalpha}\times \vtr{p}
+	\end{dmath}
+	\begin{dsuspend}
+		and of course
+	\end{dsuspend}
+	\begin{dmath}[]
+		\comm{S_i}{S_j}=i\hbar\varepsilon_{ijk}S_k
+	\end{dmath}
+	\begin{dsuspend}
+		claim:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vtr{S}=\frac{\hbar}{2}\sum_{}^{}=\frac{-i\hbar}{2}\alpha^1\alpha^2\alpha^3\vtr{\upalpha}
+		=\frac{\hbar}{2}
+		\begin{pmatrix}
+			\vtr{\upsigma}&0\\
+			0&\vtr{\upsigma}
+		\end{pmatrix}
+	\end{dmath}
+\end{dgroup}
+\begin{proof}
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			\comm{S_i}{S_j}=i\hbar \varepsilon_{ijk}S_k
+		\end{dmath}
+		\begin{dmath}[]
+			\comm{S_i}{H}=\frac{-i\hbar}{2}\comm{\alpha^{1}\alpha^2\alpha^3\alpha^i}{H}
+			=\frac{-i\hbar}{2}\frac{1}{2}\comm{\alpha^j\alpha^k}{\alpha^np^n+\beta mc^2}
+		\end{dmath}
+		\begin{dsuspend}
+			with
+		\end{dsuspend}
+		\begin{dmath}[]
+			\comm{\alpha^j\alpha^k}{\beta}=0
+		\end{dmath}
+		\begin{dsuspend}
+			use
+		\end{dsuspend}
+	\end{dgroup}
+\end{proof}
+Let's look at relation between spin and coordinate transformation more carefulle
+
+QMI (nor-rel) [Section 10.4]
+Translation \& rotations:
+generators $P^{i},J^{i}$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{P^i}{P^j}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{J^i}{J^j}=i\hbar\varepsilon^{ijk}J^{k}
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{J^i}{P^j}=i\hbar\varepsilon^{ijk}P^k
+	\end{dmath}
+	\begin{dsuspend}
+		coordinate transformation:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vtr{x}\to \vtr{x}'=R \vtr{x}+\vtr{a}
+	\end{dmath}
+	\begin{dsuspend}
+		$a$: state $\ket{\psi}$ transformation under a certain representation
+	\end{dsuspend}
+	\begin{dmath}[]
+		\ket{\psi}\to \ket{\psi'}=U(R,a)\ket{\psi}
+	\end{dmath}
+	\begin{dsuspend}
+		in relativity  add boosts
+	\end{dsuspend}
+	\begin{dmath}[]
+		x^{\mu}\to {\Lambda^{\mu}}_{\nu}x^{\nu}+a^{\mu}
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{K_i}{K_j}=-i\hbar\varepsilon_{ijk}J_k
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{K_i}{J_i}=i\hbar\varepsilon_{ijk}K_k
+	\end{dmath}
+	\begin{dsuspend}
+		generator
+	\end{dsuspend}
+	\begin{dmath}[]
+		J^{\mu\nu}
+		=
+		\begin{cases}
+			J_{0i}=-J_{i0}=K_i\\
+			J_{ij}=-J_{ji}=i\varepsilon_{ijk}J_k
+		\end{cases}
+	\end{dmath}
+	\begin{dsuspend}
+		6 generators +4 $P^{\mu}$
+	\end{dsuspend}
+\end{dgroup}
+\subsection{Lie algebra of generators}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{P_{\mu}}{P_{\nu}}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{J_{\mu\nu}}{J_{\rho\sigma}}=i\hbar\left( g_{\nu\rho}J_{\mu\sigma}-g_{\mu\rho}J_{\nu\sigma}-g_{\nu\sigma}J_{\mu\rho}+g_{\mu\sigma}J_{\nu\rho} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{P_{\mu}}{J_{\rho\sigma}}=i\hbar\left( g_{\mu\rho}P_{\sigma}-G_{\mu\sigma}P_{\rho} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		under Lorentz transform a state $\ket{p,}$ transforms under a certain representation
+	\end{dsuspend}
+	\begin{dmath}[]
+		\ket{p}\to \ket{\Lambda p}=U(\Lambda)\ket{p}
+	\end{dmath}
+\end{dgroup}
+$P_{\mu}P^{\mu}$ commutes with all generators, $P^2$ is $L$-invariant (Casimir). What else do we need to know (Result: ``only'' transform under rotations, i.e., ``spin'')
+
+Consider any $P^{\mu}$. little group of $P^{\mu}$:
+
+Subgroup of all Poincaré transformations that leave $P^{\mu}$ invariant
+
+for $p^{\mu}$ in rest frame $p^{\mu}=\left( m,0,0,0 \right)$: Little group $\simeq$ rotatinos
+
+Let 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		p^{\mu}={L^{\mu}}_{\nu}q^{\nu}
+	\end{dmath}
+	\begin{dsuspend}
+		i.e. for any $q^{\mu}$ with
+	\end{dsuspend}
+	\begin{dmath}[]
+		q^{2}=m^2>0
+	\end{dmath}
+	\begin{dsuspend}
+		we can find LT $L\left( p \right)$, s.t.
+	\end{dsuspend}
+	\begin{dmath}[]
+		p=L(p)q
+	\end{dmath}
+	\begin{dsuspend}
+		is in rest frame  \ldots
+		under any LT, $\Lambda$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\ket{p}\to U(\Lambda)\ket{p}
+		=U(\Lambda)U\left( L(p) \right)\ket{q}
+	\end{dmath}
+	\begin{dmath}[]
+		U\left( L\left( \Lambda p \right) \right)U^{-1}\left( L\left( \Lambda p \right) \right)U(\Lambda)U\left( L(p) \right)\ket{q}
+	\end{dmath}
+	\begin{dmath}[]
+		U\left( L\left( \Lambda p \right) \right)\cdot U\left( L^{-1}\left( \Lambda p \right) \right) U(\Lambda)U\left( L\left( p \right) \right)\ket{q}
+	\end{dmath}
+	\begin{dmath}[]
+		U\left( L\left( \Lambda p \right) \right)U\left( L^{-1}\left( \Lambda p \right)\Lambda \cdot L\left( p \right) \right)\ket{q}
+	\end{dmath}
+\end{dgroup}
+$\to$ additional labels in $\ket{p,s}$ are affected by rotations only
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\ket{p,s}\to
+		U(\Lambda)\ket{p,s}=U\left( L\left( \Lambda p \right) \right)\underbrace{\sum_{}^{}D_{ss'}}_{\mathclap{\text{def. transformation under rotations}}}
+		=\sum_{}^{}D_{ss'}\ket{\Lambda p,s'}
+	\end{dmath}
+\end{dgroup}
+\subsection{2nd casimir operator}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		W_{\mu}W^{\mu}=-m^2\hbar^2 s\left( s+1 \right)
+	\end{dmath}
+	\begin{dsuspend}
+		Pauli-Lubanski (axial) vector
+	\end{dsuspend}
+	\begin{dmath}[]
+		W_{\mu}=-\frac{1}{2}\varepsilon_{\mu\nu\rho\sigma}J^{\nu\rho}P^{\sigma}
+	\end{dmath}
+	\begin{dsuspend}
+		in rest frame
+	\end{dsuspend}
+	\begin{dmath}[]
+		P^{\sigma}=\left( m,0,0,0 \right)
+	\end{dmath}
+	\begin{dmath}
+		W_{\mu}=\left( 0,\vtr{\upomega} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		W_i=-\frac{1}{2}\varepsilon_{i\nu\rho\sigma}J^{\nu\rho}P^{\sigma}
+		=-\frac{m}{2}\varepsilon_{i\nu\rho\sigma}J^{\nu\rho}=-m J_i
+	\end{dmath}
+\end{dgroup}

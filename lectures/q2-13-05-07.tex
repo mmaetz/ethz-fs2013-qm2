@@ -1,0 +1,201 @@
+\section{Klein-Gordon equation}
+KGE:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\left( \partial_{\mu}\partial^{\mu}+\frac{m^2c^2}{\hbar^2} \right)\phi=0
+	\end{dmath}
+	\begin{dmath}[]
+		\partial_{\mu}=\left( \frac{1}{c}\pdv{}{t},\vtr{\nabla} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		Solution
+	\end{dsuspend}
+	\begin{dmath}[]
+		\phi\left( t,\vtr{x} \right)=A\cdot e^{i\vtr{k}\cdot \vtr{x}-i\omega t}
+	\end{dmath}
+	\begin{dmath}[]
+		\phi(x)=A\cdot e^{-ik_{\mu} x^{\mu}}
+	\end{dmath}
+	\begin{dseries}[]
+		\begin{math}
+			k^{\mu}=\left( \frac{\omega}{c},\vtr{k} \right)
+		\end{math},
+		\begin{math}
+			k^{2}=k_{\mu}k^{\mu}=\frac{\omega^2}{c^2}-\vtr{k}^2=\frac{m^2 c^2}{\hbar^2}
+		\end{math}
+	\end{dseries}
+	\begin{dsuspend}
+		or
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( h\omega \right)=\pm \sqrt{m^2c^4+\vtr{p}^2c^2}
+	\end{dmath}
+	\begin{dsuspend}
+		Negative solutions?!
+	\end{dsuspend}
+\end{dgroup}
+In analogy to Schrödinger, try to define probability density $\rho(\vtr{x},t)$ and probability current density $\vtr{j}\left( \vtr{x},t \right)$ satisfying
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\pdv{}{t}\rho+\vtr{\nabla}\vtr{j}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\vtr{j}=\frac{\hbar}{2mi}\left( \phi^{*}\left( \nabla\phi \right)-\left( \nabla\phi^{*} \right)\phi \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\rho=\frac{i\hbar}{2mc^2}\left( \phi^{*}\pdv{\phi}{t}-\pdv{\phi^{*}}{t}\phi \right)
+	\end{dmath}
+	\begin{dsuspend}
+		covariant form
+	\end{dsuspend}
+	\begin{dmath}[]
+		j^{\mu}=\left( cp,j \right)
+		=\frac{i\hbar}{2m}\left( \phi^{*}\partial^{\mu}\phi-\left( \partial^{\mu}\phi^{*} \right)\phi \right)
+	\end{dmath}
+	\begin{dsuspend}
+		Note that $\rho\left( \vtr{x},t \right)$ is \emph{not} positive definite $\to$ cannot be interpreted as probability density
+	\end{dsuspend}
+\end{dgroup}
+\section{Dirac equation}
+Try a linear (in $\pdv{}{t},\vtr{\nabla}$) equation. Mostgeneral linear equation.
+\begin{dgroup}[]
+	\begin{dmath}[]
+		i\hbar \pdv{}{t}\psi=H\psi
+		=\left( -i\hbar c \vtr{\upalpha}\cdot \vtr{\nabla} +\beta mc^2 \right)\psi
+		=\left( -i\hbar c\alpha_i\nabla_i+\beta mc^2 \right)\psi
+	\end{dmath}
+	\begin{dsuspend}
+		With summation convention and
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vtr{\upalpha}=\left( \alpha_1,\alpha_2,\alpha_3 \right)
+	\end{dmath}
+	\begin{dsuspend}
+		and $\beta$ are 4 non-commeting coefficients
+	\end{dsuspend}
+\end{dgroup}
+Iterate tis equation
+\begin{dgroup}[]
+	\begin{dmath*}[]
+		-\hbar^2 \pddv{}{t}\psi
+		=\left( -i\hbar c \alpha_i\nabla_i+\beta mc^2 \right)\left( -i\hbar c\alpha_j\nabla_j+\beta mc^2 \right)\psi
+		=\left( c^2\frac{\hbar^2}{2}\left( \alpha_i\alpha_j+\alpha_j\alpha_i \right)\nabla_i\nabla_j-i\hbar\left( \alpha_i\beta+\beta\alpha_i \right)\nabla_i mc^2+\beta m^2c^4 \right)\psi
+	\end{dmath*}
+	\begin{dsuspend}
+		Compare to KGE
+	\end{dsuspend}
+	\begin{dmath}[]
+		-\hbar^2\pddv{}{t}\psi=\left( -\hbar c^2\nabla_i\nabla_i+m^2c^4 \right)\psi
+	\end{dmath}
+	\begin{dmath}[]
+		\beta^2=1
+	\end{dmath}
+	\begin{dmath}[]
+		\left( \alpha_i\beta+\beta\alpha_i \right)=\left\{ \alpha_i,\beta \right\}=0 \condition{(sometimes $\left[ \alpha_i,\beta \right]_{+}$)}
+	\end{dmath}
+	\begin{dmath}[]
+		\left( \alpha_i\alpha_j+\alpha_j\alpha_i \right)=\left\{ \alpha_i,\alpha_j \right\}=2\delta_{ij}
+	\end{dmath}
+\end{dgroup}
+From anticommutation relations we see that coeff. cannot be ``numbers''. ($\to$ Exercise $\dim 4$ matrices are simplest possibility)
+
+$\to$ wave function
+\begin{dmath}[]
+	\psi=
+	\begin{pmatrix}
+		\psi_1\\
+		\psi_2\\
+		\psi_3\\
+		\psi_4
+	\end{pmatrix}
+\end{dmath}
+and one possible choice for $\vtr{\upalpha}$ and $\beta$.
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\alpha_i=
+		\begin{pmatrix}
+			0&\sigma_i\\
+			\sigma_i&0
+		\end{pmatrix}
+	\end{dmath}
+	\begin{dmath}[]
+		\beta=
+		\begin{pmatrix}
+			\vtr{1}&0\\
+			0&-\vtr{1}
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			1&0&0&0\\
+			0&1&0&0\\
+			0&0&-1&0\\
+			0&0&0&-1
+		\end{pmatrix}
+		\condition{Dirac representiation}
+	\end{dmath}
+\end{dgroup}
+
+Rewrite Dirac equation in terms of $\gamma$ matrices ($4\times 4$ again)
+
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\gamma^{\mu}\condition*{\mu\in \left\{ 0,1,2,3 \right\},\gamma^0=\beta,\gamma^i=\beta \alpha^i}
+	\end{dmath}
+	\begin{dsuspend}
+		in Dirac representation
+	\end{dsuspend}
+	\begin{dmath}[]
+		\gamma^0
+		=\begin{pmatrix}
+			\vtr{1}&0\\
+			0&-\vtr{1}
+		\end{pmatrix}
+	\end{dmath}
+	\begin{dmath}[]
+		\gamma^i=
+		\begin{pmatrix}
+			0&\sigma^i\\
+			-\sigma^i&0
+		\end{pmatrix}
+	\end{dmath}
+\end{dgroup}
+Note cane use any other representation:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\gamma^{\mu}\to U \gamma^{\mu}U^{`]}
+	\end{dmath}
+	\begin{dsuspend}
+		Take $\beta$: Dirac equation
+	\end{dsuspend}
+	\begin{dmath}[]
+		\beta\cdot \left( i\hbar \pdv{}{t} \right)\psi=\beta\left( -i\hbar c\alpha_i\nabla_i+\beta mc^2 \right)\psi
+	\end{dmath}
+	\begin{dmath}[]
+		i\hbar \pdv{}{t}\gamma^{0}\psi=\left( -i\hbar c\gamma^i \nabla_i +mc^2\right)\psi
+	\end{dmath}
+	\begin{dmath}[]
+		\left( i\hbar \partial_{\mu}-mc \right)\psi=0
+	\end{dmath}
+	\begin{dsuspend}
+		Notation any 4-vector $a^{\mu}$:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\cancel{\partial}\equiv a_{\mu}\gamma^{\mu}
+	\end{dmath}
+	\begin{dsuspend}
+		($\phi$ and $\not\partial$ have been mistaken\ldots)
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( i\hbar \not\partial-mc \right)\psi=0
+	\end{dmath}
+	\begin{dsuspend}
+		Properties of $\gamma$  matrices:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left\{ \gamma^{\mu},\gamma^{\nu} \right\}=2g^{\mu\nu}
+	\end{dmath}
+	\begin{dmath}[]
+		\gamma^{0}\gamma^{\mu}\gamma^{0}=\left( \gamma^{\mu} \right)^{\dagger}
+	\end{dmath}
+\end{dgroup}
+(There is an old notation in Sakurai.)

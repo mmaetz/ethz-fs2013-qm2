@@ -1,0 +1,124 @@
+\section{The non-relativistic limit}
+Consider expansion in $\frac{\vtr{p}}{m}\sim V$ of Dirac equation.
+
+We will derive the Hamiltionian used in section 2 (for fine structure)
+
+Dirac equation in presence of em field: 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		p^{\nu}\to p^{\nu}+\frac{e}{c}A^{\nu}
+	\end{dmath}
+	\begin{dsuspend}
+		write
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi=
+		\begin{pmatrix}
+			\chi\\
+			\eta
+		\end{pmatrix}
+		\condition{2-componenent-spinors}
+	\end{dmath}
+	\begin{dmath}[]
+		\cancel{p}+\frac{e}{c}\cancel{A}-mc
+	\end{dmath}
+	\begin{dmath}[]
+		\begin{pmatrix}
+			\chi\\
+			\eta
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			\frac{E}{c}+\frac{e}{c}\phi-mc&-\left( \vtr{p}+\frac{e}{c}\vtr{A} \right)\cdot \vtr{\upsigma}\\
+			\left( \vtr{p}+\frac{e}{c}\vtr{A} \right)\cdot \vtr{\upsigma}& -\left( \frac{E}{c}+\frac{e}{c}\phi+mc \right)
+		\end{pmatrix}
+		\begin{pmatrix}
+			\chi\\
+			\eta
+		\end{pmatrix}
+		=0
+	\end{dmath}
+	\begin{dmath}[label=eq:starnonrellim]
+		\hiderel{\Rightarrow} 
+		\left( \frac{E}{c}+\frac{e}{c}\phi -mc \right)\chi
+		=\left( \vtr{p}+\frac{e}{c}\vtr{A} \right)\cdot \vtr{\upsigma} \eta
+	\end{dmath}
+	\begin{dmath}[]
+		\left( \vtr{p}+\frac{e}{c}\vtr{A} \right)\cdot \vtr{\upsigma} \chi
+		=\left( \frac{E}{c}+mc+\frac{e}{c}\phi \right)\eta
+	\end{dmath}
+	\begin{dmath}[label=eq:trianglenonrellim]
+		\hiderel{\leadsto} \eta=\frac{\left( \vtr{p}+\frac{e}{c}\vtr{A} \right)\cdot \vtr{\upsigma}}{\frac{E}{c}+mc+\frac{e}{c}\phi}\chi
+		\approx \frac{\left( \vtr{p}+\frac{e}{c}\vtr{A} \right)\cdot \upsigma}{2mc}\chi
+	\end{dmath}
+	\begin{dsuspend}
+		Putting Eq. \ref{eq:trianglenonrellim} in Eq. \ref{eq:starnonrellim} gives us
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( \frac{E}{c}+\frac{e}{c}\phi-mc \right)\chi
+		=\left( \vtr{p}+\frac{e}{c}\vtr{A} \right)\cdot \vtr{\upsigma} \left( \vtr{p}+\frac{e}{c}\vtr{A} \right)\cdot \vtr{\upsigma} \frac{1}{2mc}\chi
+		=\frac{1}{2mc}\left( \left( \vtr{p}+\frac{e}{c}\vtr{A} \right)^2 +i\left( -i\hbar \right)\frac{e}{c}\underbrace{\left( \vtr{\nabla}\times \vtr{A}+\vtr{A}\times\vtr{\nabla} \right)}_{\left[ \nabla\times \vtr{A} \right]}\cdot \vtr{\upsigma} \right)\chi
+	\end{dmath}
+	\begin{dsuspend}
+		``derivative within $\left[ \cdot \right]$ only''
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow}
+		\left( \frac{1}{2m}\left( \vtr{p}\cdot \frac{e}{c}\vtr{A} \right)^2 +\frac{\hbar e}{2mc}\vtr{\upsigma} \cdot \vtr{B}-e\phi \right)\chi
+		=\left( E-mc^2 \right)\chi=\hiderel{:}E' \chi
+	\end{dmath}
+	\begin{dsuspend}
+		where $\frac{\hbar e}{2mc}\vtr{\upsigma} \cdot \vtr{B}$ has to be compare to section 2.3 with
+	\end{dsuspend}
+	\begin{dmath}[]
+		H\sim \vtr{\upmu}\cdot \vtr{B}
+		=\frac{e}{2m} g \vtr{S}\cdot \vtr{B}
+		=\frac{e}{4m}g\vtr{\upsigma}\cdot \vtr{B}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow} g=2
+	\end{dmath}
+\end{dgroup}
+Let's do this more systematically (expand in $\frac{\abs{e}}{m}$)
+
+Find transformation
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\psi=e^{-iS}\psi'\condition{(Foldy-Wontthuysen transformation)}
+	\end{dmath}
+	\begin{dsuspend}
+		such thath odd operators are suppressed by $\left( \frac{\abs{p}}{m} \right)^n$ $\leadsto$ mixes $\chi$ and $\eta$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\sigma\hiderel{:}=c\vtr{\upalpha}\left( \vtr{p}+\frac{e}{c}\vtr{A} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		i\hbar\partial_t\psi'=i\hbar\partial_te^{iS}\psi
+		=i\hbar \left[ \partial_{t}e^{iS} \right]\psi +e^{@S}i\hbar\partial_{t}\psi
+		=i\hbar \left[ \partial_{t}e^{+iS} \right]e^{-iS}\psi'+e^{iS}He^{-iS}\psi'
+		=\hiderel{:}H'\psi'
+	\end{dmath}
+	\begin{dmath}[]
+		H'=H+i\comm{S}{H}+\frac{i^2}{2!}\comm{S}{\comm{S}{H}}+\frac{i^3}{3!}\ldots
+		-\hbar \dot{S}-\frac{i\hbar}{2!}\comm{S}{\dot{S}}-\frac{i^2\hbar}{3!}\comm{S}{\comm{S}{\dot{S}}}\ldots
+	\end{dmath}
+	\begin{dsuspend}
+		Recall
+	\end{dsuspend}
+	\begin{dmath}[]
+		H=\beta mc^2 +\sigma +\xi\condition{even: $\xi=-e\phi$}
+	\end{dmath}
+	\begin{dsuspend}
+		Set
+	\end{dsuspend}
+	\begin{dmath}[]
+		S=\frac{-i\beta}{2mc^2}\sigma
+	\end{dmath}
+	\begin{dsuspend}
+		Compute
+	\end{dsuspend}
+	\begin{dmath}[]
+		i\comm{S}{H}=i\comm{\frac{-i\beta}{2mc^2}\sigma}{\beta mc^2+\sigma+\xi}
+		=\frac{\beta}{2mc^2}\comm{\sigma}{\xi}+\frac{\beta}{mc^2}\sigma^2 -\sigma
+	\end{dmath}
+\end{dgroup}
