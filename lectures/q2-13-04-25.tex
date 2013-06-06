@@ -1,5 +1,51 @@
 \begin{dgroup}[]
 	\begin{dmath}[]
+		P=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\hbar \vtr{k} a_{k\lambda}^{*}a_{k,\lambda}
+	\end{dmath}
+\end{dgroup}
+2nd quantiziation: so far $\vtr{A}$ classical field, $a^{*}=f^{\text{cts}}$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		A.H,P\to \hat{A},\hat{H},\hat{P}
+	\end{dmath}
+	\begin{dsuspend}
+		commutation relations
+	\end{dsuspend}
+	\begin{dmath}[]
+		\comm{\hat{a}_{k\lambda}}{\hat{a}_{k'\lambda'}}=\comm{\hat{a}_{k\lambda}^{!}}{\hat{a}_{k'\lambda'}^{\dagger}}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{\hat{a}_{k\lambda}}{\hat{a}_{k'\lambda'}^{\dagger}}
+		=\left( 2\pi \right)^{3}\delta\left( k-k' \right)\delta_{\lambda\lambda'}
+	\end{dmath}
+\end{dgroup}
+\begin{description}
+	\item[$k$ continuous] $\to$ world in a box $\to k$ discrete; box $\to \infty$, $k\to$ const
+	\item[$\lambda$:] discrete
+\end{description}
+another way to quanise field $\vtr{A}$:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\mathcal{L}=\frac{1}{16\pi}F_{\mu\nu}F^{\mu\nu}=\frac{1}{8\pi}\left( E^2-B^2 \right)
+	\end{dmath}
+	\begin{dsuspend}
+		define conjugate momentum field.
+	\end{dsuspend}
+	\begin{dmath}[]
+		\pi=\pdv{f}{\vtr{A}}=\ldots = -\frac{1}{4\pi c}\vtr{E}^2
+	\end{dmath}
+\end{dgroup}
+$A,\pi\to \hat{A},\hat{\pi}$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{A_i\left( x,t \right)}{A_j\left( y,t \right)}=\comm{\pi_i\left( x,t \right)}{\pi_j\left( y,t \right)}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{A_i}{\pi_j}\approx i\hbar \delta\left( x-y \right)\delta_{ij}
+	\end{dmath}
+\end{dgroup}
+\begin{dgroup}[]
+	\begin{dmath}[]
 		\vtr{A}\left( \vtr{r},t \right)=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3} \sum_{\lambda}^{}\left( \alpha\left( k,\lambda \right)\vtr{\upepsilon}\left( k,\lambda \right)e^{i\vtr{k}\cdot\vtr{r}-i\omega t}+\alpha^{*}\left( \vtr{k},\lambda \right)\vtr{\upepsilon}^{*}\left( \vtr{k},\lambda \right)e^{-i\vtr{k}\cdot \vtr{r}+i\omega t} \right)
 	\end{dmath}
 	\begin{dmath}[]
@@ -165,7 +211,8 @@ Note:
 General:
 \begin{dgroup}[]
 	\begin{dmath}[]
-		\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}a_{k\lambda}\ldots
+		\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}a_{k\lambda}\ket{n_1\ldots n_m}
+		=\sum_{i=1}^{m}\sqrt{n_i}\ket{n_1\ldots n_{i-1},\ldots n_m}
 	\end{dmath}
 	\begin{dsuspend}
 		Compute expectation value of $\hat{H}$ in state $\ket{n_1\left( k_1\lambda_1 \right)}$

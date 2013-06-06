@@ -1,0 +1,151 @@
+\chapter{Potential scattering}
+We consider
+\begin{dgroup}[]
+	\begin{dmath}[]
+		H=H_0+V(r)
+	\end{dmath}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		\lim_{r\to \infty} r V(r)=0\condition{(i.e. \emph{not} Coloumb)}
+	\end{dmath}
+	\begin{dsuspend}
+		$V$ is restricted to ``small'' region.
+
+		Want to find stationary solutions 
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi\left( \vtr{r},t \right)=e^{-\frac{i}{\hbar}Et}\psi\left( \vtr{r} \right)\condition{for $r\to \infty$}
+	\end{dmath}
+	\begin{dsuspend}
+		steady incoming beam scattered by potential (more general treatment in section 7)
+	\end{dsuspend}
+\end{dgroup}
+\section{Elastic scattering and cross sections}
+we are looking for solutions to 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\left( H_0+V \right)\ket{\psi}=E\ket{\psi}
+	\end{dmath}
+	\begin{dmath}[]
+		E_{\text{in}}=E_{\text{out}}=\frac{p^2}{2m}=\frac{\hbar^2k^2}{2m}
+	\end{dmath}
+	\begin{dsuspend}
+		of the form
+	\end{dsuspend}
+	\begin{dmath}[]
+		r\to \infty
+	\end{dmath}
+	\begin{dmath}[]
+		\psi_{k}\left( \vtr{r} \right)\to \psi_{\text{in}}(\vtr{r})+\psi_{\text{sc}}(\vtr{r})
+		=e^{i\vtr{k}\vtr{r}}+f\left( \theta,\phi \right)\frac{e^{ikr}}{r}
+	\end{dmath}
+	\begin{dsuspend}
+		where we are not interested in $\psi(r)$ for small $r$ (in range of $V$) and $f\left( \theta,\phi \right)$ is the scattering amplitude and $\frac{e^{ikr}}{r}$ is the outgoing spherical wave
+	\end{dsuspend}
+\end{dgroup}
+Differential cross section
+\begin{dmath}[]
+	\dv{\sigma}{\Omega}=\frac{N}{F}
+\end{dmath}
+\begin{description}
+	\item[$N$:] \#particles scattered into $\dd{\Omega}$ per time in $N\dd{\Omega}$
+	\item[$F$:] flux of incoming particles, number/time/unit area
+\end{description}
+\paragraph{Exercise:}
+For $\abs{\psi_{\text{in}}}^2=1$ (1 part/volume),
+\begin{dgroup}[]
+	\begin{dmath}[]
+		F=V=\frac{p}{m}=\frac{\hbar k}{m}
+	\end{dmath}
+	\begin{dsuspend}
+		outgoing:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vtr{j}=\ldots = \frac{\hbar k}{m}\abs{f\left( \theta,\phi \right)}^2\frac{\vtr{e}_r}{r^2}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow}\dv{\sigma}{\Omega}=\abs{f\left( \theta,'i \right)}^2
+	\end{dmath}
+	\begin{dsuspend}
+		total cross section
+	\end{dsuspend}
+	\begin{dmath}[]
+		\sigma=\int_{}^{}\dd{\Omega}\, \dv{\sigma}{\Omega}
+	\end{dmath}
+\end{dgroup}
+\section{Partial-wave analysis}
+For central potential $V(r)$. No $\phi$ dependence in $\psi_k$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\psi_k\left( r,\theta \right)=\sum_{\ell =0}^{\infty}R_{\ell}\left( kr \right)P_{\ell}\left( \cos\theta \right)
+	\end{dmath}
+	\begin{dsuspend}
+		$P_{\ell}\left( \cos\theta \right)$ being Legendre polynomials
+	\end{dsuspend}
+	\begin{dmath}[]
+		f\left( \theta \right)=\sum_{\ell =0}^{\infty}P_{\ell}\left( k \right)P_{\ell}\left( \cos\theta \right)
+	\end{dmath}
+	\begin{dsuspend}
+		$\to$ equation for $R_{\ell}$:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\dvt{}{r}+\frac{2}{r}\dv{}{r}-\frac{\ell \left( \ell +1 \right)}{r^2}+2m\left( V(r)-E \right)R_{\ell}\left( kr \right)=0
+	\end{dmath}
+	\begin{dsuspend}
+		Aside: Assume $V$ is constant ($\rho=kr$)
+	\end{dsuspend}
+\end{dgroup}
+Solutions for $E>V$: Spherical Bessel function:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		j_{\ell}\left( \rho \right)\equiv \left( -\rho \right)^{\ell}\left( \frac{1}{\rho}\dv{}{\rho} \right)^{\ell}\frac{\sin\rho}{\rho}
+	\end{dmath}
+	\begin{dsuspend}
+		Spherical Neumann function:
+	\end{dsuspend}
+	\begin{dmath}[]
+		n_{\ell}\left( \rho \right)=-\left( -\rho \right)^{\ell}\left( \frac{1}{\rho}\dv{}{\rho} \right)^{\ell}\frac{\cos\rho}{\rho}
+	\end{dmath}
+\end{dgroup}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		j_{\ell}\left( \rho \right)\xrightarrow{\rho\to0}\rho^{\ell}
+		\xrightarrow{\rho\to\infty}\frac{1}{\rho}\sin\left( \rho-\frac{\pi\ell}{2} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		n_{\ell}(\rho)\xrightarrow{\rho\to 0}\frac{1}{\rho^{\ell-1}}
+		\xrightarrow{\rho\to \infty}-\frac{1}{\rho}\cos \left( \rho-\frac{\pi\ell}{2} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		h_{\ell}=j_{\ell}\pm in_{\ell}
+	\end{dmath}
+\end{dgroup}
+General solution for radial Schrödinger equation for $r\to 0$ $\frac{\ell\left( \ell +1 \right)}{r^2}$ dominant for $V(r)$ less singular  $\tan\frac{1}{r^2}$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		R_{\ell}(r)\sim j_{\ell}(\rho)=j_{\ell}\left( kr \right)
+	\end{dmath}
+	\begin{dsuspend}
+		for $r\to \infty$ $V(r)\to 0$ general solution
+	\end{dsuspend}
+	\begin{dmath}[]
+		R_{\ell}(r)=B_{\ell}(k)j_{\ell}(kr)+C_{\ell}n_{\ell}(kr)
+		\xrightarrow{r\to \infty}B_{\ell}(k)\frac{1}{kr}\sin \left( kr-\frac{\pi\ell}{2} \right)-C_{\ell}(k)\frac{1}{kr}\cos \left( kr-\frac{\pi \ell}{2} \right)
+		=\frac{1}{kr}A_{\ell}(k)\sin \left( kr-\frac{\ell\pi}{2}+\delta_{\ell}(k) \right)
+		\condition{$A_{\ell}=\sqrt{B_{\ell}^2+C_{\ell}^2}$, phase shift $\tan \delta_{\ell}=-\frac{C_{\ell}(k)}{B_{\ell(k)}}$}
+	\end{dmath}
+\end{dgroup}
+note: for $V=0$: 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		R_{\ell}\sim j_{\ell}\left( kr \right)
+	\end{dmath}
+	\begin{dsuspend}
+		i.e. $C_{\ell}$ and $\delta_{\ell}=0$
+	\end{dsuspend}
+\end{dgroup}
+Solutions for $r\to \infty$ are characterized by phase shift $\delta_{\ell}$
+
+Next: find relation between $\delta_{\ell}\leftrightarrow f(\theta)$

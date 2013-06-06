@@ -1,0 +1,107 @@
+\section{Periodic perturbations}
+Let
+\begin{dmath}[]
+	V(t)=\left( Ve^{-i\omega t}+V^{\dagger}e^{+i\omega t} \right)\condition{for $t> t_0=0$}
+\end{dmath}
+The transition probability $P_{i\to f}$ is given by 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		P_{i\to f}(t)=\frac{1}{\hbar}\abs{\int_{t_0}^{t}\dd{t'}\, \left( V_{fi}e^{i\left( \omega_{fi}-\omega \right)t'}+V_{fi}^{\dagger}e^{i\left( \omega_{fi}+\omega \right)t'} \right)}^2
+		=\frac{\pi t}{\hbar^2}
+		\left( \abs{V_{fi}}^2\sin^2\left( \frac{t}{2}\left( \omega_{fi}-\omega \right) \right)
+		+\abs{V_{fi}^{\dagger}}^2\frac{\sin^2 \left( \frac{t}{2}\left( \omega_{fi}+\omega \right) \right)}{\pi t\left( \frac{\omega_{fi}+\omega}{2} \right)^2}
+		+\Re \left( V_{fi}V_{fi}^{\dagger}\cdot \mathcal{F}\left( \omega_{fi},\omega \right) \right)
+		\right)
+	\end{dmath}
+	\begin{dsuspend}
+		with $\mathcal{F}\left( \omega_{fi},\omega \right)$ the interference pattern
+	\end{dsuspend}
+\end{dgroup}
+the behaviour for large $t$, $t>\frac{2\pi}{\omega}$
+(recall $\sin^2\to \delta$-function),
+interference term vanishes,
+transition rate
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\Gamma_{i\to f}=\frac{P_{i\to f}}{t}\condition{for large $t$}
+	\end{dmath}
+	\begin{dmath}[]
+		\Gamma_{i\to f}=\frac{2\pi}{\hbar}\left( \abs{V_{fi}}^2\delta\left( \underbrace{E_{f}-E_{i}-\hbar\omega}_{E_{f}=E_{i}+\hbar\omega} \right)+\abs{V_{fi}^{\infty}}^2\delta\left( \underbrace{E_f-E_i+\hbar\omega }_{E_f=E_i-\hbar\omega}\right) \right)
+		=\text{absorption of $\hbar\omega$}+\text{emission of $\hbar\omega$}
+	\end{dmath}
+	\begin{dsuspend}
+		$\to$ inteaction of matter with radiation
+	\end{dsuspend}
+\end{dgroup}
+\section{The Interaction picture}
+Consider again evolution operator
+\begin{dmath}[]
+	\ket{\psi(t)}=U\left( t,t_0 \right)\ket{\psi(t_0)}
+\end{dmath}
+\begin{enumerate}[i)]
+	\item $U\left( t,t_0 \right)=\vtr{1}$
+	\item $U\left( t,t_1 \right)U\left( t_1,t_0 \right)=U\left( t,t_0 \right)$
+	\item 
+		\begin{dmath}[]
+			i\hbar \pdv{}{t}\ket{\psi(t)}=H(t)\ket{\psi(t)}
+			=i\hbar \pdv{}{t}U\left( t,t_0 \right)\ket{\psi(t_0)}
+			=H(t)U\left( t,t_0 \right)\ket{\psi(t_0)}
+		\end{dmath}
+\end{enumerate}
+		$U$ satisfies
+\begin{dgroup}[]
+	\begin{dmath}[]
+		i\hbar\pdv{}{t}U\left( t,t_0 \right)=H(t)U\left( t,t_0 \right)
+	\end{dmath}
+	\begin{dsuspend}
+		Formial solution:
+	\end{dsuspend}
+	\begin{dmath}[]
+		U\left( t,t_0 \right)=1+\left( i\hbar \right)^{-1}\int_{t_0}^{t}\!\dd{t'}\, H(t')U(t',t_0)
+	\end{dmath}
+	\begin{dsuspend}
+		``solve'' by iteration
+	\end{dsuspend}
+	\begin{dmath}[]
+		U\left( t,t_0 \right)=\sum_{n=0}^{\infty}U^{(n)}\left( t,t_0 \right)
+		=1+U^{(1)}+\ldots
+	\end{dmath}
+	\begin{dmath}[]
+		U^{(1)}\left( t,t_0 \right)=\left( i\hbar \right)^{-1}\int_{t_0}^{t}\! \dd{t_1}\, H(t_1)
+	\end{dmath}
+	\begin{dmath}[]
+		U^{(2)}\left( t,t_0 \right)=\left( i\hbar \right)^{-2}\int_{t_0}^{t}\dd{t_2}\, H(t_2)\int_{t_0}^{t}\! \dd{t_1}\, H(t_1)
+		=\frac{\left( i\hbar \right)^{-2}}{2!}\int_{t_0}^{t}\! \dd{t_1h}\dd{t_2}\, T\left( H\left( t_1 \right)H(t_2) \right) 
+	\end{dmath}
+	\begin{dsuspend}
+		(last step see exercise)
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vdots = \vdots
+	\end{dmath}
+	\begin{dmath}[]
+		U^{(n)}\left( t,t_0 \right)=\left( i\hbar \right)^{-n}\int_{t_0}^{t}\! \dd{t_n}\, H\left( t_n \right)\int_{t_0}^{t_n}\dd{t_{n-1}}\, H\left( t_{n-1} \right)\ldots\int_{t_0}^{t_2}\dd{t_1}\, H\left( T_1 \right)
+		=\frac{1}{n!}\left( i\hbar \right)^{-n}\int_{t_0}^{t}\!\dd{t_n}\int_{t_0}^{t}\dd{t_{n-1}}\ldots \int_{t_0}^{t}\dd{t_1}\, T\left( H\left( t_n \right)\ldots H(t_1) \right)
+	\end{dmath}
+	\begin{dsuspend}
+		with $T$ the time ordering operator
+	\end{dsuspend}
+	\begin{dmath}[]
+		T\left( H(t_1)\ldots H\left( t_1 \right) \right)=H\left( t_{\tau(1)}\ldots H\left( t_{\tau(n)} \right) \right)
+	\end{dmath}
+	\begin{dsuspend}
+		if 
+	\end{dsuspend}
+	\begin{dmath}[]
+		t_{\tau(1)}>t_{\tau(2)}>\ldots >t_{\tau(n)}
+	\end{dmath}
+	\begin{dsuspend}
+		full solution
+	\end{dsuspend}
+	\begin{dmath}[]
+		U\left( t,t_0 \right)=T\left[ e^{-\frac{i}{\hbar}\int_{t_0}^{t}\! \dd{t'}\, H(t')} \right]
+	\end{dmath}
+	\begin{dsuspend}
+		\emph{cannot} be expanded in a useful way. \emph{All terms are equally important.}
+	\end{dsuspend}
+\end{dgroup}

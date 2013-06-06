@@ -1,0 +1,139 @@
+\section{Dipole approximation and selection rules}
+Transitions are governed by $\alpha^{*}\mel{\psi_0}{j\left( \vtr{k} \right)\cdot \vtr{\upepsilon}^{*}\left( \vtr{k} \right) }{\psi_n}$
+\begin{dgroup}[]
+	\begin{dmath}[]
+	j\left( \vtr{k} \right)=\frac{1}{2m}\left( \vtr{p} e^{-i\vtr{k}\cdot \vtr{r}}]+e^{-i\vtr{k}\cdot \vtr{r}}\vtr{p} \right)
+	=\frac{\vtr{p}}{m}
+	\end{dmath}
+	\begin{dsuspend}
+		with Dipole approximation
+	\end{dsuspend}
+	\begin{dmath}[]
+		e^{-i\vtr{k}\vtr{r}}=1-i\vtr{k}\vtr{r}+\ldots
+	\end{dmath}
+	\begin{dmath}[]
+		k\sim \frac{1}{\lambda}\condition{for visible light $\sim \left( \SI{10e-7}{\meter} \right)^{-1}$}
+	\end{dmath}
+	\begin{dmath}[]
+		r\sim \text{size of atom}\sim \text{Bohr radius}\sim \SI{10e-10}{\meter}
+	\end{dmath}
+	\begin{dmath}[]
+		\vtr{j}\cdot \vtr{A}\to \text{Dipole approx.}: \vtr{j}\hiderel{=}\frac{\vtr{p}}{m}
+	\end{dmath}
+	\begin{dsuspend}
+		(radiation filed $\sim$ constant within atom)
+	\end{dsuspend}
+	\begin{dsuspend}
+		Aside: this is equivalent to a term
+	\end{dsuspend}
+	\begin{dmath}[]
+		e\vtr{r}\cdot \vtr{E}=-\vtr{d}\cdot \vtr{E}
+	\end{dmath}
+	\begin{dsuspend}
+		with $\vtr{d}$ dipole moment
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vtr{d}\equiv -e \vtr{r}
+	\end{dmath}
+	\begin{dsuspend}
+		(compare $\vtr{\upmu}\cdot \vtr{B}$)
+	\end{dsuspend}
+\end{dgroup}
+\begin{proof}
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			\comm{r_x}{H_0}=\comm{r_x}{\frac{\vtr{p}^2}{2m}}
+			=\frac{1}{2m}\left( \comm{r_x}{\vtr{p}}\vtr{p}+\vtr{p}\comm{r_x}{p} \right)
+		\end{dmath}
+		\begin{dsuspend}
+			with
+		\end{dsuspend}
+		\begin{dmath}[]
+			\comm{r_x}{\vtr{p}}=\sum_{y}^{}i\hbar \delta_{xy}p_y
+		\end{dmath}
+		\begin{dmath}[]
+			\comm{r_x}{H_0}=\frac{p_x}{m}i\hbar
+		\end{dmath}
+		\begin{dmath}[label=eq:gruenerstern]
+			\comm{r}{H_0}=i\hbar\frac{\vtr{p}}{m}
+		\end{dmath}
+		\begin{dsuspend}
+			emission
+		\end{dsuspend}
+		\begin{dmath}[]
+			\mel{\psi_0}{e\vtr{r}\cdot \vtr{E}}{\psi_n}
+			=-\frac{e}{c}\mel{\psi_0}{\vtr{r}\cdot \dot{\vtr{A}}}{\psi_n}
+			=-\frac{e}{c}i\omega \mel{\psi_0}{\vtr{r}\cdot \vtr{A}}{\psi_n}
+			=-\frac{e}{c}\frac{i}{\hbar}\left( E_n-E_0 \right)\mel{\psi_0}{\vtr{r}\cdot \vtr{A}}{\psi_n}
+			=-\frac{e}{c}\frac{i}{\hbar}\mel{\psi_0}{\comm{\vtr{r}}{H_0}\cdot \vtr{A}}{\psi_n}
+		\end{dmath}
+		\begin{dsuspend}
+			using Eq. \ref{eq:gruenerstern}
+		\end{dsuspend}
+		\begin{dmath}[]
+			\mel{\psi_0}{e\vtr{r}\cdot \vtr{E}}{\psi_n}
+			=-\frac{e}{c}\mel{\psi_0}{\frac{\vtr{p}}{m}\cdot \vtr{A}}{\psi_n}
+			=\frac{e}{c}\mel{\psi_0}{\vtr{j}\cdot \vtr{A}}{\psi_n}
+		\end{dmath}
+	\end{dgroup}
+\end{proof}
+\begin{proof}[alternative]
+	Make gauge trafo with 
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			\chi\left( \vtr{r},t \right)=-\vtr{A}(t)\cdot \vtr{r}
+		\end{dmath}
+		\begin{dmath}[compact]
+			\vtr{A}\to \vtr{A}+\vtr{\nabla}\xi =0
+		\end{dmath}
+		\begin{dmath}[compact]
+			0=\Phi\to \Phi -\frac{1}{c}\dot{\chi}
+			=-\frac{1}{c}\dot{\vtr{A}}\cdot \vtr{r}=-\vtr{E}\cdot \vtr{r}
+		\end{dmath}
+		\begin{dmath}[]
+			H-e\Phi=-e\vtr{r}\vtr{E}
+		\end{dmath}
+	\end{dgroup}
+\end{proof}
+Atomic transitions are only possible if
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\mel{\psi_{n'\ell' m_{\ell}'}}{\vtr{r}}{\psi_{n\ell m_{\ell}}}\neq 0
+	\end{dmath}
+\end{dgroup}
+Given $\ell, m_{\ell}$ this imposes constraints on $\ell',m_{\ell'}\to$ selection rules (in dipole approximation). Can be obtained by (solving at properties of spherical harmonics).
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\int_{}^{}\dd{\Omega}\, \left( Y_{\ell'}^{m_{\ell'}}\left( \theta,\phi \right) \right)^{*}
+		\begin{pmatrix}
+			x+iy\\
+			x-iy\\
+			z
+		\end{pmatrix}
+		\mathcal{Y}_{\ell}^{m_{\ell}}\left( \theta,\phi \right)
+	\end{dmath}
+	\begin{dsuspend}
+		this is most of the time $0$ exept if
+	\end{dsuspend}
+	\begin{dmath}[]
+		\mel{\psi_{n'\ell'm_{\ell}'}}{z}{\psi_{n\ell m_{\ell}}}\neq 0
+		\condition*{\ell'=\ell\pm 1,m_{\ell}'=m_{\ell}}
+	\end{dmath}
+	\begin{dmath}[]
+		\mel{\psi_{n'\ell'm_{\ell}'}}{x\pm iy}{\psi_{n\ell m_{\ell}}}\neq 0
+		\condition*{\ell'=\ell \pm 1, m_{\ell}'=m_{\ell}\pm 1}
+	\end{dmath}
+	\begin{dsuspend}
+		(or use Wigner-Ekcart theorem, $\vtr{r}$ is a vector operator)\\
+		$\Rightarrow$ selection rules for $E_{1}$ tronsitions (dipole approximation)
+	\end{dsuspend}
+	\begin{dmath}[]
+		\Delta \ell =\pm 1
+	\end{dmath}
+	\begin{dmath}[]
+		\Delta m =0, \pm 1
+	\end{dmath}
+\end{dgroup}
+These rules are violated by ``beyound-dipole'' transitions (e.g. $E_{2}$ quadrupole transitions).
+
+Further selection rules: $\Delta S=0$ (spin part of wavefunction not affected by $\vtr{r}\cdot \vtr{E}$) always true: \emph{no} transitions between $j=0\to j=0$ (total angular momentum conservation)
