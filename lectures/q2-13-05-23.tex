@@ -1,61 +1,91 @@
-Compute $i[S,H]$:
-	\begin{align}[]
-i[S,H]=i[-\frac{i\beta}{2mc^2}\mathcal{O},\beta mc^2+\mathcal{O}+\varepsilon]
-=\frac{\beta}{2mc^2}[\mathcal{O},\varepsilon]
-	\end{align}
-	\begin{align}[]
-	[\beta\mathcal{O},\mathcal{O}]=\beta\mathcal{O}\mathcal{O}-\mathcal{O}\beta\mathcal{O}
-	=2\beta\mathcal{O}^2
-	\end{align}
-	\begin{align}[]
-	[\mathcal{\beta\mathcal{O},\beta}]=c[\beta\vtr{\alpha},\beta]\left(\vtr{p}+\frac{e}				{c}\vtr{A}\right)=-2\mathcal{O}
-	\end{align}
+\chapter{Second Quantization}
+Classical field theory $\to$ quatized field theory ``done'' already for radiation field, section $5\to 8$
+\section{Creation and annihilation operators for bosons and fermions}
+Bosons: recall radiation field $\hat{a}_{\vtr{k}\lambda}$, $\hat{a}_{\vtr{k}\lambda}^{\dagger}$  ($\hat{\cdot}$: bosons, Signer will forget $\hat{\cdot}$ \ldots)
 
-\begin{align}[]
-H'=\beta mc^2+\frac{\mathcal{O}^2}{2mc^2}-\frac{\mathcal{O}^4}{8m^3c^6}+\mathcal{E}-\frac{[\mathcal{O},[\mathcal{O},\mathcal{E}]]}{8m^2c^4}
--\frac{i\hbar[\mathcal{O},\mathcal{O}]}{8m^2c^4}+\underbrace{\frac{\beta}{2mc^2}[\mathcal{O},\mathcal{E}]-\frac{\mathcal{O}^3}{2mc^2}+\frac{i\hbar\beta\dot{\mathcal{O}}}{2mc^2}}_{\mathcal{O}'}
-\end{align}
+now $i\sim \left\{ \vtr{k},\lambda \right\}$. Discrete
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{\hat{a}_i}{\hat{a}_j}=\comm{\hat{a}_{i}^{\dagger}}{\hat{a}_{j}^{\dagger}}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{\hat{a}_i}{\hat{a}_{j}^{\dagger}}=\delta_{ij}\condition{(discrete)}
+	\end{dmath}
+	\begin{dsuspend}
+		states
+	\end{dsuspend}
+	\begin{dmath}[]
+		\ket{n_1,n_2,\ldots,n_m}=\frac{\left( \hat{a}_{1}^{\dagger} \right)^{n_1}\ldots \left( \hat{a}_{m}^{\dagger} \right)^{n_{m}}}{\sqrt{n_1!\ldots n_m!}}\ket{0}
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{a}_i\ket{0}=0
+	\end{dmath}
+\end{dgroup}
+fermions: the same exept
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{\cdot}{\cdot}\equiv\comm{\cdot}{\cdot}_{-}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\to} \acomm{\cdot}{\cdot}\equiv\comm{\cdot}{\cdot}_{+}
+	\end{dmath}
+\end{dgroup}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\acomm{\hat{b}_i}{\hat{b}_{j}^{\dagger}}=\delta_{ij}
+	\end{dmath}
+	\begin{dmath}[]
+		\acomm{\hat{b}_i}{\hat{b}_j}=\acomm{\hat{b}_{i}^{\dagger}}{\hat{b}_{j}^{\dagger}}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\left( \hat{b}_{i}^{\dagger} \right)^{2}=0
+	\end{dmath}
+	\begin{dmath}[]
+		n_i=\acomm{0}{1}\condition{Pauli}
+	\end{dmath}
+	\begin{dsuspend}
+		particularly:
+	\end{dsuspend}
+	\begin{dmath}[]
+		\ket{1}=\hat{b}_{i}^{\dagger}\ket{0}
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{b}_{i}^{\dagger}\ket{1}=\left( \hat{b}_{i}^{\dagger} \right)^{\pm}\ket{0}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\ket{n_1\hiderel{=}1,n_2\hiderel{=}1}=\hat{b}_{1}^{\dagger}\hat{b}_{2}^{\dagger}\ket{0}
+		=-\hat{b}_{2}^{\dagger}b_{1}^{\dagger}\ket{0}
+		=-\ket{n_2\hiderel{=}1,n_1\hiderel{=}1}\condition{antisymmetric}
+	\end{dmath}
+	\begin{dmath}[]
+		\braket{n_1 \ldots n_m}{n_1' \ldots n_m'}=\delta_{n1,n_1'}\ldots \delta_{n_m n_m'}\condition{orthogonality}
+	\end{dmath}
+	\begin{dmath}[]
+		\sum_{n_i}^{}\proj{n_1\ldots n_m}=\vtr{1}\condition{completeness}
+	\end{dmath}
+	\begin{dmath}[]
+		n=\sum_{i}^{}n_i=\sum_{i}^{}\hat{b}_{i}^{\dagger}\hat{b}_i\condition{ counting operator}
+	\end{dmath}
+\end{dgroup}
+\section{Field operators}
+Let $\psi_i(x)$ wave function (coord. rep. of state) $x:$ here 3-vector not 4-vector any more
 
-Repeat $\psi'=e^{-iS'}\psi''$ with $S'=\frac{-i\beta\mathcal{O}'}{2mc^2}$ which leads to
-\begin{align}[]
-H''+H_{\text{even}}+\mathcal{O}''
-\end{align}
-With the third and last iteration
-\begin{align}[]
-\psi''=e^{-iS''}\psi'''\quad S''=\frac{-i\beta\mathcal{O}''}{2mc^2}
-\end{align}
-we arrive at
-\begin{align}[]
-H'''=H=\beta m c^2+\frac{\mathcal{O}^2}{2mc^2}-\frac{\mathcal{O}^4}{8m^3c^6}+\mathcal{E}
--\frac{[\mathcal{O},[\mathcal{O},\mathcal{E}]]}{8m^2c^4}-\frac{i\hbar[\mathcal{O},\mathcal{O}]}{8m^2c^4}+\mathcal{O}\left(\frac{1}{m^3}\right)
-\end{align}
-First term:
-\begin{align}[]
-\frac{\mathcal{O}^2}{2mc^2}=\frac{1}{2m}\alpha_i(p_i+\frac{e}{c}A_i)\alpha_j(p_j+\frac{e}{c}A_j)
-=\frac{1}{2m}\left(\vtr{p}+\frac{e}{c}\vtr{A}\right)^2+\frac{\hbar e}{2m}\vtr{\sigma} \vtr{B} \alpha_i\alpha_j 
-=\frac{1}{2}\braced{\alpha_i,\alpha_j}+\frac{1}{2}[\alpha_i,\alpha_j]
-=\delta_{ij}+i\varepsilon_{ijk}\sigma_k
-\end{align}
-Second term:
-\begin{align}[]
--\frac{\mathcal{O}^4}{8m^3c^6}=\frac{\vtr p^4}{8m^3c^2}+\ldots (\text{rel. Correction to kinetic Energy})
-\end{align}
-
-Third term:
-\begin{align}[]
--\frac{1}{8m^2c^4}[\mathcal{O},[\mathcal{O},\mathcal{E}]]=\frac{-(-\hbar)^2}{8m^2c^2}\left[\alpha_i\nabla_i
-\underbrace{\left[\alpha_j\nabla_j,eV\right]}_{\alpha_je(\nabla_j V-V\nabla_j)=\alpha_je[\nabla_j,V]}\right]
-=\frac{(-i\hbar^2)e}{8m^2c^2}\underbrace{\left[\alpha_i\nabla_i,\alpha_jE_j\right]}_{\clubsuit}
-\end{align}
-where
-\begin{align}[]
-\clubsuit =\alpha_i\alpha_j\nabla_iE_j-\alpha_j\alpha_iE_j\nabla_i
-=\nabla\vtr{E}+i\vtr{\sigma}(\nabla\times\vtr{E})-\vtr{E}\cdot\nabla-i\vtr{\sigma}(\vtr{E}\times\nabla)
-=[\nabla,\vtr{E}]-2i\vtr{\sigma}(\vtr{E}\times\nabla)+i\vtr{\sigma}(\nabla\times\vtr{E})
-\end{align}
-
-such that we have
-\begin{align}[]
-=\frac{ie\hbar^2}{4m^2c^2}\left(\vtr{\sigma}\cdot(\vtr{E}\times\nabla)-\frac{\vtr{\sigma}(\nabla\times\vtr{E})}{2}\right)-\frac{\hbar^2e}{8m^2c^2}[\nabla\cdot\vtr{E}]
-\end{align}
-ADD MISSING
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\hiderel{\to} \text{basis} \int_{}^{}\rd^3 x\, \psi_{i}^{*}(x)\psi_{j}(x)=\delta_{ij}
+	\end{dmath}
+	\begin{dsuspend}
+		(can think of $\psi_i$ as eigenfunctions of $H$, $H\psi_i=E\psi_i$)\\
+		consider any state $\to f(x)\in L^2$
+	\end{dsuspend}
+	\begin{dmath}[]
+		f(x)=\sum_{i}^{}c_i\psi_i(x)
+	\end{dmath}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		c_i=\int_{}^{}\rd^3 \vtr{y}\, \psi_{i}^{*}(y)f(y)
+		=\int_{}^{}\rd^3 \vtr{y}\, f(y)\underbrace{\sum_{i}^{}\psi_{i}^{*}(y)\psi_i(x)}_{\delta^{(3)}\left( \vtr{x}-\vtr{y} \right)}
+	\end{dmath}
+\end{dgroup}

@@ -1,4 +1,29 @@
-\section{Obs in 2nd quantization}
+\section{Observables in 2nd quantization}
+Observables expressed in terms of fields $/to$ operators in Fock space $\mathcal{F}$.
+
+Example: particle number density
+\begin{description}
+	\item[QM:] probability density
+		\begin{dmath}[]
+			\rho(x)=\abs{\psi(x)}^2
+		\end{dmath}
+	\item[now:] 
+		\begin{dgroup}[]
+			\begin{dmath}[]
+				\hat{\rho(x)}=\hat{\psi}^{\dagger}(x)\hat{\psi}(x)
+				=\sum_{ij}^{}\hat{a}_{i}^{\dagger}\hat{a}_j\psi_{i}^{*}(x)\psi_j(x)
+				=\sum_{ij}^{}\hat{a}_{i}^{\dagger}\hat{a}_j\braket{x}{i}\braket{j}{x}
+			\end{dmath}
+			\begin{dmath}[]
+				\int_{}^{}\rd^3 \vtr{x}\, \hat{\rho}(x)=\sum_{ij}^{}\hat{a}_{i}^{\dagger}\hat{a}_j
+				\bra{j}\underbrace{\int_{}^{}\rd^3 x\, \proj{x}}_{\vtr{1}}\ket{i}
+				=\sum_{i}^{}\hat{a}_{i}^{\dagger}\hat{a}_i=\sum_{i}^{}n_i
+			\end{dmath}
+		\end{dgroup}
+\end{description}
+
+\paragraph{kinetic energy}
+
 \begin{dgroup}[]
 	\begin{dmath}[]
 		\hat{T}=\int_{}^{}\rd^3 \vtr{x}\, \hat{\psi}^{\dagger}\left( -\frac{\hbar^2 \nabla^2}{2m} \right)\hat{\psi}(x)

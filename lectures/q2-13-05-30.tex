@@ -1,0 +1,106 @@
+\section{Quantization of relativistic fields}
+\begin{itemize}
+	\item Start with Lagrangian density $\mathcal{L}$ for classical field tehory
+	\item Compute conjugate momentum field
+	\item impose equal-time (anti-) commutation relations
+\end{itemize}
+\paragraph{Example 1: free scalar field $\Phi(\vtr{x},t)=\Phi(x)$}
+\begin{itemize}
+	\item 
+		\begin{dgroup}[]
+			\begin{dmath}[]
+				\mathcal{L}=\frac{1}{2}\partial_{\mu}\Phi\partial^{\mu}\Phi-\frac{1}{2}\underbrace{\frac{m^2c^2}{\hbar^2}}_{\equiv m^2}\Phi^2-\underbrace{V(\Phi)}_{=0}
+			\end{dmath}
+			\begin{dsuspend}
+				free field (no interactions). Action:
+			\end{dsuspend}
+			\begin{dmath}[]
+				S=\int_{}^{}\dd{t}\int_{}^{}\rd^3 x\, \mathcal{L}
+				=\int_{}^{}\rd^3 4 x \, \mathcal{L}\left( \Phi, \partial_{\mu}\Phi \right)
+			\end{dmath}
+			\begin{dmath}[]
+				\delta S=0
+			\end{dmath}
+			\begin{dmath}[]
+				\hiderel{\to} \pdv{\mathcal{L}}{\Phi}-\partial_{\mu}\pdv{\mathcal{L}}{\left( \partial_{\mu}\Phi \right)}90
+			\end{dmath}
+			\begin{dsuspend}
+				for our $\mathcal{L}$:
+			\end{dsuspend}
+			\begin{dmath}[]
+				-m^2\Phi-\partial_{\mu}\partial^{\mu}\Phi=0
+			\end{dmath}
+			\begin{dsuspend}
+				Klein-Gordan equation
+			\end{dsuspend}
+		\end{dgroup}
+	\item Conjugate momentum field
+		\begin{dgroup}[]
+			\begin{dmath}[]
+				\pi\left( \vtr{x},t \right)=\pdv{\mathcal{L}}{\Phi}=\dot{\phi}\left( \vtr{x},t \right)
+			\end{dmath}
+			\begin{dsuspend}
+				Hamiltonian
+			\end{dsuspend}
+			\begin{dmath}[]
+				H=\int_{}^{}\rd^3 \vtr{x}\, \pi\dot{\Phi}-L
+				=\int_{}^{}\rd^3 x\, \left( \pi\dot{\phi}-\mathcal{L} \right)
+				=\frac{1}{2}\int_{}^{}\rd^3 x\, \left( \pi^2 +\left( \nabla \Phi \right)^2+m^2\Phi^2 \right)
+			\end{dmath}
+			\begin{dsuspend}
+				with $\mathcal{L}$ the Lagrangian density 
+			\end{dsuspend}
+			\begin{dmath}[]
+				\int_{}^{}\rd^3 x\, \mathcal{L}=L=\text{Lagriangian}
+			\end{dmath}
+		\end{dgroup}
+	\item 
+		now second quantization:
+		\begin{dgroup}[]
+			\begin{dmath}[]
+				\Phi(x)\to \hat{\Phi(x)}
+			\end{dmath}
+			\begin{dsuspend}
+				and
+			\end{dsuspend}
+			\begin{dmath}[]
+				\pi (x)\to \hat{\pi}(x)
+			\end{dmath}
+			\begin{dmath}[]
+				\comm{\hat{\phi}\left( \vtr{x},t \right)}{\hat{\phi}\left( \vtr{y},t \right)}
+				=\comm{\hat{\pi}\left( \vtr{x},t \right)}{\hat{\pi}\left( \vtr{y},t \right)}=0
+			\end{dmath}
+			\begin{dsuspend}
+				impose
+			\end{dsuspend}
+			\begin{dmath}[]
+				\comm{\hat{\Phi}\left( \vtr{x},t \right)}{\hat{\pi}\left( \vtr{y},t \right)}
+				=i\delta\left( \vtr{x}-\vtr{y}\right)
+			\end{dmath}
+			\begin{dmath}[]
+				\hiderel{\sim} \comm{x_i}{p_j}=i\delta_{ij}\condition*{\left( \hbar=1 \right)}
+			\end{dmath}
+			\begin{dsuspend}
+				spin $0$, bosonic field use $\comm{\cdot}{\cdot}=\comm{\cdot}{\cdot}_{-}$ and not $\acomm{\cdot}{\cdot}=\comm{\cdot}{\cdot}_{+}$
+			\end{dsuspend}
+			\begin{dsuspend}
+				now as for radiation field
+			\end{dsuspend}
+			\begin{dmath}[]
+				\hat{\Phi}\left( \vtr{x},t \right)=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^{3}}\frac{1}{2\omega_k}\left( \hat{a}_{k}e^{i\vtr{k}\vtr{x}-i\omega_{k}t}+\hat{a}_{k}^{\dagger}e^{-i\vtr{k}\vtr{x}+i\omega_{k}t} \right)
+			\end{dmath}
+			\begin{dsuspend}
+				with $\omega_k=\sqrt{\vtr{k}^2+m^2}$ this satisfies KGE
+			\end{dsuspend}
+			\begin{dmath}[]
+				\hat{\pi}\left( \vtr{x},t \right)=\dot{\hat{\Phi}}\left( \vtr{x},t \right)
+				=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\frac{1}{2\omega_k}\left( -i\omega_{k}\hat{a}_ke^{i\vtr{k}\vtr{x}-i\omega_k t}+i\omega_k\hat{a}_{k}^{\dagger}e^{-i\vtr{k}\vtr{x}+i\omega_k t} \right)
+			\end{dmath}
+			\begin{dsuspend}
+				Note: change in normalization:
+			\end{dsuspend}
+			\begin{dmath}[]
+				\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}\hiderel{\to}\underbrace{\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3 }\frac{1}{2\omega_k}}_{\mathclap{\text{Lorentz invariant}}}
+			\end{dmath}
+		\end{dgroup}
+\end{itemize}

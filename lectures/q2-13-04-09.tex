@@ -1,0 +1,120 @@
+\begin{dmath}[]
+	\psi_k\to e^{i\vtr{k}\cdot \vtr{r}}+f(\theta)e^{ikr}\frac{1}{r}
+\end{dmath}
+central potential
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\psi_k=\sum_{\ell=0}^{\infty}R_{\ell}\left( kr \right)P_{\ell}\left( \cos\theta \right)
+	\end{dmath}
+	\begin{dmath}[]
+		f_{k}=\sum_{\ell=0}^{\infty}f_{\ell}(k)P_{\ell}\left( \cos\theta \right)
+	\end{dmath}
+	\begin{dsuspend}
+		Schrödinger equation for $R_{\ell}$, solution $\stackrel{r\to\infty}{\sim} j_{\ell} n_{\ell}$
+	\end{dsuspend}
+	\begin{dmath}[]
+		R_{\ell}(kr)\stackrel{r\to\infty}{\simeq}\frac{1}{kr}\left( B_{\ell}\sin \left( kr-\frac{\ell \pi}{2} \right)+C_{\ell}\cos\left( kr-\frac{\ell \pi}{2} \right) \right)
+		=\frac{1}{kr}A_{\ell}\sin \left( kr-\frac{\ell \pi}{2}+\underbrace{\delta_{\ell}(k)}_{\mathclap{\text{phase shift}}} \right)
+	\end{dmath}
+\end{dgroup}
+for $V=0$ we have $C_{\ell}=0$, i.e. $\rho_{\ell}=0$\\
+
+next: find relation between phase shifts $\delta_{\ell}(k)$ and scattering amplitude $f(\theta)$ $\left( \to \dv{\sigma}{\Omega} \right)$
+
+Aside: ree particle eigenfunction in spherical coordinates
+
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\psi_{j\ell m_{\ell}}\left( r,\phi,\theta \right)=C_{J\ell}(kr)Y_{\ell}^{m_{\ell}}\left( \theta,\phi \right)\condition*{E=\frac{\hbar^2 k^2}{2m}}
+	\end{dmath}
+	\begin{dsuspend}
+		Form a basis, expand 
+	\end{dsuspend}
+	\begin{dmath}[]
+		e^{i\vtr{k}\vtr{r}}=e^{ikr\cos\theta}
+	\end{dmath}
+	\begin{dsuspend}
+		in this basis
+	\end{dsuspend}
+	\begin{dmath}[]
+		e^{i\vtr{k}\vtr{r}}=\sum_{\ell=0}^{\infty}\sum_{m_{\ell}}^{\ell}C_{\ell m_{\ell}}j_{\ell}\left( kr \right)Y_{\ell}^{m_{\ell}}\left( \theta,\phi \right)
+	\end{dmath}
+	\begin{dsuspend}
+		having no $\phi$ dependence
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hiderel{\leadsto} e^{i\vtr{k}\vtr{r}}=\sum_{\ell=0}^{\infty}a_{\ell} j_{\ell}(kr)P_{\ell}\left( \cos\theta \right)
+	\end{dmath}
+	\begin{dsuspend}
+		fix coefficient $a_{\ell}$ (use orthogonality)
+	\end{dsuspend}
+	\begin{dmath}[]
+		e^{i\vtr{k}\vtr{r}}=\sum_{\ell=0}^{\infty}\left( 2\ell +1 \right)i^{\ell}j_{\ell}\left( kr \right)P_{\ell}\left( \cos\theta \right)
+	\end{dmath}
+	\begin{dsuspend}
+		Put everything into (*) for $r\to \infty$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\frac{1}{kr}A_{\ell}\sin \left( kr-\frac{\pi \ell}{2}+\delta_{\ell} \right)
+		=\left( 2\ell +1 \right)i^{\ell}\frac{1}{kr}\sin \left( kr-\frac{\pi \ell}{2} \right)+P_{\ell}\frac{e^{ikr}}{r}
+	\end{dmath}
+	\begin{dmath}[]
+		\frac{A_{\ell}}{2i}e^{ikr}e^{-\frac{i\pi\ell}{2}}e^{i\delta_{\ell}}-\frac{A_{\ell}}{2i}e^{-ikr}e^{\frac{i\pi\ell}{2}}e^{-i\delta_{\ell}}=\left( 2\ell+1 \right)i^{\ell}\frac{1}{2i}e^{ikr}e^{-\frac{i\ell\pi}{2}}-\left( 2\ell+1 \right)i^{\ell}\frac{1}{2i}e^{-ikr}e^{\frac{i\ell \pi}{2}}+kf_{\ell}e^{ikr}
+	\end{dmath}
+	\begin{dmath}[]
+		A_{\ell}=\left( 2\ell +1 \right)i^{\ell}e^{i\delta_{\ell}}
+	\end{dmath}
+	\begin{dmath}[]
+		f_{\ell}=\frac{2\ell +1}{2ik}\left( e^{2i\delta_{\ell}}-1 \right)
+		=\frac{2\ell +1}{k}e^{i\delta_{\ell}}\sin\left( \delta_{\ell} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		having the full information of $f(\theta)$, thus $\dv{\sigma}{\Omega}$
+	\end{dsuspend}
+	\begin{dmath}[]
+		f\left( \theta \right)=\sum_{\ell =0}^{\infty}\frac{2\ell +1}{k}e^{i\delta_{\ell}}\sin \left( \delta_{\ell} \right)P_{\ell}\left( \cos\theta \right)
+		=\sum_{\ell=0}^{\infty}f_{\ell}P_{\ell}\left( \cos\theta \right)
+	\end{dmath}
+\end{dgroup}
+Total cross section
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\sigma_{\text{tot}}=\int_{}^{}\dd{\Omega}\, \dv{\sigma}{\Omega}
+		=\int_{}^{}\dd{\Omega}\, \abs{f\left( \theta \right)}^2
+		=2\pi\int_{-1}^{1}\dd{\cos\theta}\sum_{\ell=0}^{\infty}\sum_{\ell '=0}^{\infty}f_{\ell}f_{\ell'}^{*}P_{\ell}\left( \cos\theta \right)P_{\ell}\left( \cos\theta \right)
+	\end{dmath}
+	\begin{dsuspend}
+		use
+	\end{dsuspend}
+	\begin{dmath}[]
+		\int_{}^{}\dd{\cos\theta}\, P_{\ell}\left( \cos\theta \right)P_{\ell'}\left( \cos\theta \right)=\frac{2}{2\ell +1}\delta_{\ell\ell'}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow}\sigma_{\text{tot}}=\sum_{\ell=0}^{\infty}4\pi\frac{2\ell +1}{k^2}\sin^2\left( \delta_{/ell} \right)\equiv\sum_{\ell=0}^{\infty}\sigma_{\ell}
+	\end{dmath}
+\end{dgroup}
+\subsection{The optical theorem}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\im\left( f\left( \theta=0 \right) \right)=\Im\left( \sum_{\ell=0}^{\infty}f_{\ell} \right)
+		=\im\left( \sum_{\ell=0}^{\infty}\frac{2\ell+1}{k}e^{i\delta_{\ell}}\sin\left( \delta_{\ell} \right) \right)
+		=\sum_{\ell=0}^{\infty}\frac{2\ell +1}{k}\sin^2\left( \delta_{\ell} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\Rightarrow}\sigma_{\text{tot}}=\frac{4\pi}{k}\im\left( f\left( \theta=0 \right) \right)
+	\end{dmath}
+\end{dgroup}
+often an ``easy'' way to compute the total cross section by computing $\im$ of forward scattering amplitude.
+
+Partial-wave useful if not too many $\sigma_{\ell}$ contribute.
+
+semi-classical: potential of range $A,$ $V(r)=0$ for $r>0$
+
+classical: no scattering if $b>a$
+\begin{dmath}[]
+	L\simeq \ell\cdot \hbar=b\cdot P=b\cdot \hbar\cdot k
+\end{dmath}
+no scattering for
+\begin{dmath}[]
+	b=\frac{\ell}{k}>a
+\end{dmath}
