@@ -247,14 +247,74 @@ The anti commutation relations of the fields are consistent with
 		=\acomm{b}{d}=\ldots = 0
 	\end{dmath}
 \end{dgroup}
-%Check:
-%\begin{dgroup}[]
-	%\begin{dmath}[]
-		%\acomm{\hat{\psi}_{\alpha}}{\hat{\psi}_{\beta}^{\dagger}}
-		%=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}2\omega_{k}
-		%\int_{}^{}\frac{\rd^3 k'}{\left( 2\pi \right)^32\omega_k'}\sum_{\text{?}}^{}
-		%\left( \acomm{\hat{b}_{kr}}{\hat{b}_{k'r'}}U_{\alpha}\left( \vtr{k},r \right)U_{\beta}^{\dagger}\left( k',r' \right)e^{-ikx}e^{ik'y}+\acomm{\hat{d}_{kr}^{\dagger}}{\hat{d}_{k'r'}}V_{\alpha}\left( k,r \right)V_{\beta}^{\dagger}\left( k',r' \right)e^{ikr}e^{-ik'y} \right)
-		%=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^32\omega_k}\frac{1}{2\omega_k}\sum_{r}^{}\left( \underbrace{\left( U\left( k,r \right)\overline{U}\left( k,r \right)\gamma_0}_{\left( \left( k+m \right)\gamma_0 \right)_{\alpha\beta}} \right)_{\alpha\beta}e^{-ik\left( x-y \right)}-\left( \underbrace{U\left( k,r \right)\overline{U}\left( k,r \right)\gamma_0}_{\left( \left( -k+m \right)\gamma_0 \right)_{\alpha\beta}} \right)_{\alpha\beta}e^{ik\left( x-y \right)} \right)
-		%=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3 2\omega_k}2\omega_k\sum_{r}^{}\left( \hat{b}_{kr}^{\dagger}\hat{b}_{kr}-\hat{d}_{kr}\hat{d}_{kr}^{\dagger} \right)
-	%\end{dmath}
-%\end{dgroup}
+Check:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\acomm{\hat{\psi}_{\alpha}}{\hat{\psi}_{\beta}^{\dagger}}
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}2\omega_{k}
+		\int_{}^{}\frac{\rd^3 k'}{\left( 2\pi \right)^32\omega_k'}\sum_{\text{?}}^{}
+		\left( \acomm{\hat{b}_{kr}}{\hat{b}_{k'r'}}U_{\alpha}\left( \vtr{k},r \right)U_{\beta}^{\dagger}\left( k',r' \right)e^{-ikx}e^{ik'y}+\acomm{\hat{d}_{kr}^{\dagger}}{\hat{d}_{k'r'}}V_{\alpha}\left( k,r \right)V_{\beta}^{\dagger}\left( k',r' \right)e^{ikr}e^{-ik'y} \right)
+		=\int_{}^{}\underbrace{\frac{\rd^3 k}{\left( 2\pi \right)^3 2\omega_k}}_{\mathclap{\text{section 9.4}}}\frac{1}{2\omega_k}\sum_{r}^{}\left( \left( U\left( k,r \right)\overline{U}\left( k,r \right)\gamma_0 \right)_{\alpha\beta}e^{-ik\left( x-y \right)}-\left( U\left( k,r \right)\overline{U}\left( k,r \right)\gamma_0 \right)_{\alpha\beta}e^{ik\left( x-y \right)} \right)
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3 2\omega_k}2\omega_k\sum_{r}^{}\left( \hat{b}_{kr}^{\dagger}\hat{b}_{kr}-\hat{d}_{kr}\hat{d}_{kr}^{\dagger} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		where
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( U\left( k,r \right)\overline{U}(k,r)\gamma_0 \right)_{\alpha\beta}
+		=\left( \left( k+m \right)\gamma_0 \right)_{\alpha\beta}
+	\end{dmath}
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( U\left( k,r \right)\overline{U}\left( k,r \right)\gamma_0 \right)_{\alpha\beta}
+		=\left( \left( -k+m \right)\gamma_0 \right)_{\alpha\beta}
+	\end{dmath}
+	\begin{dsuspend}
+		in 2nd term change integration variable $\vtr{k}\to -\vtr{k}$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hiderel{\leadsto}
+		\acomm{\hat{\psi}_{\alpha}}{\hat{\psi}_{\beta}^{\dagger}}
+		=\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3\left( 2\omega_k \right)}\left( \left( k_0\gamma_0-\vtr{k}\vtr{\upgamma}+m \right)\gamma_0+\left( k_0\gamma_0+\vtr{k}'\vtr{\upgamma}-m \right)\gamma_0 \right)_{\alpha\beta}e^{i\vtr{k}\left( \vtr{x}-\vtr{y} \right)}
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi  \right)^3 2\omega_k}2\omega_k\delta_{\alpha\beta}e^{ik\left( \vtr{x}-\vtr{y} \right)}
+		=\delta_{\alpha\beta}\delta\left( \vtr{x}-\vtr{y} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{H}=\ldots
+		=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3 2\omega_k}\omega_k \sum_{r}^{}
+		\left( \hat{b}_{kr}^{\dagger}\hat{b}_{kr}-\hat{d}_{kr}\hat{d}_{kr}^{\dagger} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{H}=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3 2\omega_k}\omega_k\sum_{r}^{}\left( \hat{b}_{kr}^{\dagger}\hat{b}_{kr}+\hat{d}_{kr}^{\dagger}\hat{d}_{kr} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{Q}=\hat{j}^{0}
+		=\overline{\hat{\psi}}\gamma^{0}\hat{\psi}
+		=\ldots = \int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3 2\omega_k}\sum_{r}^{}\left( \hat{b}_{kr}^{\dagger}\hat{b}_{kr}-\hat{d}_{kr}^{\dagger}\hat{d}_{kr} \right)
+	\end{dmath}
+\end{dgroup}
+WHy all this? Add interactions $p^{\mu}\to p^{\mu}+eA^{\mu}$ or $i\cancel{\infty}\to i\cancel{\infty}+e\cancel{A}$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\mathcal{L}=\overline{\psi}\left( i\cancel{\infty}-m \right)\psi+eA_{\mu}\overline{\psi}\gamma^{\mu}\psi
+	\end{dmath}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		eA_{\mu}\overline{\psi}\gamma^{\mu}\psi
+		=eA_{\mu}j^{\mu}
+	\end{dmath}
+	\begin{dsuspend}
+		recall (section 5)
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hat{U}=T\left( e^{-i\int_{t_0}^{t}\! \dd{t}\,\hat{V}_{\text{I}}(t)} \right)
+		=\left( 1-i\int_{t_0}^{t}\! \dd{t}\, \hat{V}_{\text{I}}+\ldots \right)
+	\end{dmath}
+	\begin{dsuspend}
+		recall section4, transition matrix elements $\mel{f}{\hat{U}}{i}$ with $f$ and $i$ having different particle content
+	\end{dsuspend}
+\end{dgroup}
