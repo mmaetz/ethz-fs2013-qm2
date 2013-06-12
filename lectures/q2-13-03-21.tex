@@ -1,0 +1,287 @@
+$T$: time ordering
+\begin{dgroup}[]
+	\begin{dmath}[]
+		T\left( H\left( t_1 \right),H(t_2) \right)\equiv H\left( t_1 \right)H(t_2)\vartheta\left( t_1-t_2 \right)+H\left( t_2 \right)H\left( t_1 \right)\vartheta\left( t_2-t_1 \right)
+	\end{dmath}
+	\begin{dmath}[]
+		T\left( H\left( t_1 \right),H(t_2)H(_3) \right)=H\left( t_1 \right)H\left( t_2 \right)H(t_3)\vartheta\left( t_1-t_2 \right)\vartheta\left( t_2-t_3 \right)+H\left( t_1 \right)H\left( t_3 \right)H\left( t_2 \right)\vartheta\left( t_1-t_3 \right)\vartheta\left( t_3-t_1 \right)+\text{4 more terms}
+	\end{dmath}
+\end{dgroup}
+to make approximations posible, us \emph{interaction picture.}
+recall
+\begin{description}
+	\item[Schrödinger picture:]
+		\begin{dmath}[]
+			\ket{\psi_S(t)}\condition{$A_{S}$ (time independent)}
+		\end{dmath}
+		with $\psi_{S}(t)$ time dependent
+	\item[Heisenberg picture:] 
+		\begin{dgroup}[]
+			\begin{dmath}[]
+				\ket{\psi}_{H}=\ket{\psi(t_0)}=U\left( t_0,t \right)\ket{\psi(t)}
+			\end{dmath}
+			\begin{dsuspend}
+				with
+			\end{dsuspend}
+			\begin{dmath}[]
+				A_{H}(t)=U\left( t_0,t \right)A U\left( t,t_0 \right)
+			\end{dmath}
+		\end{dgroup}
+	\item[interaction picture:] 
+		\begin{dgroup}[]
+			\begin{dmath}[]
+				H=H_0+V(t)
+			\end{dmath}
+			\begin{dsuspend}
+				with $H_0$ time independent
+			\end{dsuspend}
+			\begin{dmath}[]
+				U_0\left( t,t_0 \right)=e^{-\frac{i}{\hbar}H_0\left( t-t_0 \right)}
+			\end{dmath}
+			\begin{dmath}[]
+				\psi\left( t \right)_{I}=\equiv U_0\left( t_0,t \right)\ket{\psi(t)}=U_0\left( t_0,t \right)U\left( t,t_0 \right)\ket{\psi}_{H}
+			\end{dmath}
+			\begin{dmath}[]
+				A_{I}(t)\equiv U_0\left( t_0,t \right)A U_0\left( t,t_0 \right)
+			\end{dmath}
+			\begin{dsuspend}
+				$A_{I}(t)$ and $\ket{\psi(t)}$ both time dependent
+			\end{dsuspend}
+		\end{dgroup}
+\end{description}
+Time evolution in interaction picture
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\ket{\psi(t)}_{I}=U_{I}\left( t,t_1 \right)\ket{\psi(t_1)}_{I}
+	\end{dmath}
+	\begin{dsuspend}
+		where
+	\end{dsuspend}
+	\begin{dmath}[]
+		U_{I}\left( t,t_1 \right)=U_{0}\left( t_0,t \right)U\left( t,t_1 \right)U_0\left( t_1,t_0 \right)
+	\end{dmath}
+\end{dgroup}
+\begin{dmath}[frame]
+	i\hbar\pdv{}{t}U_{I}\left( t,t_1 \right)=V_{I}(t)U_{I}\left( t,t_1 \right)
+\end{dmath}
+\begin{dmath}[]
+	i\hbar \pdv{}{t}U\left( t,t_1 \right)=H(t)U\left( t,t_1 \right)
+\end{dmath}
+\begin{dmath}[frame]
+	U_{I}\left( t,t_1 \right)=Te^{-\frac{i}{\hbar}\int_{t_1}^{t}\dd{t'}\, V_{I}(t')}
+\end{dmath}
+If $V(t)$ ``small'', can do perturbation theory by expanding exponential. Structure of expansion
+\begin{dmath}[]
+	U_{I}\left( t,t_0 \right)=1+\left( i\hbar \right)^{-1}\int_{t_0}^{t}\dd{t}\, V_{I}(t)
+	+\left( i\hbar \right)^{-1}\int_{t_0}^{t}\!\dd{t_1}\int_{t_1}^{t_1}\dd{t_2}\, V_{I}(t_1)V_{I}(t_2)+\ldots
+\end{dmath}
+Compurae to Chapter 4.1. Let $V(t)=0$ for $t<t_0$
+
+Amplitude for initial state $\ket{\psi_{i}^{(0)}}$ to go over into final state 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\braket{\psi_{f}^{(0)}}{\psi_i(t)}=\mel{\psi_{f}^{(0)}}{U_{I}(t,t_0)}{\psi_{i}^{(0)}}
+		=\underbrace{\braket{\psi_{f}^{(0)}}{\psi_{i}^{(0)}}}_{\delta_{if}}
+		+\left( i\hbar \right)^{-1}
+		\mel{\psi_{f}^{(0)}}{\int_{t_0}^{t}\dd{t'}\, V_{I}(t')}{\psi_{i}^{(0)}}
+	\end{dmath}
+	\begin{dsuspend}
+		where
+	\end{dsuspend}
+	\begin{dmath}[]
+		\mel{\psi_{f}^{(0)}}{\int_{t_0}^{t}\dd{t'}\, V_{I}(t')}{\psi_{i}^{(0)}}
+		=\int_{t_0}^{t}\dd{t'}\, \mel{\psi_{f}^{(0)}}{e^{-\frac{i}{\hbar}\left( t_0-t' \right)}V(t')e^{-\frac{i}{\hbar}H\left( t'-t_0 \right)}}{\psi_{i}^{(0)}}
+		=\int_{t_0}^{t}\dd{t'}\, \mel{\psi_{f}^{(0)}}{V(t')e^{\frac{i}{\hbar}\left( E_{F}-E_{i} \right)t'}}{\psi_{i}^{(0)}}
+	\end{dmath}
+\end{dgroup}
+\section{The adiabatic approximation}
+Here $V(t)$ \emph{not} small by change is slow
+
+\begin{thrm}
+	For an adiabatic change $H_i\to H_F$ a system that is initialy i nthe $n$th eigenstate of $H_i$ will evolve into the $n$th eigenstate of $H_{f}$ (no level crossing).
+\end{thrm}
+\begin{proof}
+	Let
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			H(t)=E_{n}\left( t \right)\ket{\psi_n(t)}
+		\end{dmath}
+		\begin{dmath}[]
+			\ket{\psi(t)}=\sum_{n}^{}c_n(t)e^{\left( i\hbar \right)^{-1}\int_{0}^{t}\dd{\tau}\, E_{n}(\tau)}\ket{\psi_n(t)}
+			=\sum_{n}^{}c_n e^{iE_n}\ket{\psi_n(t)}
+		\end{dmath}
+	\end{dgroup}
+	$to$ into Schrödinger
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			i\hbar\sum_{n}^{}\left( C_{n}^{i}\ket{\psi_n}+c_n\ket{\dot{\psi_n}} \right)e^{iE_n}
+			=\sum_{n}^{}c_n e^{iE_n}H\ket{\psi_n}
+		\end{dmath}
+		\begin{dsuspend}
+			multiply by $\bra{\psi_m}$
+		\end{dsuspend}
+		\begin{dmath}[]
+			\dot{c}_m=-\sum_{}^{}c_n\braket{\psi_m}{\dot{\psi}_n}e^{i\left( E_n-E_m \right)}
+		\end{dmath}
+		\begin{dsuspend}
+			where we need to compute $\braket{\psi_m}{\dot{\psi}_n}$
+		\end{dsuspend}
+	\end{dgroup}
+\end{proof}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		H\ket{\psi_n}=_n\ket{\psi_n}
+	\end{dmath}
+	\begin{dmath}[]
+		\dot{H}\ket{\psi_m}+H\ket{\dot{\psi}_n}
+		=\dot{E}_n\ket{\psi_n}+E_n\ket{\dot{\psi}_n}
+	\end{dmath}
+	\begin{dsuspend}
+		$m\not n$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\mel{\psi_m}{\dot{H}}{\psi_n}=\left( E_n-E_m \right)\braket{\psi_m}{\dot{\psi}_n}
+	\end{dmath}
+	\begin{dsuspend}
+		into equation for $\dot{c}_m$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\dot{c}_m=-c_m\braket{\psi_m}{\dot{\psi}_m}
+		-\sum_{n\not = m}^{}c_n\frac{\mel{\psi_m}{\dot{H}}{\psi_n}}{\left( E_n-E_m \right)}
+	\end{dmath}
+	\begin{dsuspend}
+		adiabatic approximation $\dot{H}$ small $\to 0$ also must not have degeneracy
+	\end{dsuspend}
+\end{dgroup}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\dot{c}_m(t)=-c_m\braket{\psi_m}{\dot{\psi}_m}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\to} c_m(t)=c_m(t_0)e^{i\gamma_m (t)}
+	\end{dmath}
+	\begin{dmath}[]
+		\gamma_m(t)=i\int_{t_0}^{t}\dd{\tau}\, \braket{\psi_m(\tau)}{\dot{\psi}_m(\tau)}
+	\end{dmath}
+	\begin{dsuspend}
+		if system is in state $\ket{\psi_m}$ at time $t$ it remains in this state
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi(t)=c_m(t)e^{iE_m(t)}\ket{\psi_m(t)}=e^{i\gamma_m(t)}e^{iE_m(t)}\ket{\psi_m(t)}
+	\end{dmath}
+	\begin{dsuspend}
+		where $e^{i\gamma_m(t)}$ is the geometric phase ($\to$ Berry phase) and $e^{iE_m(t)}$ is the dynamic phase
+	\end{dsuspend} 
+\end{dgroup}
+\chapter{Interaction of matter with classical radiation}
+Here radiation treated as a classical field (quantization of radiation $\to$ Chaptor 8)
+\section{Basics from EM \& QMI}
+External classicial field
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\vtr{B}=\vtr{\nabla}\times \vtr{A}
+	\end{dmath}
+	\begin{dmath}[]
+		\vtr{E}=-\vtr{\nabla}\phi-\dot{\vtr{A}}
+	\end{dmath}
+\end{dgroup}
+(in relativity $\phi$, $A$ $\to$ $A^{\mu}$ not here)\\
+physics invariant und er gauge transformation
+\begin{dgroup}[]
+	\begin{dmath}[]
+		A^{\mu}\to A^{\mu}+\partial^{\mu}\chi
+		\begin{cases}
+			\vtr{A}\to \vtr{A}+\vtr{\nabla}\chi\left( \vtr{r},t \right)\\
+			\phi\to \phi-\frac{1}{c}\dot{\chi}\left( \vtr{r},t \right)
+		\end{cases}
+	\end{dmath}
+\end{dgroup}
+gauge choice: here \emph{Coulomb gauge}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\vtr{\nabla}\cdot \vtr{A}=0
+	\end{dmath}
+	\begin{dsuspend}
+		Maxwell equation in free space $\to$ wave equation for $\vtr{A}$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\Box \vtr{A}=\left( \frac{1}{c^)}\pddv{}{t}-\nabla^2 \right)\vtr{A}=0
+	\end{dmath}
+	\begin{dsuspend}
+		solution
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vtr{A}=\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\left( \chi\left( k,\lambda \right)\vtr{\upepsilon}\left( k,\lambda \right)e^{i\vtr{k}\cdot \vtr{r}-i\omega_{k}t}+\alpha^{*}\left( \vtr{k},\lambda \right)\upepsilon^{*}\left( \vtr{k},\lambda \right)\vtr{\upepsilon}^{*}\left( \vtr{k},\lambda \right)e^{-i\vtr{k}\cdot \vtr{r}}+i\omega_{k}t \right)
+	\end{dmath},
+	\begin{dsuspend}
+		where $\alpha\left( \vtr{k},\lambda \right)$ is the coefficient of linear combination and $\lambda$ is the polarization $\lambda \in \left\{ 1,2 \right\}$ and $\vtr{k}\cdot \vtr{\upepsilon}=0\to$2 polarizations
+		from $\Box A=0$ ($\to$ $\omega_{k}=c\abs{\vtr{k}}$). 
+	\end{dsuspend}
+\end{dgroup}
+Recall QMI Chapter 9
+\begin{dgroup}[]
+	\begin{dmath}[]
+		H=\frac{1}{2m}\left( i\hbar\vtr{\nabla}-\frac{q}{c}\vtr{A} \right)^2+q\phi+V_0
+		=\underbrace{\frac{p^2}{2m}+V_0}_{H_0}-\underbrace{\frac{q}{2mc}\left( \vtr{p}\cdot \vtr{A}+\vtr{A}\cdot \vtr{p} \right)+\frac{q^2}{2mc^2}\vtr{A}^2+q\phi}_{V(t)}
+	\end{dmath}
+\end{dgroup}
+Introduce \emph{number density:}
+\begin{dmath}[]
+	\rho(\vtr{r})=\sum_{i}^{}\delta\left( \vtr{r}-\vtr{r}_i \right)=\delta\left( \vtr{r}-\vtr{r}_1 \right)
+\end{dmath}
+and \emph{current density:}
+\begin{dmath}[]
+	\vtr{j}(\vtr{r})=\frac{1}{2m}\sum_{i}^{}\left( \vtr{p}_i\delta\left( \vtr{r}-\vtr{r}_i \right)+\delta\left( \vtr{r}-\vtr{r}_i \right)\vtr{p}_i \right)
+\end{dmath}
+then rewrite
+\begin{dgroup}[]
+	\begin{dmath}[]
+		V(t)=\int_{}^{}\rd^3 r\, \left( \frac{e}{c}\vtr{j}(\vtr{r})\vtr{A}\left( \vtr{r},t \right)+\frac{e^2}{2mc^2}\rho(\vtr{r})\vtr{A}^2-e\rho(\vtr{r})\phi\left( \vtr{r},t \right) \right)
+	\end{dmath}
+	\begin{dsuspend}
+		where $\vtr{j}(\vtr{r})$ is the dominant term, $\rho(\vtr{r})$ drop $\sim \frac{e^2}{c^2}$ (small compared to $\vtr{j}\cdot \vtr{A}$) and $\phi(\vtr{r},t), \phi=0$. Write $V\left( \vtr{r}_1,t \right)$ for a single electron in terms of Fourier transform
+	\end{dsuspend}
+	\begin{dmath}[]
+		\vtr{j}(\vtr{k})=\int_{}^{}\rd^3 \vtr{r}\, e^{-i\vtr{k}\cdot \vtr{r}}\vtr{j}(\vtr{r})
+		=\left( \frac{\vtr{p}_1}{2m}e^{-ik\vtr{r}_1}+e^{-i\vtr{k}\vtr{r}_1}\frac{\vtr{p}_1}{2m} \right)
+	\end{dmath}
+	\begin{dmath}[]
+		V(t)=\frac{e}{c}\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}
+		\sum_{\lambda=\left\{ 1,2 \right\}}^{}
+		\left( \underbrace{\alpha\left( k,\lambda \right)\tilde{\vtr{j}}\left( -\vtr{k} \right)\cdot \vtr{\upepsilon}\left( k,\lambda \right)}_{V}e^{-i\omega_kt}+\underbrace{\alpha^{*}\left( k,\lambda \right)\tilde{\vtr{j}}(\vtr{k})\cdot \vtr{\upepsilon}^{*}\left( \vtr{k},\lambda \right)}_{V^{*}}e^{i\omega_k t} \right)
+	\end{dmath}
+\end{dgroup}
+\section{Induced emission and absorption}
+Consider atom in external (classical) electromagnetic field. Compute transition probability/rate of state $\psi_0$ into $\psi_n (n\neq 0)$ by absorption of electromagnetic radiation. From section 4.3 for a single mode $\left( k\lambda \right)$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\Gamma_{10}\left( \vtr{k},\lambda \right)
+		=\frac{2\pi}{\hbar}\delta\left( E_n-E_0-\hbar\omega \right)\frac{e^2}{c^2}
+		\abs{\alpha\left( k,\lambda \right)}^2\underbrace{\abs{\mel{\psi_n}{\tilde{\vtr{j}}\left( -\vtr{k} \right)\cdot\vtr{\upepsilon}\left( \vtr{k},\lambda \right)}{\psi_0}}^2}_{\abs{V_{n0}}^2}
+	\end{dmath}
+	\begin{dsuspend}
+		For incoherent radiation (nointerference effects)
+	\end{dsuspend}
+	\begin{dmath}[]
+		\Gamma_{n0}=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\sum_{\lambda}^{}\Gamma_{n0}\left( \vtr{k},\lambda \right)
+		=\int_{}^{}\frac{\dd{\omega}\, 'w}{\left( 2\pi c \right)^3}
+		\int_{}^{}\dd{\Omega}\, \sum_{\lambda}^{}\Gamma_{n0}\left( \vtr{k},\lambda \right)
+		=\int_{}^{}\frac{2\pi}{\left( \hbar c \right)^2}\frac{\omega_{n0}^{2}}{\left( 2\pi c \right)^3}\sum_{\lambda}^{}\abs{\alpha}^2 \mel{\psi_n}{\vtr{j}\cdot \vtr{\varepsilon}}{\psi_0}J^2 \dd{\Omega}\left( \hat{k} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		the reverse process: induced emission
+	\end{dsuspend}
+	\begin{dmath}[]
+		\Gamma_{on}=\frac{2\pi e^2}{\left( \hbar c \right)^2}\frac{\omega_{n0}^{2}}{\left( 2\pi c \right)^3}
+		\sum_{}^{}\abs{\alpha^{*}}^{2}\abs{\mel{\psi_0}{j\left( \vtr{k} \right)\cdot \vtr{\upepsilon}(k)}{\psi_n}}^2
+		=\Gamma_{n0}
+	\end{dmath}
+	\begin{dsuspend}
+		where
+	\end{dsuspend}
+	\begin{dmath}[]
+		\mel{\psi_0}{j(\vtr{k}\cdot \vtr{\upepsilon}(k))}{\psi_n}^2
+		=\abs{\mel{\psi_0}{\vtr{j}\left( -\vtr{k} \right)\vtr{\upepsilon}(\vtr{k})}{\psi_0}}^2
+	\end{dmath}
+\end{dgroup}
+Aside: there is a 3rd process: spontaneous emmission (without external field)

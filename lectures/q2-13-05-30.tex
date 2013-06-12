@@ -104,3 +104,157 @@
 			\end{dmath}
 		\end{dgroup}
 \end{itemize}
+\begin{proof}
+	\begin{dgroup}[]
+		\begin{dmath}[]
+			\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^4}2\pi \delta\left( k^2-m^2 \right)\sigma(k_0) \condition{(manifestly $L$-invariant)}
+			=\int_{}^{}\frac{\rd^4 k}{\left( 2\pi \right)^3}\delta\left( k^2-m^2 \right)\vartheta\left( k_0 \right)
+			=\int_{}^{}\frac{\rd^4 k}{\left( 2\pi \right)^3} \frac{1}{2\omega_k}\left( \delta\left( k_0-\omega_k \right)+\delta\left( k_0+\omega_k \right)\vartheta\left( k_0 \right) \right)
+			=\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}\frac{1}{\omega_k}
+		\end{dmath}
+		\begin{dsuspend}
+			where in $\delta\left( k_0+\omega_k \right)$ $\omega_k$ does not contribute and we used
+		\end{dsuspend}
+		\begin{dmath}[]
+			\delta\left( f(x) \right)=\sum_{i}^{}\frac{1}{\abs{f(x_i)}}\delta(x_i)\condition*{f(x_i)=0}
+		\end{dmath}
+		\begin{dsuspend}
+			Express $\hat{a}_k$ and $\hat{a}_{k}^{\dagger}$ in terms of $\hat{\phi}$ and $\hat{\pi}$
+		\end{dsuspend}
+		\begin{dmath}[]
+			\int_{}^{}\rd^3 x\, e^{i\vtr{k}\cdot \vtr{x}}\left( \omega_k\hat{\phi}(\vtr{x},t)+i\hat{\pi}\left( \vtr{x},t \right) \right)=\ldots \hat{a}_k e^{-i\omega_k t}
+		\end{dmath}
+		\begin{dmath}[]
+			\hiderel{\Rightarrow} \hat{a}_k=\int_{}^{}\rd^3 \vtr{x}\, e^{ikx}\left( \omega_k\hat{\phi}+i\hat{\pi} \right)
+		\end{dmath}
+		\begin{dmath}[]
+			\hat{a}_{k}^{\dagger}
+			=\int_{}^{}\rd^3 x\, e^{-i\vtr{k}\vtr{x}}\left( \omega_{k}\hat{\phi}-i\hat{\pi} \right)
+		\end{dmath}
+		\begin{dsuspend}
+			check consistency:
+		\end{dsuspend}
+		\begin{dmath}[]
+			\comm{\hat{a}_k}{\hat{a}_{k'}^{\dagger}}
+			=\int_{}^{}\rd^3 \vtr{x}\int_{}^{}\rd^3 \vtr{y}\, 
+			e^{i\omega_k t-i\vtr{k}\vtr{x}}e^{-i\omega_{k'}t+i\vtr{k}'\vtr{x}}\comm{\omega_k\hat{\phi}+i\hat{\pi}}{\omega_{k'}\hat{\phi}\pm i\hat{\pi}}
+		\end{dmath}
+		\begin{dsuspend}
+			where
+		\end{dsuspend}
+		\begin{dmath}[]
+			\comm{\omega_k\hat{\phi}+i\hat{\pi}}{\omega_k\hat{\phi}\pm i\hat{\pi}}=\left( \omega_k\mp \omega_{k'} \right)\delta\left( \vtr{x}-\vtr{y} \right)
+		\end{dmath}
+		\begin{dmath}[]
+			\hiderel{\leadsto}\comm{\hat{a}_k}{\hat{a}_{k'}^{\dagger}}
+			=\int_{}^{}\rd^3 \vtr{x}\, e^{-i\vtr{x}\left( \vtr{k}-\vtr{k}' \right)}e^{i\left( \omega_{k}-\omega_{k'} \right)t}
+			=\left( 2\pi \right)^3 2\omega_k\delta\left( \vtr{k}-\vtr{k}' \right)
+		\end{dmath}
+		\begin{dsuspend}
+			where
+		\end{dsuspend}
+		\begin{dmath}[]
+			\int_{}^{}\rd^3 \vtr{x} \,e^{-i\vtr{x}\left( \vtr{k}-\vtr{k}' \right)}=\left( 2\pi \right)^3 \delta\left( \vtr{k}-\vtr{k}' \right)
+		\end{dmath}
+		\begin{dmath}[]
+			\hiderel{\leadsto} \hat{H}=\ldots
+			=\frac{1}{2}\int_{}^{}\frac{\rd^3 \vtr{k}}{\left( 2\pi \right)^3}
+			\frac{1}{2\omega_k}\omega_k\left( \hat{a}_{k}^{\dagger}\hat{a}_{k}+\underbrace{\hat{a}_k\hat{a}_{k}^{\dagger}}_{\hat{a}^{\dagger}\hat{a}_{k}+\sim\delta(0)} \right)
+		\end{dmath}
+		\begin{dsuspend}
+			where $\delta(0)$ is infinite ground state energy but no absolute energy scale (only cae about energy differences)
+		\end{dsuspend}
+	\end{dgroup}
+\end{proof}
+nermal ordering: (anti) commute
+all $\hat{a}^{\dagger}$ to the left of $\hat{a}$
+\begin{dmath}[]
+	\hat{H}\hiderel{:}=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3} \frac{1}{2\omega_k}\left( \hat{a}_{k}^{\dagger}\hat{a}_k \right)\omega_k\condition{subtracted $\mel{0}{H}{0}=\infty$}
+\end{dmath}
+\paragraph{Example 2: spin $\frac{1}{2}$ field}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\mathcal{L}=\overline{\psi}(x)\left( i\cancel{\partial}-m \right)\psi(x)\condition{($\hbar=1$,$c=1$)}
+	\end{dmath}
+	\begin{dmath}[]
+		\pdv{\mathcal{L}}{\psi}-\partial^{\mu}\pdv{\mathcal{L}}{\left( \partial^{\mu}\psi \right)}
+		=0=-m\overline{\psi}-\partial^{\mu}\left( \overline{\psi}i\gamma_{\mu} \right)
+		=\underbrace{\overline{\psi}\left( i\cancel{\partial}+m \right)}_{\mathclap{\text{adjoint Dirac equation}}}=0
+	\end{dmath}
+\end{dgroup}
+Field momentum conjugate to $\psi$
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\pi\doteq \pdv{\mathcal{L}}{\dot{\phi}}
+		=\overline{\psi}i\Gamma^{0}i\psi^{\dagger}
+	\end{dmath}
+	\begin{dsuspend}
+		Hamiltonian
+	\end{dsuspend}
+	\begin{dmath}[]
+		H=\int_{}^{}\rd^3 x\, \left( \pi \dot{\psi}-\mathcal{L} \right)
+		=\int_{}^{}\rd^3 x\, i\psi^{\dagger}\dot{\psi}
+	\end{dmath}
+	\begin{dsuspend}
+		add $\hat{}$ and impose
+	\end{dsuspend}
+	\begin{dmath}[]
+		\acomm{\hat{\psi}_{\alpha}\left( \vtr{x},t \right)}{\hat{\psi}_{\beta}\left( \vtr{y},t \right)}
+		=\acomm{\hat{\pi}_{\alpha}\left( \vtr{x},t \right)}{\hat{\pi}_{\beta}\left( \vtr{y},t \right)}
+		=0
+	\end{dmath}
+	\begin{dmath}[]
+		\acomm{\hat{\psi}_{\alpha}\left( \vtr{x},t \right)}{\hat{\pi}_{\beta}\left( \vtr{y},t \right)}
+		=i\Delta_{\alpha\beta}\delta\left( \vtr{x}-\vtr{y} \right)
+		\condition{$\alpha,\beta\in \left\{ 1,\cdots,4 \right\}$ spinor indices}
+	\end{dmath}
+\end{dgroup}
+fermions $\Rightarrow$ use 
+	\begin{dmath}[]
+		\acomm{\cdot}{\cdot}=\comm{\cdot}{\cdot}_{+}
+	\end{dmath}
+		and not
+	\begin{dmath}[]
+		\comm{\cdot}{\cdot}=\comm{\cdot}{\cdot}_{-}
+	\end{dmath}
+field operators in momentum representaion 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\hat{\psi}_{\alpha}=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}\frac{1}{2\omega_k}\sum_{r=1}^{2}
+		\left( \hat{b}\left( \vtr{k},r \right)U_{\alpha}\left( k,r \right)e^{-ikx}+\hat{d}^{\dagger}\left( k,r \right)V_{\alpha}(k,r)e^{ikx} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		where $\ds \int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3} \frac{1}{2\omega_k}$ is Lorentz invariant and $\sum_{r=1}^{2}$ from spin and $b^{\dagger}$ creates $E>0$ electrons and $d^{\dagger}$ creates a $E>0$ positron\\
+		satisfies Dirac, since
+	\end{dsuspend}
+	\begin{dmath}[]
+		\left( k-m \right)u=0
+	\end{dmath}
+	\begin{dmath}[]
+		-k-m
+	\end{dmath}v=0
+\end{dgroup}
+The anti commutation relations of the fields are consistent with
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\acomm{\hat{b}_{kr}}{\hat{b}_{k'r'}}
+		=\acomm{\hat{d}_{kr}}{\hat{d}_{k'r'}^{\dagger}}
+		=\left( 2\pi \right)^3 2\omega_k \delta_{rr'}\delta\left( \vtr{k}-\vtr{k}' \right)
+	\end{dmath}
+	\begin{dmath}[]
+		\acomm{\hat{b}}{\hat{b}}
+		=\acomm{\hat{b}^{\dagger}}{\hat{d}^{\dagger}}
+		=\acomm{b}{d}=\ldots = 0
+	\end{dmath}
+\end{dgroup}
+%Check:
+%\begin{dgroup}[]
+	%\begin{dmath}[]
+		%\acomm{\hat{\psi}_{\alpha}}{\hat{\psi}_{\beta}^{\dagger}}
+		%=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3}2\omega_{k}
+		%\int_{}^{}\frac{\rd^3 k'}{\left( 2\pi \right)^32\omega_k'}\sum_{\text{?}}^{}
+		%\left( \acomm{\hat{b}_{kr}}{\hat{b}_{k'r'}}U_{\alpha}\left( \vtr{k},r \right)U_{\beta}^{\dagger}\left( k',r' \right)e^{-ikx}e^{ik'y}+\acomm{\hat{d}_{kr}^{\dagger}}{\hat{d}_{k'r'}}V_{\alpha}\left( k,r \right)V_{\beta}^{\dagger}\left( k',r' \right)e^{ikr}e^{-ik'y} \right)
+		%=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^32\omega_k}\frac{1}{2\omega_k}\sum_{r}^{}\left( \underbrace{\left( U\left( k,r \right)\overline{U}\left( k,r \right)\gamma_0}_{\left( \left( k+m \right)\gamma_0 \right)_{\alpha\beta}} \right)_{\alpha\beta}e^{-ik\left( x-y \right)}-\left( \underbrace{U\left( k,r \right)\overline{U}\left( k,r \right)\gamma_0}_{\left( \left( -k+m \right)\gamma_0 \right)_{\alpha\beta}} \right)_{\alpha\beta}e^{ik\left( x-y \right)} \right)
+		%=\int_{}^{}\frac{\rd^3 k}{\left( 2\pi \right)^3 2\omega_k}2\omega_k\sum_{r}^{}\left( \hat{b}_{kr}^{\dagger}\hat{b}_{kr}-\hat{d}_{kr}\hat{d}_{kr}^{\dagger} \right)
+	%\end{dmath}
+%\end{dgroup}

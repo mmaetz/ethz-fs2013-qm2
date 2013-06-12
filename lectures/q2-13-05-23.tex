@@ -1,3 +1,113 @@
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{\beta\sigma}{\sigma}=\beta\sigma\sigma-\sigma\beta\sigma=2\beta\sigma^2
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{\beta\sigma}{\beta}=c\comm{\beta\vtr{\upalpha}}{\beta}\left(\vtr{ }+\frac{e}{c}\vtr{A} \right)
+		=-2\sigma
+	\end{dmath}
+\end{dgroup}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		H'=\beta mc^2+\frac{\sigma^2}{2mc^2}-\frac{\sigma^4}{8m^3c^6}+\varepsilon-\frac{\comm{\sigma}{\comm{\sigma}{\varepsilon}}}{8m^2c^4}-\frac{i\hbar\comm{\sigma}{\sigma}}{8m^2c^4} \text{$\leftarrow$(even)}
+		+\frac{\beta}{2mc^2}\comm{\sigma}{\varepsilon}-\frac{\sigma^3}{2m^2c^4}+\frac{i\hbar \beta \sigma}{2mc^2}
+		\text{($\leftarrow$ add, suppressed by at least $\frac{1}{m}$)}
+	\end{dmath}
+	\begin{dsuspend}
+		repeat
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi'=e^{iS'}\psi''
+	\end{dmath}
+	\begin{dsuspend}
+		with
+	\end{dsuspend}
+	\begin{dmath}[]
+		S'=\frac{-i\beta\sigma'}{2mc^2}
+	\end{dmath}
+	\begin{dmath}[]
+		H''=H_{\text{even}}+\sigma''
+	\end{dmath}
+	\begin{dsuspend}
+		suppressen by $\frac{1}{m^2}$
+		3rd and last iteration 
+	\end{dsuspend}
+	\begin{dmath}[]
+		H'''=\hiderel{:}H
+		=\beta c^2+\frac{\sigma^2}{2mc^2}-\frac{\sigma^4}{8m^3 c^6}+\varepsilon-\frac{\comm{\sigma}{\comm{\sigma}{\varepsilon}}}{8m^2 c^4}-\frac{i\hbar\comm{\sigma}{\sigma}}{8m^2 c^4}+\mathcal{O}\left( \frac{1}{m^3} \right)
+	\end{dmath}
+\end{dgroup}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\frac{\sigma^2}{2mc^2}=\frac{1}{2m}\alpha_i\left( p_i+\frac{e}{c}A_i \right)\alpha_j\left( p_j+\frac{e}{c}A_j \right)
+		=\frac{1}{2m}\left( \vtr{p}+\frac{e}{c}\vtr{A} \right)^2
+		+\frac{\hbar e}{2m}\vtr{\sigma}\cdot\vtr{\upbeta}
+	\end{dmath}
+	\begin{dmath}[]
+		\frac{-\sigma^4}{8m^3c^6}=\frac{\vtr{p}^4}{8 m^3 c^2}+\ldots \text{relativistic correction to kinetic energy}
+	\end{dmath}
+	\begin{dmath}[]
+		-\frac{1}{8m^2c^4}\comm{\sigma}{\comm{\sigma}{\varepsilon}}=\frac{\left( -i\hbar \right)^2}{8m^2c^2}\left( \alpha_i\nabla_i\comm{\alpha_j\nabla_j}{eV} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		where
+	\end{dsuspend}
+	\begin{dmath}[]
+		\comm{\alpha_j\nabla_j}{eV}=\alpha_j e\left( \nabla_j V-V \nabla_j \right)=\alpha_i e\left( \nabla_j V \right)
+	\end{dmath}
+	\begin{dsuspend}
+		which gives us
+	\end{dsuspend}
+	\begin{dmath}[]
+		-\frac{1}{8m^2c^4}\comm{\sigma}{\comm{\sigma}{\varepsilon}}=
+		\frac{\left( i\hbar^2 \right)}{8m^2 c^2}\comm{\alpha_i\nabla_i}{\alpha_j E_j}
+	\end{dmath}
+	\begin{dsuspend}
+		where
+	\end{dsuspend}
+	\begin{dmath}[]
+		\comm{\alpha_i\nabla_i}{\alpha_jE_j}
+		=\alpha_i\alpha_j\nabla_i\cdot E_i-\alpha_j\alpha_iE_j\nabla_i
+		=\nabla\cdot E+i\sigma\left( \nabla\times E \right)-E \cdot \nabla-i\sigma\left( E\times \nabla \right)
+		=\left( \nabla\cdot E \right)-2i \vtr{\upsigma} \left( \vtr{E}\times \vtr{\nabla} \right)+i\sigma \left[ \vtr{\nabla}\times \vtr{E} \right]
+	\end{dmath}
+	\begin{dsuspend}
+		which leads to 
+	\end{dsuspend}
+	\begin{dmath}[]
+		\frac{-\sigma^4}{8m^3c^6}
+		=\frac{ie\hbar^2}{4m^2c^2}\left( \underbrace{\vtr{\upsigma}\cdot \left( \vtr{E}\times \vtr{\nabla} \right)}_{\mathclap{\text{spin orbit}}}-\underbrace{\frac{\upsigma \left( \vtr{\nabla}\times \vtr{E} \right)}{2}}_{\mathclap{=0\text{ Coulomb}}}-\underbrace{\frac{\hbar^2 e}{8m^2 c^2}\left( \vtr{\nabla}\cdot \vtr{E} \right)}_{\mathclap{\text{Darwin term}}} \right)
+		=\frac{1}{2m^2c^2}\frac{1}{r}\dv{V}{r}\cdot \vtr{S} \cdot\vtr{L}
+	\end{dmath}
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath}[]
+		\frac{-\hbar}{4m^2c^2}\vtr{\upsigma}\left( -\dv{V}{r}\cdot \vtr{S}\cdot \vtr{L} \right)
+		=\frac{1}{2m^2c^2}\frac{1}{r}\dv{V}{r}\cdot \vtr{S}\cdot \vtr{L}
+	\end{dmath}
+	\begin{dsuspend}
+		and
+	\end{dsuspend}
+	\begin{dmath}[]
+		\frac{\hbar^2}{8m^2c^2}\left( \vtr{\nabla} \left( -c E \right)=\frac{\hbar^2}{8mc^2}\nabla\left( \nabla V \right) \right)
+		=\frac{+i\hbar^2 Z e^3}{2m^2 c^2\delta(r)}
+	\end{dmath}
+	\begin{dsuspend}
+		where we have used
+	\end{dsuspend}
+	\begin{dmath}[]
+		\Delta\left( \frac{1}{r} \right)=-4\pi\delta(\vtr{r})
+	\end{dmath}
+	\begin{dsuspend}
+		and $Z=1$
+	\end{dsuspend}
+\end{dgroup}
+including all other terms
+\begin{itemize}
+	\item $\ds -i\hbar \vtr{\nabla} \to -i\hbar \vtr{\nabla}+\frac{e}{c}\vtr{A}$ (gauge symmetry)
+	\item $\ds\vtr{E}=-\vtr{\nabla}\phi-\frac{1}{c}\dot{\vtr{A}}$ (internal symmetry)
+\end{itemize}
 \chapter{Second Quantization}
 Classical field theory $\to$ quatized field theory ``done'' already for radiation field, section $5\to 8$
 \section{Creation and annihilation operators for bosons and fermions}
