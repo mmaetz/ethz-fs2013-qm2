@@ -23,6 +23,96 @@ new variables
 	\end{dmath}
 \end{dgroup*}
 
+For hydrogen-like atoms
+\begin{dgroup}[]
+	\begin{dmath}[]
+		V(r)-\frac{Ze^2}{r}
+	\end{dmath}
+	\begin{dsuspend}
+		QMI uses spherical coordinates
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi\left( \vtr{r} \right)=R_{E\ell}\left( r \right)\mathcal{Y}_{\ell}^{m_{\ell}}\left( \vartheta,\varphi \right)
+		=\frac{U_{E\ell(r)}}{r}Y_{\ell}^{m_{\ell}}\left( \vartheta,\varphi \right)
+	\end{dmath}
+	\begin{dsuspend}
+		Then \emph{Schrödinger} $\to$ differential equation for $U_{E \ell}(r)$
+	\end{dsuspend}
+	\begin{dmath}[]
+		U_{E_{\ell}}-\left( \frac{\ell\left( \ell+1 \right)}{r^2}+\frac{2m \left( V(r)-E \right)}{\hbar^2} \right)U_{E\ell}=0
+	\end{dmath}
+	\begin{dsuspend}
+		$\to$ eigenvalues
+	\end{dsuspend}
+	\begin{dmath}[]
+		E_n=-\left( \frac{Ze^2}{\hbar} \right)^2 \frac{m}{2n^2}
+		=-\frac{\left( Ze \right)^2}{2n^2}
+		=-\frac{\left( Ze \right)^2}{2n^2}\frac{1}{a}=-\frac{\left( Z\alpha \right)^2}{2n^2}mc^2
+	\end{dmath}
+	\begin{dsuspend}
+		Bohr radius $a=\frac{\hbar^2}{mc^2}$ (Fine structure constant $\alpha=\frac{\ell^2}{\hbar c}\simeq \frac{1}{137}$)
+	\end{dsuspend}
+	\begin{dmath}[]
+		n=1,2,3,\ldots
+	\end{dmath}
+	\begin{dmath}[]
+		\ell=0,1,\ldots,n-1
+	\end{dmath}
+	\begin{dmath}[]
+		m_{\ell}=-\ell,-\ell+1,\ldots,\ell
+	\end{dmath}
+	\begin{dsuspend}
+		for each $n$:
+	\end{dsuspend}
+	\begin{dmath}[]
+		2\sum_{\ell=0}^{n-1}\left( 2\ell+1 \right)=2n^2\condition{degeneracy}
+	\end{dmath}
+	\begin{dsuspend}
+		where the left-most $2$ comes from the electron spin. Eigenfunctions
+	\end{dsuspend}
+	\begin{dmath}[]
+		\psi_{n\ell m_{\ell}}=\ket{n,\ell,m_{\ell}}=\sqrt{\frac{\rho^3 \left( n-\ell -1 \right)!}{\left( n+\ell \right)!}}L_{n-\ell+1}^{2\ell +1}(\rho r)e^{-\rho r /2}\left( \rho r \right)^{\ell}\mathcal{Y}_{\ell}^{m_{\ell}}\left( \vartheta,\varphi \right)
+	\end{dmath}
+\end{dgroup}
+\section{Relativistic corrections}
+For $Z\alpha\ll 1$: $E_{n}\ll mc^2\to $ non-relativistic system $\to$ relativistic corrections are small (so we can use Schrödingers equation) 
+\begin{dgroup}[]
+	\begin{dmath}[]
+		T=\frac{p^2}{2m}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\to}\sqrt{p^2 c^2-m^2c^4}-mc^2
+		=\frac{p^2}{2m}-\frac{p^4}{8^3c^2}+\ldots
+	\end{dmath}
+	\begin{dsuspend}
+		where $-\frac{p^4}{8m^3c^2}$ are corrections to $E_n$ computed with \emph{perturbation theory}
+	\end{dsuspend}
+	\begin{dmath}[]
+		\Delta E_{\text{rel}}=\mel{n,\ell,m_{\ell}}{\frac{-p^4}{8m^3 c^2}}{n,\ell,m_{\ell}}
+		=-\frac{1}{2mc^2}\mel{n,\ell,m_{\ell}}{\left( \frac{p^2}{2m} \right)^2}{n,\ell,m_{\ell}}
+		=-\frac{1}{2mc^2}\mel{n,\ell,m_{\ell}}{\left( H_0+Z\frac{e^2}{r} \right)^2}{n,\ell,m_{\ell}}
+		=-\frac{1}{2mc^2}\mel{n,\ell,m_{\ell}}{\left( H_0+Z\frac{e^2}{r} \right)^2}{n,\ell,m_{\ell}}
+		=-\frac{1}{2mc^2}\left( E_{n}^{2}+2Ze^2E_n\vev{\frac{1}{r}}_{n\ell m_{\ell}}+Z^2e^4\vev{\frac{1}{r^2}_{n\ell m_{\ell}}} \right)
+	\end{dmath}
+	\begin{dsuspend}
+		from exercise
+	\end{dsuspend}
+	\begin{dseries}[]
+		\begin{math}
+			\vev{\frac{1}{r}}_{n\ell}=\frac{Z}{an^2}
+		\end{math},
+		\begin{math}
+			\vev{\frac{1}{r^2}}_{n\ell}=\frac{Z^2}{a^2n^3\left( \ell+\frac{1}{2} \right)}
+		\end{math}
+		\begin{math}
+			\vev{\frac{1}{r^3}}_{n\ell}=\frac{Z^3}{a^3n^3\ell \left( \ell +\frac{1}{2} \right)\left( \ell +1 \right)}
+		\end{math}
+	\end{dseries}
+	\begin{dmath}[]
+		\Delta E_{\text{rel}}
+		=-E_{n}\underbrace{\frac{\left( Ze^2 \right)^2}{\hbar^2 c^2}}_{\left( Z\alpha \right)^2}\frac{1}{n^2}\left( \frac{3}{4}-\frac{n}{\ell +\frac{1}{2}} \right)
+	\end{dmath}
+\end{dgroup}
 \section{Spin-orbit term}
 naive ``derivation'' 
 \begin{enumerate}[(1)]
@@ -53,7 +143,6 @@ naive ``derivation''
 		\end{dgroup*}
 		wrong by factor $2$ (Thomas precession)
 \end{enumerate}
-\ldots
 correct result
 \begin{dmath}[]
 	H_{\text{SO}}=\frac{Ze^2}{2mc^2}\frac{1}{r^3}\vtr{L}\cdot\vtr{S}\condition*{\left( \sim -\vtr{\upmu}\cdot \vtr{B} \right)}

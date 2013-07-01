@@ -1,0 +1,42 @@
+%\definecolor{scolor}{RGB}{255,220,181} 
+%\definecolor{scolor}{RGB}{255,166,0} 
+%\colorlet{scolordark}{scolor!50!black}
+
+\definecolor{rioday}{RGB}{255,166,0} 
+\colorlet{riomorning}{rioday!65!black}
+\colorlet{rionight}{rioday!50!black}
+%\definecolor{scolor2}{RGB}{0,255,166} 
+%\definecolor{scolor2}{RGB}{100,100,170} 
+%\definecolor{scolor2}{RGB}{0,233,255} 
+%\definecolor{scolor2}{RGB}{0,182,255} 
+%\definecolor{scolor2}{RGB}{0,255,16} 
+%\definecolor{scolor2}{RGB}{0,89,255} 
+%\colorlet{scolor2dark}{scolor2!50!black}
+
+\definecolor{helsinkiday}{RGB}{0,89,255} 
+%%% Hi from 2013. I think it's fascinating that this code could possibly be used until like 2043 or even further.
+\colorlet{helsinkimorning}{helsinkiday!65!black}
+\colorlet{helsinkinight}{helsinkiday!50!black}
+\hypersetup{colorlinks=false,linkbordercolor=rioday}
+%%%This is the global setting of the number of samples used to plot the functions in the graphs. 
+\tikzset{
+	smasa/.style={
+		%%%The number of samples with low number.
+		%%% 1000 should be enough for a final edition
+		samples=10
+		%samples=1000
+	},
+	bigsa/.style={
+		%%%The number of samples with high number.
+		%%% 10000 should be enough for a final edition.
+		samples=20
+		%samples=10000
+	},
+	%%%The standard filling
+	sfill/.style={
+		fill=rioday
+	},
+	zyplane/.style={canvas is zy plane at x=#1,very thin},
+	zxplane/.style={canvas is zx plane at y=#1,very thin},
+	yxplane/.style={canvas is yx plane at z=#1,very thin}
+}
