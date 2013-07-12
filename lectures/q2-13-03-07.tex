@@ -161,10 +161,10 @@ find relation between $\rho$ and $\Phi$. Let $n$ be nr. states in certain energy
 		n=\frac{2}{\left( 2\pi\hbar \right)^3}\condition*{\ds\text{if }E=\frac{p^2}{2m}-e\Phi<0}
 	\end{dmath}
 	\begin{dmath}[]
-		n=0\condition*{\text{if }E=\frac{p^2}{2m}-e\Phi>0}
+		n=0\condition*{\ds\text{if }E=\frac{p^2}{2m}-e\Phi>0}
 	\end{dmath}
 	\begin{dmath}[]
-		\rho=\int_{0}^{\sqrt{2me\Phi}}\rd^3 p n=\frac{\left( 4\pi \right)2}{\left( 2\pi\hbar \right)^3}\int_{0}^{\sqrt{2me\phi}}
+		\rho=\int_{0}^{\sqrt{2me\Phi}}\rd^3\, p n=\frac{\left( 4\pi \right)2}{\left( 2\pi\hbar \right)^3}\int_{0}^{\sqrt{2me\phi}} \dd{p}\, p^2 =\frac{\rho \pi}{3\left( 2\pi\hbar \right)^3}\left( 2m e\phi \right)^{3/2}
 	\end{dmath}
 \end{dgroup}
 plug this into Poisson $\to$ differential equation for $\Phi$
@@ -185,7 +185,7 @@ solve numerically. boundary condition:
 \end{dgroup}
 $\leadsto$ ``radius'' of atom (contains all but one electron)
 \begin{dmath}[]
-	\overline{R}\simeq \text{consant} a Z^{1/3}
+	\overline{R}\simeq \text{constant} \cdot a\cdot Z^{1/3}
 \end{dmath}
 \section{The Hartree approximation}
 Assume 

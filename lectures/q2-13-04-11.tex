@@ -209,6 +209,17 @@ Check asymptotic behaviour ($\vtr{r}'V(\vtr{r}')\to 0$)
 	\end{dsuspend}
 	\begin{dmath}[]
 		\psi_k(\vtr{r})=e^{i\vtr{k}\vtr{r}}-\frac{m}{2\pi\hbar^2}\int_{}^{}\rd^3 \vtr{r}' \frac{e^{ikr e^{-ik\vtr{e}_r\vtr{r}'}}}{r}\times V(\vtr{r}')\psi_k(\vtr{r}')
+		=e^{ikr}+f(\vtr{r})\frac{e^{ikr}}{r}
 	\end{dmath}
+	\begin{dsuspend}
+		where
+	\end{dsuspend}
+	\begin{dmath}[]
+		f(\vtr{r})
+		=\frac{-m}{2\pi\hbar}\int_{}^{}\rd^3 \vtr{r}'\, \underbrace{e^{-ik\hat{\vtr{e}}_r\cdot\vtr{r}'}}_{\spadesuit}V(\vtr{r}')\psi_k\left( \vtr{r}' \right)
+	\end{dmath}
+	\begin{dsuspend}
+		$\spadesuit$: $\vartheta=\angle \left( \vtr{k},\vtr{r} \right)$ dependence. If $V\left( \vtr{r}' \right)=V\left( r \right)\leadsto f\left( \vartheta,\varphi \right)$.
+	\end{dsuspend}
 \end{dgroup}
-\ldots
+This is still a formal solution because $\psi_k$ is on the right hand side. $\leadsto$ Proceed as in perturbation theory and get another expansion.

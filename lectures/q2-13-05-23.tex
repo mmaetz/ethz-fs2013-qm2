@@ -190,12 +190,98 @@ Let $\psi_i(x)$ wave function (coord. rep. of state) $x:$ here 3-vector not 4-ve
 	\end{dsuspend}
 	\begin{dmath}[]
 		f(x)=\sum_{i}^{}c_i\psi_i(x)
+		=\int_{}^{}\rd^3 \vtr{y}\, f(y)\underbrace{\sum_{i}^{}\psi_{i}^{*}(y)\psi_i(x)}_{\delta^{(3)}\left( \vtr{x}-\vtr{y} \right)}
 	\end{dmath}
 	\begin{dsuspend}
 		with
 	\end{dsuspend}
 	\begin{dmath}[]
 		c_i=\int_{}^{}\rd^3 \vtr{y}\, \psi_{i}^{*}(y)f(y)
-		=\int_{}^{}\rd^3 \vtr{y}\, f(y)\underbrace{\sum_{i}^{}\psi_{i}^{*}(y)\psi_i(x)}_{\delta^{(3)}\left( \vtr{x}-\vtr{y} \right)}
 	\end{dmath}
+\end{dgroup}
+\paragraph{Field operator:}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\hat{\psi}(\vtr{x})=\sum_{}^{}\hat{a_i}\psi_i(\vtr{x})
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{\psi}^{\dagger}=\sum_{}^{}\hat{a}_{i}^{\dagger}\psi_{i}^{*}(x)
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{\psi}^{\dagger}\ket{0}=\sum_{j}^{}\proj{j}\sum_{i}^{}\hat{a}_{i}^{\dagger}\psi_{i}^{*}\ket{0}
+		=\sum_{j,i}^{}\ket{j}\mel{0}{\hat{a}_j\hat{a}_{i}^{\dagger}}{0}\psi_{i}^{\dagger}(x)
+	\end{dmath},
+	\begin{dsuspend}
+		where
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hat{a}_j\hat{a}_{i}^{\dagger}=\comm{\hat{a}_j}{\hat{a}_{i}^{\dagger}}_{\mp}\pm \hat{a}_{i}^{\dagger}\hat{a}_{j}
+		=\delta_{ij}\pm \text{does not contribute}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\leadsto}\hat{\psi}^{\dagger}(x)
+		=\sum_{i}^{}\ket{i}\psi_{i}^{*}(x)
+		=\sum_{}^{}\ket{i}\braket{i}{x}=\ket{x}
+	\end{dmath}
+\end{dgroup}
+$\hat{\psi}^{\dagger}(\vtr{x})$ creates a particle localized at $\vtr{x}$\\
+$\hat{\psi}(\vtr{x})$ annihilates a particle localized at $\vtr{x}$\\
+\paragraph{Commutation relation}
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\comm{\hat{\psi}(x)}{\hat{\psi}(y)}_{\mp}
+		=\comm{\hat{\psi}^{\dagger}(x)}{\hat{\psi}^{\dagger}(y)}=0
+	\end{dmath}
+	\begin{dmath}[]
+		\comm{\hat{\psi}(x)}{\hat{\psi}(y)}_{\mp}
+		=\sum_{j}^{}\psi_i(x)\psi_{j}^{*}(y)\underbrace{\comm{\hat{a}_i}{\hat{a}_{j}^{\dagger}}_{\mp}}_{\delta_{ij}}
+		=\sum_{i}^{}\psi_i(x)\psi_{j}^{*}(g)=\delta\left( \vtr{x}-\vtr{y} \right)
+	\end{dmath}
+\end{dgroup}
+Many particle states
+\begin{dmath}[]
+	\ket{\vtr{x}_1,\vtr{x}_2,\ldots,\vtr{x}_n}
+	=\frac{1}{\sqrt{n!}}\hat{\psi}^{\dagger}(\vtr{x}_1)\ldots \hat{\psi}(\vtr{x}_n)\ket{0}
+\end{dmath}
+Example: Two identical bosons/fermions at $\vtr{x}_1\& \vtr{x}_2$:
+\begin{dgroup}[]
+	\begin{dmath}[]
+		\psi_{ij}\left( \vtr{x}_1,\vtr{x}_2 \right)=\braket{\vtr{x}_1,\vtr{x}_2}{ij}
+		=\frac{1}{\sqrt{2}}\mel{0}{\hat{\psi}(\vtr{x}_2)\hat{\psi}(x_1)\hat{a}_{i}^{\dagger}\hat{a}_{j}^{\dagger}}{0}
+		=\frac{1}{\sqrt{2}}\sum_{n,m}^{}\mel{0}{\hat{a}_m\hat{a}_n\hat{a}_{i}^{\dagger}\hat{a}_{j}^{\dagger}}{0}\psi_m(\vtr{x}_2)\psi_1(\vtr{x}_1)
+	\end{dmath}
+	\begin{dsuspend}
+		where
+	\end{dsuspend}
+	\begin{dmath}[]
+		\mel{0}{\hat{a}_m\hat{a}_n\hat{a}_{i}^{\dagger}\hat{a}_{j}^{\dagger}}{0}
+		=\delta_{n_1 m_j}\pm \delta_{m_i}\delta_{n_j}
+		\begin{cases}
+			+&\text{bosons}\\
+			-&\text{fermions}
+		\end{cases}
+	\end{dmath}
+	\begin{dmath}[]
+		\hiderel{\leadsto}
+		\psi_{ij}\left( \vtr{x}_1,\vtr{x}_2 \right)
+		=\frac{1}{\sqrt{2}}\left( \psi_j(\vtr{x}_2)\psi_1(\vtr{x}_1)\pm \psi_i(\vtr{x}_2)\psi_j(\vtr{x}_1) \right)\condition{(bosons symmetric, fermions antisummetric (Slater determinant))}
+	\end{dmath}
+	\begin{dsuspend}
+		For fixed number $n$ of particles Hilbert space $\mathcal{H}_n$
+	\end{dsuspend}
+	\begin{dmath}[]
+		\hat{\psi}^{\dagger}(\vtr{x})\mathcal{H}_n\to\mathcal{H}_{n-1}
+	\end{dmath}
+	\begin{dmath}[]
+		\hat{\psi}(\vtr{x})\mathcal{H}_n\to \mathcal{H}_{n-1}
+	\end{dmath}
+	\begin{dsuspend}
+		Fock space
+	\end{dsuspend}
+	\begin{dmath}[]
+		\mathcal{F}=\bigoplus_{n=0}^{\infty}\mathcal{H}_n=\mathcal{H}_0\oplus \mathcal{H}_1\oplus \ldots
+	\end{dmath}
+	\begin{dsuspend}
+		with  $\mathcal{H}_0$ Volume $\ket{0}$
+	\end{dsuspend}
 \end{dgroup}
